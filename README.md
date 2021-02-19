@@ -9,6 +9,7 @@
 | last_name       | string | null: false |
 | first_name_kana | string | null: false |
 | last_name_kana  | string | null: false |
+| nickname        | string | null: false |
 
 ### Association
 - has_many: orders
@@ -29,6 +30,7 @@
 | last_name       | string  | null: false |
 | first_name_kana | string  | null: false |
 | last_name_kana  | string  | null: false |
+| nickname        | string  | null: false |
 | acceptable_area | integer | null: false |
 
 ### Association
