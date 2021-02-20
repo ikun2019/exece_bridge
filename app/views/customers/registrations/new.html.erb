@@ -1,8 +1,21 @@
 <div class="wrapper">
   <div class="customer-form">
     <h2 class="devise-title">お客様情報登録</h2>
+    <div class="text-right">
+      <i class="far fa-hand-point-right finger"></i>
+      <%= link_to "エンジニア及び学習を希望の方はこちらから登録", new_engineer_registration_path, class: "btn btn-danger btn-sm" %>
+    </div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
+
+      <div class="field mt-3">
+        <div class="deivse-image-box">
+          <span class="face-image-box"></span>
+          <label for="input_face_image" class="btn btn-outline-secondary btn-sm">ファイルを選択
+            <%= f.file_field :image, class: "hidden", id: "input_face_image" %>
+          </label>
+        </div>
+      </div>
 
       <div class="field mt-3">
         <%= f.label :"氏名(漢字)" %><span>※必須（法人の場合は窓口となる方の氏名）</span><br>

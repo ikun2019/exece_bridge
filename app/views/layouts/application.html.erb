@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,8 +18,14 @@
         <% end %>
       </div>
       <div>
-        <a href="#" class="sign-in">ログイン</a>
-        <%= link_to '新規登録',new_customer_registration_path, class: "sign-up" %>
+        <% if customer_signed_in? %>
+          <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "sign-out" %>
+        <% elsif engineer_signed_in? %>
+          <%= link_to "ログアウト", destroy_engineer_session_path, method: :delete, class: "sign-out" %>
+        <% else %>
+          <%= link_to "ログイン", new_customer_session_path, class: "sign-in" %>
+          <%= link_to '新規登録',new_customer_registration_path, class: "sign-up" %>
+        <% end %>
       </div>
     </header>
     <%= yield %>
