@@ -5,4 +5,6 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_one_attached :image
+  has_many :orders
+  has_many :requests
 end

@@ -1,0 +1,34 @@
+.form {
+  padding: 30px 80px;
+  background: #EEF5CE;
+  border-radius: 8px;
+}
+
+.form-label {
+  color: #454839;
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #00A2A3;/*左線*/
+}
+.form-text {
+  width: 100%;
+}
+.select-box {
+  width: 50%;
+  height: 8vh;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+  position: relative;
+	border-radius: 2px;
+	border: 2px solid #00A2A3;
+	background: #ffffff;
+}
