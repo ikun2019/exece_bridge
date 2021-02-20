@@ -45,7 +45,7 @@
 | Column   | Type       | Options           |
 | -------- | ---------- | ----------------- |
 | request  | references | foreign_key: true |
-| customer | references | foreign_key: true |
+| engineer | references | foreign_key: true |
 
 ### Association
 - belongs_to: customer

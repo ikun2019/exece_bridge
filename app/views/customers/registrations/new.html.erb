@@ -1,7 +1,6 @@
 <div class="wrapper">
   <div class="customer-form">
     <h2 class="devise-title">お客様情報登録</h2>
-    <%# form_with model: @customer, url: new_customer_registration_path, id: 'new_customer', class: 'new-customer', local: true do |f| %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
