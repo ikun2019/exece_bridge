@@ -1,0 +1,63 @@
+.devise-title {
+  font-family: Helvetica-Bold;
+  font-size: 21px;
+  font-weight: bold;
+  color: #454839;
+}
+.customer-form {
+  width: 700px;
+  margin: auto;
+  padding: 30px 80px;
+  background: #EEF5CE;
+  border-radius: 8px;
+}
+.finger {
+  font-size: 30px;
+  vertical-align: bottom;
+}
+
+.devise-image-box {
+  height: 100px;
+}
+.face-image-box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 50%;
+}
+.face {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: left top;
+}
+.hidden {
+  display: none;
+}
+
+.name-form {
+  width: 100px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+}
+.nickname-form {
+  width: 250px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+}
+.devise-submit-box {
+  text-align: center;
+}
+.devise-submit {
+  width: 160px;
+  height: 50px;
+  background: #00A2A3;
+  border-radius: 8px;
+  font-family: HiraginoSans;
+  font-size: 16px;
+  color: #FFFFFF;
+}
