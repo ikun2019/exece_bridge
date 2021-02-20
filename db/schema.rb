@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_023642) do
+ActiveRecord::Schema.define(version: 2021_02_20_105523) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_02_20_023642) do
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
     t.string "nickname", null: false
-    t.integer "acceptable_area", null: false
+    t.integer "acceptable_area", default: 1, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -76,5 +76,28 @@ ActiveRecord::Schema.define(version: 2021_02_20_023642) do
     t.index ["reset_password_token"], name: "index_engineers_on_reset_password_token", unique: true
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "request_id"
+    t.bigint "engineer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["engineer_id"], name: "index_orders_on_engineer_id"
+    t.index ["request_id"], name: "index_orders_on_request_id"
+  end
+
+  create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.string "title", null: false
+    t.text "content", null: false
+    t.integer "budget_id", null: false
+    t.integer "term_id", null: false
+    t.integer "approach_id", null: false
+    t.text "other"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "engineers"
+  add_foreign_key "orders", "requests"
 end

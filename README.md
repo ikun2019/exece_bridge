@@ -31,7 +31,7 @@
 | first_name_kana | string  | null: false |
 | last_name_kana  | string  | null: false |
 | nickname        | string  | null: false |
-| acceptable_area | integer | null: false |
+| acceptable_area | integer | default: 1  |          |
 
 ### Association
 - has_many: comments
@@ -55,10 +55,12 @@
 ## requestsテーブル
 | Column      | Type       | Options           |
 | ----------- | ---------- | ----------------- |
+| customer_id | integer    | null: false       |
 | title       | string     | null: false       |
 | content     | text       | null: false       |
-| hope_budget | string     | null: false       |
-| term        | string     | null: false       |
+| budget_id   | integer    |                   |
+| term_id     | integer    | null: false       |
+| approach_id | integer    | null: false       |
 | other       | text       |                   |
 
 ### Association

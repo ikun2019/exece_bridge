@@ -1,5 +1,4 @@
 .devise-title {
-  font-family: Helvetica-Bold;
   font-size: 21px;
   font-weight: bold;
   color: #454839;
@@ -57,7 +56,6 @@
   height: 50px;
   background: #00A2A3;
   border-radius: 8px;
-  font-family: HiraginoSans;
   font-size: 16px;
   color: #FFFFFF;
 }
