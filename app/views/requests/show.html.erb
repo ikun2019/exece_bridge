@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="container request-infomation mt-4 p-4">
+    <table class="table">
+      <tr>
+        <td class=w-25><label class="request-label">依頼タイトル</label></td>
+        <td class="request-text align-bottom w-75"><%= @request.title %></td>
+      </tr>
+      <tr>
+        <td><label class="request-label">依頼詳細</label></td>
+        <td class="request-text align-bottom"><%= @request.content %></td>
+      </tr>
+      <tr>
+        <td><label class="request-label">予算</label></td>
+        <td class="request-text align-bottom"><%= @request.budget.name %></td>
+      </tr>
+      <tr>
+        <td><label class="request-label">期限</label></td>
+        <td class="request-text align-bottom"><%= @request.term.name %></td>
+      </tr>
+      <tr>
+        <td><label class="request-label">対応方法</label></td>
+        <td class="request-text align-bottom"><%= @request.approach.name %></td>
+      </tr>
+      <tr>
+        <td><label class="request-label">備考欄</label></td>
+        <td class="request-text align-bottom"><%= @request.other %></td>
+      </tr>
+    </table>
+  </div>
+</div>

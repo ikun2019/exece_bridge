@@ -1,5 +1,14 @@
 class RequestsController < ApplicationController
   
+  def index
+    @requests = Request.all.order("created_at DESC").includes(:customer)
+  end
+  
+  def show
+    @request = Request.find(params[:id])
+  end
+  
+
   def new
     @request = Request.new
   end

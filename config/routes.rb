@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :tops, only: [:index]
   resources :customers
-  resources :requests, only: [:new, :create]
+  resources :requests, only: [:index, :new, :create, :show]
 
   resources :engineers
 end
