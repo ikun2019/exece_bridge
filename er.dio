@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-20T14:56:52.688Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.0 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="m2dnWE-QaTM-ngTFja6p" version="13.10.0" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-20T15:55:33.570Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.0 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="9E_MGGTb_neBxg7V3QDH" version="13.10.0" type="embed">
     <diagram id="kD2cSk-eVsyRcBKnv0tv" name="ページ1">
         <mxGraphModel dx="692" dy="219" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
@@ -94,7 +94,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="40" value="requests" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="180" width="160" height="236" as="geometry"/>
+                    <mxGeometry x="520" y="180" width="160" height="206" as="geometry"/>
                 </mxCell>
                 <mxCell id="94" value="customer_id" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="40">
                     <mxGeometry y="26" width="160" height="30" as="geometry"/>
@@ -105,17 +105,14 @@
                 <mxCell id="42" value="content" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="40" vertex="1">
                     <mxGeometry y="86" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="43" value="budget" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="40" vertex="1">
+                <mxCell id="43" value="hope_budget" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="40" vertex="1">
                     <mxGeometry y="116" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="44" value="term" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="40" vertex="1">
                     <mxGeometry y="146" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="93" value="approach" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="40" vertex="1">
-                    <mxGeometry y="176" width="160" height="30" as="geometry"/>
-                </mxCell>
                 <mxCell id="77" value="other" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="40" vertex="1">
-                    <mxGeometry y="206" width="160" height="30" as="geometry"/>
+                    <mxGeometry y="176" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="46" value="room_users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="760" y="180" width="160" height="146" as="geometry"/>

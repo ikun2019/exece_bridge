@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="container requests-contents">
+    <h2 class="requests-title">依頼一覧</h2>
+    <% @requests.each do |request| %>
+      <div class="request-content">
+        <div class="request-customer">
+          <div>
+            <div>
+              <% if request.customer.image.attached? %>
+                <%= image_tag request.customer.image %>
+              <% else %>
+                <span class="face-image-box"></span>
+              <% end %>
+            </div>
+            <div class="text-center">
+              <%= request.customer.nickname %>
+            </div>
+          </div>
+        </div>
+        <div class="request-detail">
+          <label>依頼日時：</label>
+          <%= request.created_at %><br>
+          <label>依頼内容：</label>
+          <%= request.title %><br>
+          <label>予算：</label>
+          <%= request.budget.name %><br>
+          <label>期限：</label>
+          <%= request.term.name %><br>
+          <label>対応方法：</label>
+          <%= request.approach.name %>
+          <div class="text-right">
+            <%= link_to "詳細を見る", request_path(request.id), class: "btn-show" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

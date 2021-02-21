@@ -12,20 +12,22 @@
 
   <body>
     <header>
-      <div>
-        <%= link_to root_path do %>
-          <%= image_tag 'logo.jpg', class: "logo" %>
-        <% end %>
-      </div>
-      <div>
-        <% if customer_signed_in? %>
-          <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "sign-out" %>
-        <% elsif engineer_signed_in? %>
-          <%= link_to "ログアウト", destroy_engineer_session_path, method: :delete, class: "sign-out" %>
-        <% else %>
-          <%= link_to "ログイン", new_customer_session_path, class: "sign-in" %>
-          <%= link_to '新規登録',new_customer_registration_path, class: "sign-up" %>
-        <% end %>
+      <div class="header">
+        <div>
+          <%= link_to root_path do %>
+            <%= image_tag 'logo.jpg', class: "logo" %>
+          <% end %>
+        </div>
+        <div>
+          <% if customer_signed_in? %>
+            <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "sign-out" %>
+          <% elsif engineer_signed_in? %>
+            <%= link_to "ログアウト", destroy_engineer_session_path, method: :delete, class: "sign-out" %>
+          <% else %>
+            <%= link_to "ログイン", new_customer_session_path, class: "sign-in" %>
+            <%= link_to '新規登録',new_customer_registration_path, class: "sign-up" %>
+          <% end %>
+        </div>
       </div>
     </header>
     <%= yield %>
