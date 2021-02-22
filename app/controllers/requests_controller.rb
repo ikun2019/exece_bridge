@@ -6,6 +6,7 @@ class RequestsController < ApplicationController
   
   def show
     @request = Request.find(params[:id])
+    @order = Order.new
   end
   
 
