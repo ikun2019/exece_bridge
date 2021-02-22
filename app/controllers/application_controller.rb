@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if current_engineer
-      requests_path
+      engineers_path
     elsif current_customer
-      root_path
+      customers_path
     else
       root_path
     end
