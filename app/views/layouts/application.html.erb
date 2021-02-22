@@ -14,8 +14,18 @@
     <header>
       <div class="header">
         <div>
-          <%= link_to root_path do %>
-            <%= image_tag 'logo.jpg', class: "logo" %>
+          <% if current_customer %>
+            <%= link_to customers_path do %>
+              <%= image_tag 'logo.jpg', class: "logo" %>
+            <% end %>
+          <% elsif current_engineer %>
+            <%= link_to engineers_path do %>
+              <%= image_tag 'logo.jpg', class: "logo" %>
+            <% end %>
+          <% else %>
+            <%= link_to root_path do %>
+              <%= image_tag 'logo.jpg', class: "logo" %>
+            <% end %>
           <% end %>
         </div>
         <div>
