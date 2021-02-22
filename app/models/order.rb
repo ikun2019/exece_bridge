@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
-  belongs_to :customer
-  has_one :request
+  belongs_to :request
+  has_one :engineer  
 end
