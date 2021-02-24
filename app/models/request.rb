@@ -4,7 +4,8 @@ class Request < ApplicationRecord
   validates :term_id, numericality: { other_than: 1}
   validates :budget_id, numericality: { other_than: 1}
 
-  has_one :order
+  has_many :orders
+  has_many :engineers, through: :orders
   belongs_to :customer
 
   extend ActiveHash::Associations::ActiveRecordExtensions

@@ -27,12 +27,10 @@
       </tr>
     </table>
     <div class="text-center">
-      <% if engineer_signed_in? && @request.order.blank? %>
-        <%= button_to "依頼を受ける", request_orders_path(@request), method: :post, class: "btn btn-success" %>
-      <% elsif engineer_signed_in? && @request.order.engineer_id == current_engineer.id %>
+      <% if engineer_signed_in? && @applied == true  %>
         <%= button_to "依頼をキャンセル", request_order_path(@request), method: :delete, data: {confirm: "依頼をキャンセルしてよろしいですか？"}, class: "btn btn-danger" %>
-      <% elsif engineer_signed_in? && @request.order.present? %>
-        <p>*** この依頼は既に完了しております ***</p>
+      <% elsif engineer_signed_in? && @applied == false %>
+        <%= button_to "依頼を受ける", request_orders_path(@request), method: :post, class: "btn btn-success" %>
       <% else %>
         <p>*** 依頼を受けるにはログインが必要です ***</p>
       <% end %>

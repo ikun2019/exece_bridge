@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   def create
     @request = Request.find(params[:request_id])
     @order = Order.new(request_id: @request.id, engineer_id: current_engineer.id)
-    if @request.order.present?
+    if @request.orders.where(engineer_id: current_engineer.id).present?
       redirect_to "/requests/#{@order.request_id}"
     else
       @order.save
@@ -13,14 +13,9 @@ class OrdersController < ApplicationController
 
   def destroy
     @request = Request.find(params[:request_id])
-    @order = @request.order
-    if @request.order.engineer_id == current_engineer.id
-      @order.destroy
-      redirect_to "/requests/#{@order.request_id}"
-    else
-      redirect_to "/requests/#{@order.request_id}"
-    end
-    
+    @order = @request.orders.find_by(engineer_id: current_engineer.id)
+    @order.destroy
+    redirect_to "/requests/#{@request.id}"
   end
   
   

@@ -46,6 +46,7 @@
 | -------- | ---------- | ----------------- |
 | request  | references | foreign_key: true |
 | engineer | references | foreign_key: true |
+|||
 
 ### Association
 - belongs_to: request
