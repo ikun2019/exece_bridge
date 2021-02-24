@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2021_02_20_105523) do
   end
 
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "customer_id", null: false
+    t.bigint "customer_id"
     t.string "title", null: false
     t.text "content", null: false
     t.integer "budget_id", null: false
@@ -95,9 +95,11 @@ ActiveRecord::Schema.define(version: 2021_02_20_105523) do
     t.text "other"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_requests_on_customer_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "orders", "engineers"
   add_foreign_key "orders", "requests"
+  add_foreign_key "requests", "customers"
 end

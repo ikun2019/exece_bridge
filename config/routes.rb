@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   resources :requests, only: [:index, :new, :create, :show] do
     resources :orders, only: [:create, :destroy]
   end
-  resources :engineers
+  resources :engineers, only: [:index, :show] do
+    member do
+      get :apply
+    end
+  end
 end

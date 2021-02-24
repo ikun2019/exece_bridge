@@ -1,3 +1,27 @@
 <div class="wrapper">
-エンジニア
+  <label class="engineer-label mt-3 ml-2">エンジニア様　専用ページ</label>
+  <div class="engineer-main-btn mt-3">
+    <div class="left-btn">
+      <%= link_to "受注可能な案件を探す", requests_path, class: "engineer-important-btn" %>
+    </div>
+    <div class="right-btn">
+      <%= link_to "Excelを学ぶ", requests_path, class: "engineer-normal-btn" %>
+    </div>
+    <div class="center-btn mt-2">
+      <%= link_to "質問掲示板", requests_path, class: "engineer-normal-btn" %>
+    </div>
+  </div>
+
+  <hr class="line">
+
+  <label class="engineer-label mt-3 ml-2"><%= current_engineer.nickname %>さんのページ</label>
+  <div class="engineer-menu">
+    <div class="engineer-left-box">
+      <%= link_to "申請中案件", accept_engineer_path(current_engineer), class: "engineer-sub-btn" %>
+      <a href="#" class="engineer-sub-btn mt-2">完了済み案件の確認</a>
+    </div>
+    <div class="engineer-right-box">
+      <a href="#" class="engineer-sub-btn">請求書作成フォーム</a>
+    </div>
+  </div>
 </div>
