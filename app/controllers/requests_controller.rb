@@ -6,6 +6,11 @@ class RequestsController < ApplicationController
   
   def show
     @request = Request.find(params[:id])
+    if @request.orders.where(engineer_id: current_engineer.id).present?
+      @applied = true
+    else
+      @applied = false
+    end
     @order = Order.new
   end
   

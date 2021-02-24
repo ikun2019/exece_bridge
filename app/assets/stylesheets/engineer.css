@@ -1,0 +1,58 @@
+/* engineer#index */
+.engineer-label {
+  color: #454839;
+  font-size: 16px;
+  background: linear-gradient(transparent 70%, #AECA54 70%);
+}
+.engineer-main-btn {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.engineer-important-btn {
+  display: inline-block;
+  width: 42vw;;
+  line-height: 16vh;
+  text-align: center;
+  background: #AAAD9B;
+  border: 1px solid #979797;
+  border-radius: 8px;
+  font-size: 2vw;
+  color: #FFFFFF;
+}
+.engineer-normal-btn {
+  display: inline-block;
+  text-align: center;
+  width: 42vw;;
+  line-height: 16vh;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  border-radius: 8px;
+  font-size: 2vw;
+  color: #454839;
+}
+hr {
+  color: #AAAD9B;
+}
+
+.engineer-menu {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.engineer-sub-btn {
+  display: inline-block;
+  text-align: center;
+  width: 42vw;
+  line-height: 5vh;
+  border: 1px solid #AAAD9B;
+  border-radius: 8px;
+  font-size: 2vw;
+  color: #454839;
+}
+
+/* engineer#accept */
+.list-table {
+  background: #EEF5CE;
+  border-radius: 8px;
+}

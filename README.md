@@ -46,6 +46,7 @@
 | -------- | ---------- | ----------------- |
 | request  | references | foreign_key: true |
 | engineer | references | foreign_key: true |
+|||
 
 ### Association
 - belongs_to: request
@@ -55,7 +56,7 @@
 ## requestsテーブル
 | Column      | Type       | Options           |
 | ----------- | ---------- | ----------------- |
-| customer_id | integer    | null: false       |
+| customer    | references | foreign_key: true |
 | title       | string     | null: false       |
 | content     | text       | null: false       |
 | budget_id   | integer    |                   |
