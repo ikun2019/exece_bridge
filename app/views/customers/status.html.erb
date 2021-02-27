@@ -1,0 +1,32 @@
+status
+
+<div class="wrapper">
+  <label><%= current_customer.nickname %>様の依頼状況</label>
+  <div class="container">
+    <table class="table table-hover table-bordered">
+      <tr class="text-center">
+        <td>案件番号</td>
+        <td>依頼タイトル</td>
+        <td>依頼掲載日</td>
+        <td>申請者</td>
+        <td>回答</td>
+      </tr>
+      <% @requests.each do |request| %>
+        <tr class="text-center">
+          <td>
+            <%= link_to request_path(request.id) do %>
+              <%= request.id %>
+            <% end %>
+          </td>
+          <td><%= request.title %></td>
+          <td><%= request.created_at %></td>
+          <td>
+            <% if request.orders.present? %>
+            <% end %>
+          </td>
+          <td></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

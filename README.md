@@ -42,15 +42,35 @@
 
 
 ## ordersテーブル
-| Column   | Type       | Options           |
-| -------- | ---------- | ----------------- |
-| request  | references | foreign_key: true |
-| engineer | references | foreign_key: true |
-|||
+| Column   | Type       | Options                     |
+| -------- | ---------- | --------------------------- |
+| request  | references | foreign_key: true           |
+| engineer | references | foreign_key: true           |
 
 ### Association
 - belongs_to: request
-- has_one :engineer
+- belongs_to :engineer
+
+
+## agreementsテーブル
+| Column      | Type       | Options                     |
+| ----------- | ---------- | --------------------------- |
+| request     | references | foreign_key: true           |
+| engineer    | references | foreign_key: true           |
+
+### Association
+- belongs_to :request
+- has_one :complete
+
+
+## completesテーブル
+| Column      | Type       | Options                     |
+| ----------- | ---------- | --------------------------- |
+| agreement   | references | default: false, null: false |
+| conclusion  | boolearn   | default: false, null: false |
+
+### Association
+- belongs_to :agreement
 
 
 ## requestsテーブル

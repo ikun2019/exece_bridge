@@ -31,8 +31,33 @@
         <%= button_to "依頼をキャンセル", request_order_path(@request), method: :delete, data: {confirm: "依頼をキャンセルしてよろしいですか？"}, class: "btn btn-danger" %>
       <% elsif engineer_signed_in? && @applied == false %>
         <%= button_to "依頼を受ける", request_orders_path(@request), method: :post, class: "btn btn-success" %>
+      <% elsif customer_signed_in? %>
+        <label class="text-left">申請者一覧</label>
+        <%= form_with model: [@request, @agree], method: :post, local: true do |f| %>
+          <table class="table table-sm table-bordered">
+            <tr class="text-center">
+              <th style="width: 20%;">No.</th>
+              <th style="width: 40%;">申請者</th>
+              <th style="width: 40%;">依頼するエンジニアを選択</th>
+            </tr>
+            <% if @reply == true %>
+              <% @request.orders.each_with_index do |order, i| %>
+                <tr>
+                  <td class="align-middle"><%= i + 1 %></td>
+                  <td class="align-middle">
+                    <%= order.engineer.nickname %>
+                  </td>
+                  <td>
+                    <%= f.radio_button :engineer_id, order.engineer.id %>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </table>
+          <%= f.submit "依頼確定" %>
+        <% end %>
       <% else %>
-        <p>*** 依頼を受けるにはログインが必要です ***</p>
+        <p>*** ログインが必要です ***</p>
       <% end %>
     </div>
   </div>

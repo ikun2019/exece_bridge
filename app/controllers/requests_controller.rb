@@ -6,12 +6,16 @@ class RequestsController < ApplicationController
   
   def show
     @request = Request.find(params[:id])
-    if @request.orders.where(engineer_id: current_engineer.id).present?
-      @applied = true
-    else
-      @applied = false
+    @agree = Agreement.new
+
+    if engineer_signed_in?
+      @applied = @request.engineer_apply(current_engineer.id)
     end
     @order = Order.new
+
+    if customer_signed_in?
+      @reply = @request.orders.present?
+    end
   end
   
 
