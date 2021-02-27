@@ -36,9 +36,11 @@ ActiveRecord::Schema.define(version: 2021_02_25_122519) do
   create_table "agreements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "request_id"
     t.bigint "engineer_id"
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["engineer_id"], name: "index_agreements_on_engineer_id"
+    t.index ["order_id"], name: "index_agreements_on_order_id"
     t.index ["request_id"], name: "index_agreements_on_request_id"
   end
 
@@ -109,6 +111,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_122519) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "agreements", "engineers"
+  add_foreign_key "agreements", "orders"
   add_foreign_key "agreements", "requests"
   add_foreign_key "orders", "engineers"
   add_foreign_key "orders", "requests"

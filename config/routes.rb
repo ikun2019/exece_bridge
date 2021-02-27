@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :engineers, only: [:index, :show] do
     member do
       get :apply
+      get :replied
     end
   end
 

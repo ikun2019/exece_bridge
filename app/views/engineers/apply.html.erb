@@ -1,25 +1,32 @@
 <div class="wrapper">
   <div class="container mt-5">
-    <table class="table table-bordered table-hover table-dark table-sm">
+    <table class="table table-bordered table-hover table-sm">
       <tr class="text-center">
         <td>案件番号</td>
         <td>依頼主</td>
         <td>タイトル</td>
         <td>依頼受諾日</td>
+        <td>ステイタス</td>
       </tr>
-      <tr class="text-center">
-        <% @orders.each do |order| %>
+      <% @ordered_requests.each do |request| %>
+        <tr class="text-center">
           <td>
-            <%= link_to request_path(order.request.id) do %>
-              <%= order.request.id %>
+            <%= link_to request_path(request.id) do %>
+              <%= request.id %>
             <% end %>
           </td>
-          <td><%= order.request.customer.nickname %></td>
-          <td><%= order.request.title %></td>
-          <td><%= order.created_at %></td>
-          
-        <% end %>
+          <td><%= request.customer.nickname %></td>
+          <td><%= request.title %></td>
+          <td><%= request.created_at %></td>
+          <td>
+            <% if request.agreement.present? %>
+              完了
+            <% else %>
+              未確定
+            <% end %>
+          </td>
         </tr>
+      <% end %>
     </table>
   </div>
 </div>
