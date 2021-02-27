@@ -18,7 +18,18 @@
           <td><%= order.request.customer.nickname %></td>
           <td><%= order.request.title %></td>
           <td><%= order.created_at %></td>
-          <td></td>
+          <td>
+            <%if order.request.complete.present? %>
+              <%= form_with url: "/requests/#{order.request.id}/completes/#{order.request.complete.id}", method: :delete, local: true do |f| %>
+                <%= f.submit "取り消す" %>
+              <% end %>
+            <% else %>
+              <%= form_with url: "/requests/#{order.request.id}/completes", method: :post, local: true do |f| %>
+                <%= f.hidden_field :conclusion, value: true %>
+                <%= f.submit "完了" %>
+              <% end %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </table>

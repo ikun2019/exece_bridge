@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :requests, only: [:index, :new, :create, :show] do
     resources :agreements, only: [:new ,:create]
     resources :orders, only: [:create, :destroy]
-    resoueces :conpletes, only: [:create]
+    resources :completes, only: [:create, :destroy]
   end
   resources :engineers, only: [:index, :show] do
     member do

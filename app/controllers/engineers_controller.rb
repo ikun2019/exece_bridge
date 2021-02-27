@@ -10,6 +10,7 @@ class EngineersController < ApplicationController
   
   def replied
     @replied_orders = current_engineer.agreements
+    @complete = Complete.new
   end
   
 end
