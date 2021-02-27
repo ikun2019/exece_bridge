@@ -8,6 +8,7 @@ class Request < ApplicationRecord
   has_many :engineers, through: :orders
   belongs_to :customer
   has_one :agreement
+  has_one :complete
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :approach

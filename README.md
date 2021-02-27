@@ -65,17 +65,16 @@
 - belongs_to :request
 - belongs_to :engineer
 - belongs_to :order
-- has_one :complete
 
 
 ## completesテーブル
 | Column      | Type       | Options                     |
 | ----------- | ---------- | --------------------------- |
-| agreement   | references | default: false, null: false |
-| conclusion  | boolearn   | default: false, null: false |
+| request     | references | foreign_key: true           |
+| conclusion  | boolean    | default: false, null: false |
 
 ### Association
-- belongs_to :agreement
+- belongs_to :request
 
 
 ## requestsテーブル
@@ -90,10 +89,11 @@
 | other       | text       |                   |
 
 ### Association
-- has_one: order
-- belongs_to: customer
-- has_many: room_users
-- has_many: rooms
+- has_one :order
+- belongs_to :customer
+- has_many :room_users
+- has_many :rooms
+- has_one :complete
 
 
 ## room_usersテーブル
