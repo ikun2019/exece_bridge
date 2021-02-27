@@ -7,4 +7,5 @@ class Engineer < ApplicationRecord
   has_one_attached  :image
   has_many :orders
   has_many :requests, through: :orders
+  has_many :agreements
 end

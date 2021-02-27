@@ -5,8 +5,11 @@ class EngineersController < ApplicationController
   end
 
   def apply
-    @orders = current_engineer.orders
+    @ordered_requests = current_engineer.requests
   end
   
+  def replied
+    @replied_orders = current_engineer.agreements
+  end
   
 end

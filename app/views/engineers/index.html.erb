@@ -17,8 +17,8 @@
   <label class="engineer-label mt-3 ml-2"><%= current_engineer.nickname %>さんのページ</label>
   <div class="engineer-menu">
     <div class="engineer-left-box">
-      <%= link_to "申請中案件", apply_engineer_path(current_engineer), class: "engineer-sub-btn" %>
-      <a href="#" class="engineer-sub-btn mt-2">仕掛中案件の確認</a>
+      <%= link_to "申請案件の状況", apply_engineer_path(current_engineer), class: "engineer-sub-btn" %>
+      <%= link_to "#{ current_engineer.nickname }さんが対応中の案件", replied_engineer_path(current_engineer), class: "engineer-sub-btn mt-2" %>
       <a href="#" class="engineer-sub-btn mt-2">完了済み案件の確認</a>
     </div>
     <div class="engineer-right-box">

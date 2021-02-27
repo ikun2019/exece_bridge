@@ -5,13 +5,21 @@ Rails.application.routes.draw do
   root "tops#index"
 
   resources :tops, only: [:index]
-  resources :customers
+  resources :customers, only: [:index, :status] do
+    member do
+      get :status
+    end
+  end
+
   resources :requests, only: [:index, :new, :create, :show] do
+    resources :agreements, only: [:new ,:create]
     resources :orders, only: [:create, :destroy]
   end
   resources :engineers, only: [:index, :show] do
     member do
       get :apply
+      get :replied
     end
   end
+
 end

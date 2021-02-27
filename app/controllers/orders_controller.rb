@@ -18,5 +18,4 @@ class OrdersController < ApplicationController
     redirect_to "/requests/#{@request.id}"
   end
   
-  
 end

@@ -39,18 +39,43 @@
 - has_many: room_users
 - has_many: rooms
 - has_many: orders
+- has_many :agreements
 
 
 ## ordersテーブル
-| Column   | Type       | Options           |
-| -------- | ---------- | ----------------- |
-| request  | references | foreign_key: true |
-| engineer | references | foreign_key: true |
-|||
+| Column   | Type       | Options                     |
+| -------- | ---------- | --------------------------- |
+| request  | references | foreign_key: true           |
+| engineer | references | foreign_key: true           |
 
 ### Association
 - belongs_to: request
-- has_one :engineer
+- belongs_to :engineer
+- has_one :agreement
+
+
+## agreementsテーブル
+| Column      | Type       | Options                     |
+| ----------- | ---------- | --------------------------- |
+| request     | references | foreign_key: true           |
+| engineer    | references | foreign_key: true           |
+| order       | references | forrign_key: true           |
+
+### Association
+- belongs_to :request
+- belongs_to :engineer
+- belongs_to :order
+- has_one :complete
+
+
+## completesテーブル
+| Column      | Type       | Options                     |
+| ----------- | ---------- | --------------------------- |
+| agreement   | references | default: false, null: false |
+| conclusion  | boolearn   | default: false, null: false |
+
+### Association
+- belongs_to :agreement
 
 
 ## requestsテーブル

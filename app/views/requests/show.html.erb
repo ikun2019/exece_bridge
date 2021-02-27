@@ -1,9 +1,18 @@
 <div class="wrapper">
   <div class="container request-infomation mt-4 p-4">
+    <div class="text-center">
+      <% if flash[:notice] %>
+        <p class="flash"><%= flash[:notice] %></p>
+      <% end %>
+    </div>
     <table class="table">
       <tr>
-        <td class=w-25><label class="request-label">依頼タイトル</label></td>
-        <td class="request-text align-bottom w-75"><%= @request.title %></td>
+        <td class=w-25><label class="request-label">管理No</label></td>
+        <td class="request-text align-bottom w-75"><%= @request.id %></td>
+      </tr>
+      <tr>
+        <td><label class="request-label">依頼タイトル</label></td>
+        <td class="request-text align-bottom"><%= @request.title %></td>
       </tr>
       <tr>
         <td><label class="request-label">依頼詳細</label></td>
@@ -26,13 +35,21 @@
         <td class="request-text align-bottom"><%= @request.other %></td>
       </tr>
     </table>
-    <div class="text-center">
-      <% if engineer_signed_in? && @applied == true  %>
+    <div>
+      <% if engineer_signed_in? && @applied == true && @request.agreement.blank? %>
         <%= button_to "依頼をキャンセル", request_order_path(@request), method: :delete, data: {confirm: "依頼をキャンセルしてよろしいですか？"}, class: "btn btn-danger" %>
-      <% elsif engineer_signed_in? && @applied == false %>
+      <% elsif engineer_signed_in? && @applied == false && @request.agreement.blank? %>
         <%= button_to "依頼を受ける", request_orders_path(@request), method: :post, class: "btn btn-success" %>
+      <% elsif engineer_signed_in? && @request.agreement.present? %>
+        <p>この依頼は既に対応するエンジニアが確定しています。</p>
+      <% elsif customer_signed_in? %>
+        <% if @request.agreement.present? %>
+          <%= render partial: "replied" %>
+        <% else %>
+          <%= render partial: "reply" %>
+        <% end %>
       <% else %>
-        <p>*** 依頼を受けるにはログインが必要です ***</p>
+        <p>*** ログインが必要です ***</p>
       <% end %>
     </div>
   </div>
