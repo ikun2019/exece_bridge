@@ -19,8 +19,10 @@
           <td><%= request.title %></td>
           <td><%= request.created_at %></td>
           <td>
-            <% if request.agreement.present? %>
-              完了
+            <% if request.agreements.where(answer: true, engineer_id: current_engineer.id).present? %>
+              <%= current_engineer.nickname %>さん対応
+            <% elsif request.agreements.where(answer: true).present? %>
+              他者に確定
             <% else %>
               未確定
             <% end %>

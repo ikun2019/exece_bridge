@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_090112) do
     t.bigint "request_id"
     t.bigint "engineer_id"
     t.bigint "order_id"
+    t.boolean "answer", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["engineer_id"], name: "index_agreements_on_engineer_id"

@@ -16,6 +16,11 @@ class RequestsController < ApplicationController
     if customer_signed_in?
       @reply = @request.orders.present?
     end
+
+    if customer_signed_in? && @request.agreements.where(answer: true).present?
+      @engineer = @request.agreements.find_by(answer: true).engineer.nickname
+    end
+    
   end
   
 

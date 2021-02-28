@@ -60,6 +60,7 @@
 | request     | references | foreign_key: true           |
 | engineer    | references | foreign_key: true           |
 | order       | references | forrign_key: true           |
+| answer      | boolean    | default: false              |
 
 ### Association
 - belongs_to :request
