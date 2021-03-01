@@ -14,7 +14,7 @@ class CompletesController < ApplicationController
     @request = Request.find(params[:request_id])
     @complete = @request.complete
     @complete.update(update_params)
-    redirect_to replied_engineer_path(@request.id)
+    redirect_to request.referer
   end
   
 

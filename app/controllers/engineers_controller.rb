@@ -13,7 +13,7 @@ class EngineersController < ApplicationController
   end
 
   def completed
-    @replied_orders = current_engineer.completes.where(conclusion: true)
+    @completed_orders = current_engineer.completes.where(conclusion: true)
   end
   
   
