@@ -1,4 +1,6 @@
-<label class="text-left">申請者一覧</label>
+<div class="text-left">
+  <label>この依頼に申請しているエンジニア</label>
+</div>
 <%= form_with model: @agreement_complete, url: request_agreements_path(@request.id), method: :post, local: true do |f| %>
   <table class="table table-sm table-bordered">
     <tr class="text-center">
@@ -23,5 +25,9 @@
       <% end %>
     <% end %>
   </table>
-  <%= f.submit "依頼確定" %>
+  <% if @reply == true %>
+    <%= f.submit "依頼確定" %>
+  <% else %>
+    <p>*** まだ申請がありません ***</p>
+  <% end %>
 <% end %>

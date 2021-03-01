@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_090112) do
+ActiveRecord::Schema.define(version: 2021_02_28_122104) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2021_02_27_090112) do
     t.boolean "conclusion", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "engineer_id"
+    t.index ["engineer_id"], name: "index_completes_on_engineer_id"
     t.index ["request_id"], name: "index_completes_on_request_id"
   end
 
@@ -122,6 +124,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_090112) do
   add_foreign_key "agreements", "engineers"
   add_foreign_key "agreements", "orders"
   add_foreign_key "agreements", "requests"
+  add_foreign_key "completes", "engineers"
   add_foreign_key "completes", "requests"
   add_foreign_key "orders", "engineers"
   add_foreign_key "orders", "requests"

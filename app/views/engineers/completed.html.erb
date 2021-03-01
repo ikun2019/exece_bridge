@@ -8,8 +8,7 @@
         <th class="table-th">依頼受諾日</th>
         <th class="table-th">完了報告</th>
       </tr>
-
-      <% @unfinished_request.each do |order| %>
+      <% @replied_orders.each do |order| %>
         <tr class="text-center">
           <td class="table-td">
             <%= link_to request_path(order.request.id) do %>
@@ -20,11 +19,21 @@
           <td class="table-td"><%= order.request.title %></td>
           <td class="table-td"><%= order.created_at %></td>
           <td class="table-td">
-            <%= link_to "完了", request_complete_path(order.request.id, complete: {conclusion: true}), method: :put, class: "btn btn-success btn-sm" %>
+            <% if order.request.complete.present? %>
+              <%= form_with url: "/requests/#{order.request.id}/completes/#{order.request.complete.id}", method: :delete, local: true do |f| %>
+                <%= f.submit "取り消す", class: "btn-danger" %>
+              <% end %>
+            <% end %>
+
+            <% unless order.request.complete.present? %>
+              <%= form_with url: "/requests/#{order.request.id}/completes", method: :post, local: true do |f| %>
+                <%= f.hidden_field :conclusion, value: true %>
+                <%= f.submit "完了", class: "btn-success" %>
+              <% end %>
+            <% end %>
           </td>
         </tr>
       <% end %>
-
     </table>
   </div>
 </div>

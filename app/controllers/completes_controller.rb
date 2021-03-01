@@ -1,10 +1,22 @@
 class CompletesController < ApplicationController
 
-  def create
+  # def create
+    # @request = Request.find(params[:request_id])
+    # Complete.create(complete_params)
+    # redirect_to replied_engineer_path(@request.id)
+  # end
+
+  def edit
+    
+  end
+
+  def update
     @request = Request.find(params[:request_id])
-    Complete.create(complete_params)
+    @complete = @request.complete
+    @complete.update(update_params)
     redirect_to replied_engineer_path(@request.id)
   end
+  
 
   def destroy
     @request = Request.find(params[:request_id])
@@ -15,8 +27,8 @@ class CompletesController < ApplicationController
   
   
   private
-  def complete_params
-    params.permit(:conclusion).merge(request_id: @request.id)
+  def update_params
+    params.require(:complete).permit(:conclusion)
   end
   
 end

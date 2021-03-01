@@ -1,5 +1,26 @@
+.face {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: left top;
+}
+.hidden {
+  display: none;
+}
 .flash {
   font-size: 12px;
   color: white;
   background-color: red;
+}
+
+.table-th {
+  color:#005ab3;
+  background: #fff;
+}
+.table-td {
+  border-bottom:1px dashed #999;
+}
+.table-th {
+  border-top:2px solid #005ab3 !important;
+  border-bottom:2px solid #005ab3;
 }

@@ -11,7 +11,7 @@ class AgreementComplete
 
   def save
     Agreement.create(request_id: request_id, engineer_id: engineer_id, order_id: order_id, answer: answer)
-    Complete.create(request_id: request_id, conclusion: conclusion)
+    Complete.create(request_id: request_id, conclusion: conclusion, engineer_id: engineer_id)
   end
   
 end

@@ -9,8 +9,12 @@ class EngineersController < ApplicationController
   end
   
   def replied
-    @replied_orders = current_engineer.agreements
-    @complete = Complete.new
+    @unfinished_request = current_engineer.completes.where(conclusion: false)
   end
+
+  def completed
+    @replied_orders = current_engineer.completes.where(conclusion: true)
+  end
+  
   
 end

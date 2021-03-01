@@ -40,6 +40,7 @@
 - has_many: rooms
 - has_many: orders
 - has_many :agreements
+- has_many :completes
 
 
 ## ordersテーブル
@@ -76,7 +77,7 @@
 
 ### Association
 - belongs_to :request
-
+- belongs_to :engineer
 
 ## requestsテーブル
 | Column      | Type       | Options           |

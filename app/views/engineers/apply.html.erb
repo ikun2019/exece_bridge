@@ -1,26 +1,26 @@
 <div class="wrapper">
   <div class="container mt-5">
-    <table class="table table-bordered table-hover table-sm">
+    <table class="table table-hover table-sm">
       <tr class="text-center">
-        <td>案件番号</td>
-        <td>依頼主</td>
-        <td>タイトル</td>
-        <td>依頼受諾日</td>
-        <td>ステイタス</td>
+        <th class="table-th">案件番号</th>
+        <th class="table-th">依頼主</th>
+        <th class="table-th">タイトル</th>
+        <th class="table-th">依頼受諾日</th>
+        <th class="table-th">ステイタス</th>
       </tr>
       <% @ordered_requests.each do |request| %>
         <tr class="text-center">
-          <td>
+          <td class="table-td">
             <%= link_to request_path(request.id) do %>
               <%= request.id %>
             <% end %>
           </td>
-          <td><%= request.customer.nickname %></td>
-          <td><%= request.title %></td>
-          <td><%= request.created_at %></td>
-          <td>
+          <td class="table-td"><%= request.customer.nickname %></td>
+          <td class="table-td"><%= request.title %></td>
+          <td class="table-td"><%= request.created_at %></td>
+          <td class="table-td">
             <% if request.agreements.where(answer: true, engineer_id: current_engineer.id).present? %>
-              <%= current_engineer.nickname %>さん対応
+              <span class="bg-success text-white p-1">依頼確定</span>
             <% elsif request.agreements.where(answer: true).present? %>
               他者に確定
             <% else %>
