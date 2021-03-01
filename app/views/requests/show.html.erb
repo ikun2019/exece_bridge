@@ -35,15 +35,15 @@
         <td class="request-text align-bottom"><%= @request.other %></td>
       </tr>
     </table>
-    <div>
-      <% if engineer_signed_in? && @applied == true && @request.agreement.blank? %>
-        <%= button_to "依頼をキャンセル", request_order_path(@request), method: :delete, data: {confirm: "依頼をキャンセルしてよろしいですか？"}, class: "btn btn-danger" %>
-      <% elsif engineer_signed_in? && @applied == false && @request.agreement.blank? %>
-        <%= button_to "依頼を受ける", request_orders_path(@request), method: :post, class: "btn btn-success" %>
-      <% elsif engineer_signed_in? && @request.agreement.present? %>
+    <div class="text-center">
+      <% if engineer_signed_in? && @applied == true && @request.agreements.blank? %>
+        <%= button_to "リクエストをキャンセル", request_order_path(@request), method: :delete, data: {confirm: "依頼をキャンセルしてよろしいですか？"}, class: "btn btn-danger" %>
+      <% elsif engineer_signed_in? && @applied == false && @request.agreements.blank? %>
+        <%= button_to "リクエスト", request_orders_path(@request), method: :post, class: "btn btn-success" %>
+      <% elsif engineer_signed_in? && @request.agreements.present? %>
         <p>この依頼は既に対応するエンジニアが確定しています。</p>
       <% elsif customer_signed_in? %>
-        <% if @request.agreement.present? %>
+        <% if @request.agreements.present? %>
           <%= render partial: "replied" %>
         <% else %>
           <%= render partial: "reply" %>

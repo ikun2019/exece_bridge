@@ -1,5 +1,7 @@
-<label class="text-left">申請者一覧</label>
-<%= form_with model: [@request, @agree], method: :post, local: true do |f| %>
+<div class="text-left">
+  <label>この依頼に申請しているエンジニア</label>
+</div>
+<%= form_with model: @agreement_complete, url: request_agreements_path(@request.id), method: :post, local: true do |f| %>
   <table class="table table-sm table-bordered">
     <tr class="text-center">
       <th style="width: 20%;" class="align-middle">No.</th>
@@ -14,11 +16,18 @@
             <%= order.engineer.nickname %>
           </td>
           <td class="text-center">
+            <%= f.hidden_field :order_id, value: order.id %>
+            <%= f.hidden_field :answer, value: true %>
+            <%= f.hidden_field :conclusion, value: false %>
             <%= f.radio_button :engineer_id, order.engineer.id %>
           </td>
         </tr>
       <% end %>
     <% end %>
   </table>
-  <%= f.submit "依頼確定" %>
+  <% if @reply == true %>
+    <%= f.submit "依頼確定" %>
+  <% else %>
+    <p>*** まだ申請がありません ***</p>
+  <% end %>
 <% end %>

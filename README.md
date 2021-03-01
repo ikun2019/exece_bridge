@@ -40,6 +40,7 @@
 - has_many: rooms
 - has_many: orders
 - has_many :agreements
+- has_many :completes
 
 
 ## ordersテーブル
@@ -60,23 +61,23 @@
 | request     | references | foreign_key: true           |
 | engineer    | references | foreign_key: true           |
 | order       | references | forrign_key: true           |
+| answer      | boolean    | default: false              |
 
 ### Association
 - belongs_to :request
 - belongs_to :engineer
 - belongs_to :order
-- has_one :complete
 
 
 ## completesテーブル
 | Column      | Type       | Options                     |
 | ----------- | ---------- | --------------------------- |
-| agreement   | references | default: false, null: false |
-| conclusion  | boolearn   | default: false, null: false |
+| request     | references | foreign_key: true           |
+| conclusion  | boolean    | default: false, null: false |
 
 ### Association
-- belongs_to :agreement
-
+- belongs_to :request
+- belongs_to :engineer
 
 ## requestsテーブル
 | Column      | Type       | Options           |
@@ -90,10 +91,11 @@
 | other       | text       |                   |
 
 ### Association
-- has_one: order
-- belongs_to: customer
-- has_many: room_users
-- has_many: rooms
+- has_one :order
+- belongs_to :customer
+- has_many :room_users
+- has_many :rooms
+- has_one :complete
 
 
 ## room_usersテーブル

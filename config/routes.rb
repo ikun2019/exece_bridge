@@ -14,11 +14,13 @@ Rails.application.routes.draw do
   resources :requests, only: [:index, :new, :create, :show] do
     resources :agreements, only: [:new ,:create]
     resources :orders, only: [:create, :destroy]
+    resources :completes, only: [:edit, :update]
   end
   resources :engineers, only: [:index, :show] do
     member do
       get :apply
       get :replied
+      get :completed
     end
   end
 

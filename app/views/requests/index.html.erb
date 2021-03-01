@@ -1,13 +1,13 @@
 <div class="wrapper">
-  <div class="container requests-contents">
+  <div class="container requests-contents mt-5">
     <h2 class="requests-title">依頼一覧</h2>
     <% @requests.each do |request| %>
-      <div class="request-content">
+      <div class="request-content mt-3">
         <div class="request-customer">
           <div>
             <div>
               <% if request.customer.image.attached? %>
-                <%= image_tag request.customer.image %>
+                <%= image_tag request.customer.image, class: "face" %>
               <% else %>
                 <span class="face-image-box"></span>
               <% end %>

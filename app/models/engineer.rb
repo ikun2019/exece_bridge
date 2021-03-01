@@ -8,4 +8,5 @@ class Engineer < ApplicationRecord
   has_many :orders
   has_many :requests, through: :orders
   has_many :agreements
+  has_many :completes
 end
