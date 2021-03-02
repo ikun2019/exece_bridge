@@ -1,3 +1,31 @@
+<div class="top" style="background-image: url(<%= asset_path('main4.jpg') %>)">
+  <div class="container">
+    <div class="title-box">
+      <div class="main-box">
+        <h1>Exce Bridge</h1>
+        <div class="container devise-boxs d-flex justify-content-around mt-3">
+          <div class="devise-customer">
+            <p class="top-title">お仕事の依頼をご希望の方</p>
+            <%= link_to "Sign Up", new_customer_registration_path, class: "signup-button" %>
+            <%= link_to "Sign In", new_customer_session_path, class: "signin-button mt-2" %>
+          </div>
+          <div class="devise-engineer">
+            <p class="top-title">エンジニア・学習希望の方</p>
+            <%= link_to "Sign Up", new_engineer_registration_path, class: "signup-button" %>
+            <%= link_to "Sign In", new_engineer_session_path, class: "signin-button mt-2" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+</div>
+
+
+<% if false %>
 <div class="wrapper pb-5">
 
   <div class="main">
@@ -33,3 +61,4 @@
   </div>
 
 </div>
+<% end %>
