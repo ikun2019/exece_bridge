@@ -1,10 +1,7 @@
 class CompletesController < ApplicationController
 
-  # def create
-    # @request = Request.find(params[:request_id])
-    # Complete.create(complete_params)
-    # redirect_to replied_engineer_path(@request.id)
-  # end
+  def create
+  end
 
   def edit
     

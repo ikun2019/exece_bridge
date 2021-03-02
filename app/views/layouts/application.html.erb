@@ -45,6 +45,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <% if customer_signed_in? %>
+                <%= link_to "ユーザー情報", customer_path(current_customer), class: "dropdown-item" %>
                 <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "dropdown-item" %>
               <% elsif engineer_signed_in? %>
                 <%= link_to "ログアウト", destroy_engineer_session_path, method: :delete, class: "dropdown-item" %>
