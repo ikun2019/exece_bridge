@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root "tops#index"
 
   resources :tops, only: [:index]
-  resources :customers, only: [:index, :status] do
+  resources :customers, only: [:index, :status, :edit, :update] do
     member do
       get :status
     end
