@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="shadow-sm p-3 mb-5 bg-white rounded mt-5">
+      <%= form_with model: @user, methdo: :put, local: true do |f| %>
+        <div class="field mt-3">
+          <%= f.label :"氏名(漢字)" %><span class="badge badge-danger">必須</span><span>（法人の場合は窓口となる方の氏名）</span><br>
+          <%= f.text_field :first_name, autofocus: true, placeholder: "姓", class: "name-form" %>
+          <%= f.text_field :last_name, autofocus: true, placeholder: "名", class: "name-form ml-2" %>
+        </div>
+
+        <div class="field mt-3">
+          <%= f.label :"氏名(カナ)" %><span class="badge badge-danger">必須</span><br>
+          <%= f.text_field :first_name_kana, autofocus: true, placeholder: "セイ", class: "name-form" %>
+          <%= f.text_field :last_name_kana, autofocus: true, placeholder: "メイ", class: "name-form ml-2" %>
+        </div>
+
+        <div class="field mt-3">
+          <%= f.label :"表示名" %><span class="badge badge-danger">必須</span><br>
+          <%= f.text_field :nickname, autofocus: true, placeholder: "サイトに表示させる名前", class: "nickname-form" %>
+        </div>
+
+        <div class="devise-submit-box mt-4">
+          <%= f.submit "更新", class: "devise-submit" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

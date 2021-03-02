@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="mt-5">
+      <label class="devise-label">基本情報</label>
+      <table class="table table-sm">
+        <tr>
+          <th>名前</th>
+          <td><%= current_customer.name %></td>
+        </tr>
+        <tr>
+          <th>名前(カナ)</th>
+          <td><%= current_customer.name_kana %></td>
+        </tr>
+        <tr>
+          <th>サイト表示名</th>
+          <td><%= current_customer.nickname %></td>
+        </tr>
+        <tr>
+          <th>email</th>
+          <td><%= current_customer.email %></td>
+        </tr>
+      </table>
+      <div class="text-right">
+        <%= link_to "編集", edit_customer_path(current_customer), class: "btn btn-sm btn-warning" %>
+      </div>
+    </div>
+  </div>
+</div>
