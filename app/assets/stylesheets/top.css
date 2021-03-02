@@ -1,4 +1,40 @@
+.top {
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+.top:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+.title-box {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.title-box > h1 {
+  color: white;
+  margin: auto;
+  flex: 0 1 auto;
+  z-index: 1;
+}
+
 .main {
+  width: 100%;
+  height: 100vh;
+  background-color: gray;
+}
+
+
+/* .main {
   position: relative;
 }
 .main-image {
@@ -10,7 +46,7 @@
   position: absolute;
   left: 20px;
   bottom: 20px;
-}
+} */
 
 .beginner-box {
   display: flex;
