@@ -19,6 +19,30 @@
           <th>email</th>
           <td><%= current_customer.email %></td>
         </tr>
+        <tr>
+          <th>郵便番号</th>
+          <td><%= current_customer.post_code %></td>
+        </tr>
+        <tr>
+          <th>都道府県</th>
+          <td><%= current_customer.prefecture.name %></td>
+        </tr>
+        <tr>
+          <th>市区町村</th>
+          <td><%= current_customer.city %></td>
+        </tr>
+        <tr>
+          <th>番地</th>
+          <td><%= current_customer.house_number %></td>
+        </tr>
+        <tr>
+          <th>建物名</th>
+          <td><%= current_customer.building_name %></td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><%= current_customer.phone_number %></td>
+        </tr>
       </table>
       <div class="text-right">
         <%= link_to "編集", edit_customer_path(current_customer), class: "btn btn-sm btn-warning" %>

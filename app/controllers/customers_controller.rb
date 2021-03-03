@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
 
   private
   def update_params
-    params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :nickname)
+    params.require(:customer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :nickname, :post_code, :prefecture_id, :city, :house_number, :building_name, :phone_number)
   end
   
   
