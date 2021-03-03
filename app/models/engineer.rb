@@ -9,4 +9,15 @@ class Engineer < ApplicationRecord
   has_many :requests, through: :orders
   has_many :agreements
   has_many :completes
+
+  def name
+    self.first_name + " " + self.last_name
+  end
+
+  def name_kana
+    self.first_name + " " + self.last_name
+  end
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :language
 end

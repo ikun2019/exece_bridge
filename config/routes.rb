@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:create, :destroy]
     resources :completes, only: [:edit, :update]
   end
-  resources :engineers, only: [:index, :show] do
+  resources :engineers, only: [:index, :edit, :update, :show] do
     member do
       get :apply
       get :replied

@@ -1,0 +1,5 @@
+ja:
+  activerecord:
+    attributes:
+      engineer:
+        profile: 自己PR

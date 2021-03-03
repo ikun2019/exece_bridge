@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_131819) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "profile"
-    t.integer "language_id"
+    t.integer "language_id", default: 1
     t.index ["email"], name: "index_engineers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_engineers_on_reset_password_token", unique: true
   end

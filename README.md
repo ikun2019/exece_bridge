@@ -38,7 +38,7 @@
 | nickname        | string  | null: false |
 | acceptable_area | integer | default: 1  |
 | profile         | text    |             |
-| language_id     | integer |             |
+| language_id     | integer | default: 1  |
 
 ### Association
 - has_many: comments
