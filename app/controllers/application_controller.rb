@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :devise_parameter_sanitizer, if: :devise_controller?
 
   private
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :first_name_kana, :last_name_kana, :nickname, :image, :acceptable_area])
+  def devise_parameter_sanitizer
+    if resource_class == Customer
+      Customer::ParameterSanitizer.new(Customer, :customer, params)
+    else
+      super
+    end
   end
 
   def after_sign_in_path_for(resource)

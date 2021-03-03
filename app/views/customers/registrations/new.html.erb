@@ -18,34 +18,64 @@
       </div>
 
       <div class="field mt-3">
-        <%= f.label :"氏名(漢字)" %><span>※必須（法人の場合は窓口となる方の氏名）</span><br>
+        <%= f.label :"氏名(漢字)" %><span class="badge badge-danger ml-2">必須</span><span>（法人の場合は窓口となる方の氏名）</span><br>
         <%= f.text_field :first_name, autofocus: true, placeholder: "姓", class: "name-form" %>
         <%= f.text_field :last_name, autofocus: true, placeholder: "名", class: "name-form ml-2" %>
       </div>
 
-      <div class="field mt-2">
-        <%= f.label :"氏名(カナ)" %><span>※必須</span><br>
+      <div class="field mt-3">
+        <%= f.label :"氏名(カナ)" %><span class="badge badge-danger ml-2">必須</span><br>
         <%= f.text_field :first_name_kana, autofocus: true, placeholder: "セイ", class: "name-form" %>
         <%= f.text_field :last_name_kana, autofocus: true, placeholder: "メイ", class: "name-form ml-2" %>
       </div>
 
-      <div class="field mt-2">
-        <%= f.label :"表示名" %><span>※必須</span><br>
+      <div class="field mt-3">
+        <%= f.label :"表示名" %><span class="badge badge-danger ml-2">必須</span><br>
         <%= f.text_field :nickname, autofocus: true, placeholder: "サイトに表示させる名前", class: "nickname-form" %>
       </div>
 
-      <div class="field mt-2">
-        <%= f.label :email %><span>※必須</span><br>
+      <div class="field mt-3">
+        <%= f.label :"郵便番号" %><span class="badge badge-danger ml-2">必須</span><br>
+        <%= f.text_field :post_code, placeholder: "例)123-4567", maxlength: "8", class: "post-form" %>
+      </div>
+
+      <div class="field mt-3">
+        <%= f.label :"都道府県" %><span class="badge badge-danger ml-2">必須</span><br>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+      </div>
+
+      <div class="field mt-3">
+        <%= f.label :"市区町村" %><span class="badge badge-danger ml-2">必須</span><br>
+        <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区", class: "address-form" %>
+      </div>
+
+      <div class="field mt-3">
+        <%= f.label :"番地" %><span class="badge badge-danger ml-2">必須</span><br>
+        <%= f.text_field :house_number, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1", class: "address-form" %>
+      </div>
+
+      <div class="field mt-3">
+        <%= f.label :"建物名" %><span class="badge badge-info ml-2">任意</span><br>
+        <%= f.text_field :building_name, class:"input-default", id:"building", placeholder:"例）柳ビル103", class: "address-form" %>
+      </div>
+
+      <div class="field mt-3">
+        <%= f.label :"電話番号" %><span class="badge badge-danger ml-2">必須</span><br>
+        <%= f.text_field :phone_number, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11", class: "phone-form" %>
+      </div>
+
+      <div class="field mt-3">
+        <%= f.label :email %><span class="badge badge-danger ml-2">必須</span><br>
         <%= f.text_field :email, autofocus: true, placeholder: "メールアドレス", class: "nickname-form" %>
       </div>
 
-      <div class="field mt-2">
-        <%= f.label :password %><span>※必須</span><br>
+      <div class="field mt-3">
+        <%= f.label :password %><span class="badge badge-danger ml-2">必須</span><br>
         <%= f.text_field :password, autocomplete: "off", placeholder: "英数字混合", class: "nickname-form" %>
       </div>
 
-      <div class="field mt-2">
-        <%= f.label :password_confirmation %><span>※必須</span><br>
+      <div class="field mt-3">
+        <%= f.label :password_confirmation %><span class="badge badge-danger ml-2">必須</span><br>
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "nickname-form" %>
       </div>
 
