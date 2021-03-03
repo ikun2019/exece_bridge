@@ -15,7 +15,7 @@
 }
 .select-box {
   width: 50%;
-  height: 8vh;
+  height: 40px;
 	padding-right: 1em;
 	cursor: pointer;
 	text-indent: 0.01px;
@@ -31,4 +31,16 @@
 	border-radius: 2px;
 	border: 2px solid #00A2A3;
 	background: #ffffff;
+}
+.nickname-form {
+	width: 300px;
+}
+.post-form {
+	width: 150px;
+}
+.address-form {
+	width: 300px;
+}
+.phone-form {
+	width: 170px;
 }
