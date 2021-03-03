@@ -16,5 +16,6 @@ class Customer < ApplicationRecord
     self.first_name_kana + " " + self.last_name_kana
   end
   
-  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture
 end

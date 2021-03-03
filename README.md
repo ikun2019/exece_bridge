@@ -1,15 +1,21 @@
 # テーブル設計
 
 ## customersテーブル
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| email           | string | null: false |
-| password        | string | null: false |
-| first_name      | string | null: false |
-| last_name       | string | null: false |
-| first_name_kana | string | null: false |
-| last_name_kana  | string | null: false |
-| nickname        | string | null: false |
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| email           | string  | null: false |
+| password        | string  | null: false |
+| first_name      | string  | null: false |
+| last_name       | string  | null: false |
+| first_name_kana | string  | null: false |
+| last_name_kana  | string  | null: false |
+| nickname        | string  | null: false |
+| post_code       | string  | null: false |
+| prefecture_id   | integer | null: false |
+| city            | string  | null: false |
+| house_number    | string  | null: false |
+| building_name   | string  |             |
+| phone_number    | string  | null: false |
 
 ### Association
 - has_many: requests
@@ -30,7 +36,9 @@
 | first_name_kana | string  | null: false |
 | last_name_kana  | string  | null: false |
 | nickname        | string  | null: false |
-| acceptable_area | integer | default: 1  |          |
+| acceptable_area | integer | default: 1  |
+| profile         | text    |             |
+| language_id     | integer | default: 1  |
 
 ### Association
 - has_many: comments

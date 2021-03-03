@@ -14,7 +14,7 @@
   width: 100%;
 }
 .select-box {
-  width: 50%;
+  width: 200px;
   height: 40px;
 	padding-right: 1em;
 	cursor: pointer;
@@ -43,4 +43,8 @@
 }
 .phone-form {
 	width: 170px;
+}
+.text-form {
+	width: 100%;
+	min-height: 500px;
 }
