@@ -19,6 +19,7 @@
             <%= f.hidden_field :order_id, value: order.id %>
             <%= f.hidden_field :answer, value: true %>
             <%= f.hidden_field :conclusion, value: false %>
+            <%= f.hidden_field :customer_id, value: @request.customer_id %>
             <%= f.radio_button :engineer_id, order.engineer.id %>
           </td>
         </tr>

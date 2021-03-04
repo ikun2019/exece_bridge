@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   end
 
   resources :requests, only: [:index, :new, :create, :show] do
+    collection do
+      get :completed
+    end
     resources :agreements, only: [:new ,:create]
     resources :orders, only: [:create, :destroy]
     resources :completes, only: [:edit, :update]

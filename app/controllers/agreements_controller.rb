@@ -15,7 +15,7 @@ class AgreementsController < ApplicationController
     params.permit(:engineer_id, :order_id, :answer).merge(request_id: @request.id)
   end
   def agreement_complete_params
-    params.permit(:order_id, :answer, :engineer_id, :conclusion).merge(request_id: @request.id)
+    params.permit(:order_id, :answer, :engineer_id, :conclusion, :customer_id).merge(request_id: @request.id)
   end
   
 end
