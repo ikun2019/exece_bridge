@@ -35,7 +35,10 @@ class RequestsController < ApplicationController
     else
       render action: :new
     end
-    
+  end
+
+  def completed
+    @completed_requests = current_customer.completes.where(conclusion: true)
   end
   
   private
