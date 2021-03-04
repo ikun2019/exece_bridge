@@ -12,6 +12,8 @@ class DeviseCreateEngineers < ActiveRecord::Migration[6.0]
       t.integer :acceptable_area, null: false, default: 1
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.text :profile
+      t.integer :language_id, default: 1
 
       ## Recoverable
       t.string   :reset_password_token
