@@ -31,7 +31,7 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     if @request.save
-      redirect_to root_path
+      redirect_to request_path(@request)
     else
       render action: :new
     end
