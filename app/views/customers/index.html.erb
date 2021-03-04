@@ -9,7 +9,7 @@
         <%= link_to "依頼状況", status_customer_path(current_customer.id), class: "customer-normal-btn" %>
       </div>
       <div>
-        <a class="customer-normal-btn" href="#">完了案件</a>
+        <%= link_to "完了案件", completed_requests_path, class: "customer-normal-btn" %>
       </div>
     </div>
   </div>

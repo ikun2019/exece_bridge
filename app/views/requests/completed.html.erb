@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="container mt-5">
+    <table class="table table-hover table-sm">
+      <tr class="text-center">
+        <th class="table-th">案件番号</th>
+        <th class="table-th">依頼タイトル</th>
+        <th class="table-th">対応者</th>
+        <th class="table-th">完了日</th>
+      </tr>
+      <% @completed_requests.each do |completed_request| %>
+        <tr class="text-center">
+          <td><%= completed_request.request.id %></td>
+          <td><%= completed_request.request.title %></td>
+          <td><%= completed_request.engineer.nickname %></td>
+          <td><%= completed_request.created_at %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
