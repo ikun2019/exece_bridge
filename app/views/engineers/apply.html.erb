@@ -17,7 +17,7 @@
           </td>
           <td class="table-td"><%= request.customer.nickname %></td>
           <td class="table-td"><%= request.title %></td>
-          <td class="table-td"><%= request.created_at %></td>
+          <td class="table-td"><%= l request.created_at %></td>
           <td class="table-td">
             <% if request.agreements.where(answer: true, engineer_id: current_engineer.id).present? %>
               <span class="bg-success text-white p-1">依頼確定</span>
