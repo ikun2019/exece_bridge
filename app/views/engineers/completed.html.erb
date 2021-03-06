@@ -17,7 +17,7 @@
           </td>
           <td class="table-td align-middle"><%= order.request.customer.nickname %></td>
           <td class="table-td align-middle"><%= order.request.title %></td>
-          <td class="table-td align-middle"><%= order.created_at %></td>
+          <td class="table-td align-middle"><%= l order.created_at %></td>
           <td class="table-td align-middle">
             <%= link_to "取消", request_complete_path(order.request.id, complete: {conclusion: false}), method: :put, class: "btn btn-danger btn-sm" %>
           </td>
