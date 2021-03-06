@@ -71,3 +71,41 @@
 .customer-normal-btn:hover {
   background: #AAAD9B;
 }
+
+.p-title {
+  text-align: left;
+}
+.p-title::after {
+  position: absolute;
+  content: '';
+  top: 4px;
+  left:0;
+  width: 5px;
+  height:25px;
+  background-color: #000fff;
+}
+.p-title span {
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+.p-title span::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 5px;
+  width: 5px;
+  height: 100%;
+  border: 1px solid #000;
+  border-left: none;
+}
+.p-title span::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 5px;
+  width: 5px;
+  height: 100%;
+  border: 1px solid #000;
+  border-right: none;
+}

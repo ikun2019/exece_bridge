@@ -1,32 +1,52 @@
-status
-
 <div class="wrapper">
-  <label><%= current_customer.nickname %>様の依頼状況</label>
-  <div class="container">
-    <table class="table table-hover table-bordered">
-      <tr class="text-center">
-        <td>案件番号</td>
-        <td>依頼タイトル</td>
-        <td>依頼掲載日</td>
-        <td>申請者</td>
-        <td>回答</td>
-      </tr>
-      <% @requests.each do |request| %>
+  <div class="container mt-5">
+    <p class="p-title"><span><%= current_customer.nickname %>様の案件進捗確認</span></p>
+    <div class="container">
+      <table class="table table-hover table-sm mt-3">
         <tr class="text-center">
-          <td>
-            <%= link_to request_path(request.id) do %>
-              <%= request.id %>
-            <% end %>
-          </td>
-          <td><%= request.title %></td>
-          <td><%= request.created_at %></td>
-          <td>
-            <% if request.orders.present? %>
-            <% end %>
-          </td>
-          <td></td>
+          <th class="table-th">案件番号</th>
+          <th class="table-th">依頼タイトル</th>
+          <th class="table-th">依頼掲載日</th>
+          <th class="table-th">リクエスト数</th>
+          <th class="table-th">ステイタス</th>
         </tr>
-      <% end %>
-    </table>
+        <% @requests.each do |request| %>
+          <tr class="text-center">
+            <td class="align-middle">
+              <%= link_to request_path(request.id) do %>
+                <%= request.id %>
+              <% end %>
+            </td>
+            <td class="align-middle">
+              <%= link_to request_path(request.id) do %>
+                <%= request.title %>
+              <% end %>
+            </td>
+            <td class="align-middle"><%= request.created_at %></td>
+            <td class="align-middle">
+              <%= link_to request_path(request.id) do %>
+                <% if request.orders.present? %>
+                  <%= request.orders.count %>
+                <% else %>
+                  <span>-</span>
+                <% end %>
+              <% end %>
+            </td>
+
+            <td class="align-middle">
+              <% if request.complete.present? && (request.complete.conclusion == true) %>
+                <span class="btn btn-info btn-sm">完了済案件</span>
+              <% elsif request.complete.present? && (request.complete.conclusion == false) %>
+                <span class="btn btn-success btn-sm">依頼済案件</span>
+              <% elsif request.orders.present? %>
+                <span class="btn btn-danger btn-sm">リクエスト未回答</span>
+              <% else %>
+                <span class="btn btn-secondary btn-sm">リクエスト無し</span>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>
