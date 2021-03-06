@@ -6,6 +6,11 @@ class CustomersController < ApplicationController
 
   def status
     @requests = current_customer.requests
+    @requests.each do |request|
+      if request.complete.present?
+        @completed = request.complete.conclusion
+      end
+    end
   end
 
   def edit
