@@ -22,7 +22,7 @@
                 <%= request.title %>
               <% end %>
             </td>
-            <td class="align-middle"><%= request.created_at %></td>
+            <td class="align-middle"><%= l request.created_at %></td>
             <td class="align-middle">
               <%= link_to request_path(request.id) do %>
                 <% if request.orders.present? %>
