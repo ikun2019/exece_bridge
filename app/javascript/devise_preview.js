@@ -2,10 +2,12 @@ if (document.URL.match(/sign_up/)) {
   document.addEventListener('DOMContentLoaded', () => {
     const createHTML = (blob) => {
       const imgBox = document.querySelector('.face-image-box');
+      const i = document.querySelector('.face-image-box > i');
       if (document.querySelector('.face') == null) {
         const img = document.createElement('img');
         img.setAttribute('src', blob);
         img.setAttribute('class', "face");
+        i.remove();
         imgBox.appendChild(img);
       } else {
         const img = document.querySelector('.face');
