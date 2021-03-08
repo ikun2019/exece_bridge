@@ -18,20 +18,12 @@
 .devise-image-box {
   height: 100px;
 }
-.face-image-box {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-  border: 1px solid gray;
-  border-radius: 50%;
-}
-
 .name-form {
-  width: 100px;
+  width: 150px;
   height: 32px;
   background: #FFFFFF;
   border: 1px solid #979797;
+  margin: auto;
 }
 .nickname-form {
   width: 250px;
