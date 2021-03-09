@@ -9,7 +9,7 @@ class Engineer < ApplicationRecord
   has_many :requests, through: :orders
   has_many :agreements
   has_many :completes
-  has_many :payment_histories
+  has_many :cards, dependent: :destroy
 
   def name
     self.first_name + " " + self.last_name
