@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :authenticate_customer!
 
   def index
     @card = Card.new
