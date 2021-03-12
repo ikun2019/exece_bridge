@@ -13,7 +13,9 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_up_path_for(resource)
-    if current_engineer
+    if current_engineer && (current_engineer.premium != true)
+      cards_path
+    elsif current_engineer && (current_engineer.premium == true)
       engineers_path
     elsif current_customer
       customers_path
@@ -23,7 +25,9 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if current_engineer
+    if current_engineer && (current_engineer.premium != true)
+      cards_path
+    elsif current_engineer && (current_engineer.premium == true)
       engineers_path
     elsif current_customer
       customers_path

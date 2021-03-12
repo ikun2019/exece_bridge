@@ -41,7 +41,7 @@ class CardsController < ApplicationController
     )
     current_engineer.update(subscription_id: subscription.id, premium: true)
     flash[:alert] = "会員登録が完了しました"
-    redirect_to root_path
+    redirect_to engineers_path
   end
   
   
