@@ -144,18 +144,6 @@
 - belongs_to: engineer
 
 
-## commentsテーブル
-| Column           | Type       | Options           |
-| ---------------- | ---------- | ----------------- |
-| engineer_comment | text       |                   |
-| customer         | references | foreign_key: true |
-| engineer         | references | foreign_key: true |
-
-### Association
-- belongs_to: customer
-- belongs_to: engineer
-
-
 ## ratingsテーブル
 | Column           | Type       | Options           |
 | ---------------- | ---------- | ----------------- |
