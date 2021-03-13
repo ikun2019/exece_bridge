@@ -122,3 +122,310 @@ hr {
   background: #EEF5CE;
   border-radius: 8px;
 }
+
+/* engineerの星部分 */
+.star-actived {
+  display: inline-block;
+  width: 100px;
+}
+.rate-count {
+  display: inline-block;
+  line-height: 20px;
+}
+.rate-0 {
+  position : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-0:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space: nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-0:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space: nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height: 1em;                     /* 高さを指定 */
+  overflow: hidden;                     /* オーバーフロー部分は非表示 */
+  width: 0px;        /* 評価★の幅 */
+  content: "★★★★★";        /* ★の指定 */
+}
+.rate-1 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-1:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-1:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 10px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-2 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-2:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-2:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 20px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-3 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-3:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-3:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 30px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-4 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-4:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-4:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 40px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-5 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-5:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-5:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 50px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-6 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-6:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-6:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 60px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-7 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-7:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-7:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 70px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-8 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-8:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-8:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 90px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-9 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;    
+}
+.rate-9:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-9:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 90px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-10 {
+  position   : relative;
+  font-size: 20px;
+  letter-spacing : 0px;
+}
+.rate-10:before{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #999999;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  content:"★★★★★";        /* ★の指定 */
+}
+.rate-10:after{
+  position: absolute;                  /* 親要素を基準 */
+  display: inline-block;               /* ブロック要素 */
+  color: #ffc400;               /* ★の色 */
+  white-space:nowrap;                  /* 改行不可 */
+  top: 0;                              /* 上限より表示 */
+  left: 0;                             /* 左端より表示 */
+  line-height:1em;                     /* 高さを指定 */
+  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  width: 100px;        /* 評価★の幅 */
+  content:"★★★★★";        /* ★の指定 */
+}

@@ -10,6 +10,7 @@ class Engineer < ApplicationRecord
   has_many :agreements
   has_many :completes
   has_one :card, dependent: :destroy
+  has_many :ratings
 
   def name
     self.first_name + " " + self.last_name

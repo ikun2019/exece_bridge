@@ -7,6 +7,7 @@ class Customer < ApplicationRecord
   has_one_attached :image
   has_many :requests
   has_many :completes
+  has_many :ratings
 
 
   def name
