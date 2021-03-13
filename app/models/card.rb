@@ -1,5 +1,5 @@
 class Card < ApplicationRecord
-  attr_accessor :token
+  attr_accessor :token, :card_token
 
   belongs_to :engineer
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :engineers
-  resources :cards, only: [:index, :new, :create, :destroy, :show]
+  resources :cards, only: [:index, :new, :create, :destroy, :show, :edit, :update]
 
   devise_for :customers
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
