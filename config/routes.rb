@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       get :replied
       get :completed
     end
+    resources :ratings, only: [:new, :create, :show]
   end
 
 end

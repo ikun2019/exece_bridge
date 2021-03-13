@@ -6,6 +6,7 @@
         <th class="table-th">依頼タイトル</th>
         <th class="table-th">対応者</th>
         <th class="table-th">完了日</th>
+        <td class="table-th">対応者を評価</td>
       </tr>
       <% @completed_requests.each do |completed_request| %>
         <tr class="text-center">
@@ -13,6 +14,7 @@
           <td><%= completed_request.request.title %></td>
           <td><%= completed_request.engineer.nickname %></td>
           <td><%= l completed_request.created_at %></td>
+          <td><%= link_to "評価する", new_engineer_rating_path(completed_request.engineer_id) %></td>
         </tr>
       <% end %>
     </table>
