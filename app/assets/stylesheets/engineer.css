@@ -124,8 +124,16 @@ hr {
 }
 
 /* engineerの星部分 */
+.star-actived {
+  display: inline-block;
+  width: 100px;
+}
+.rate-count {
+  display: inline-block;
+  line-height: 20px;
+}
 .rate-0 {
-  position   : relative;
+  position : relative;
   font-size: 20px;
   letter-spacing : 0px;    
 }
@@ -133,7 +141,7 @@ hr {
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
   color: #999999;               /* ★の色 */
-  white-space:nowrap;                  /* 改行不可 */
+  white-space: nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
   line-height:1em;                     /* 高さを指定 */
@@ -142,14 +150,14 @@ hr {
 .rate-0:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
-  white-space:nowrap;                  /* 改行不可 */
+  color: #ffc400;               /* ★の色 */
+  white-space: nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
-  line-height:1em;                     /* 高さを指定 */
-  overflow:hidden;                     /* オーバーフロー部分は非表示 */
+  line-height: 1em;                     /* 高さを指定 */
+  overflow: hidden;                     /* オーバーフロー部分は非表示 */
   width: 0px;        /* 評価★の幅 */
-  content:"★★★★★";        /* ★の指定 */
+  content: "★★★★★";        /* ★の指定 */
 }
 .rate-1 {
   position   : relative;
@@ -169,7 +177,7 @@ hr {
 .rate-1:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -196,7 +204,7 @@ hr {
 .rate-2:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -223,7 +231,7 @@ hr {
 .rate-3:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -250,7 +258,7 @@ hr {
 .rate-4:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -277,7 +285,7 @@ hr {
 .rate-5:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -304,7 +312,7 @@ hr {
 .rate-6:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -331,7 +339,7 @@ hr {
 .rate-7:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -358,7 +366,7 @@ hr {
 .rate-8:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -385,7 +393,7 @@ hr {
 .rate-9:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */
@@ -412,7 +420,7 @@ hr {
 .rate-10:after{
   position: absolute;                  /* 親要素を基準 */
   display: inline-block;               /* ブロック要素 */
-  color: #ffff00;               /* ★の色 */
+  color: #ffc400;               /* ★の色 */
   white-space:nowrap;                  /* 改行不可 */
   top: 0;                              /* 上限より表示 */
   left: 0;                             /* 左端より表示 */

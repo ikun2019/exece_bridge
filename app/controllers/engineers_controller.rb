@@ -2,7 +2,6 @@ class EngineersController < ApplicationController
   before_action :authenticate_engineer!
   
   def index
-    
   end
 
   def apply

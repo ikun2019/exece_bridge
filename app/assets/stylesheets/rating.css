@@ -39,3 +39,8 @@
   cursor: pointer;
   margin: 0 auto;
 }
+
+/* rating#show */
+.rating-table-th {
+  width: 20%;
+}

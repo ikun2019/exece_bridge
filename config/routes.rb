@@ -28,7 +28,7 @@ Rails.application.routes.draw do
       get :replied
       get :completed
     end
-    resources :ratings, only: [:new, :create, :show, :edit, :update]
+    resources :ratings, only: [:new, :create, :show, :edit, :update, :index]
   end
 
 end

@@ -1,5 +1,6 @@
 <div class="wrapper">
   <div class="container">
+
     <label class="engineer-label mt-3 ml-2">Main</label>
     <div class="engineer-main-btn mt-3">
       <div class="left-btn">
@@ -26,11 +27,38 @@
         <a href="#" class="engineer-sub-btn">請求書作成フォーム</a>
       </div>
     </div>
+  
 
-    <div>
-      <span class="rating-star">
-        <span class="star-actived rate-10"></span>
-      </span>
+    <hr class="line">
+
+    <label class="engineer-label mt-3 ml-2">Your Rating</label>
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+          <label>クライアント評価</label>
+          <span class="rating-star">
+            <p class="star-actived rate-<%= current_engineer.ratings.average(:rate).round %>"></p>
+            <p class="rate-count">
+              <%= link_to engineer_ratings_path(current_engineer.id) do %>
+                (<%= current_engineer.ratings.count %>)
+              <% end %>
+            </p>
+          </span>
+        </div>
+
+        <div class="col-md">
+          <label>エンジニア評価</label>
+          <span class="rating-star">
+            <p class="star-actived rate-<%= current_engineer.ratings.average(:rate).round %>"></p>
+            <p class="rate-count">
+              <%# link_to engineer_rating_path do %>
+                (<%= current_engineer.ratings.count %>)
+              <%# end %>
+            </p>
+          </span>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>

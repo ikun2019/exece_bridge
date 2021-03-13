@@ -24,6 +24,10 @@ class RatingsController < ApplicationController
     Rating.update(update_params)
     redirect_to completed_requests_path
   end
+
+  def index
+    @ratings = current_engineer.ratings
+  end
   
   private
   def rating_params
