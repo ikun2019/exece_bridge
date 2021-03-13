@@ -9,20 +9,30 @@ class RatingsController < ApplicationController
     @engineer = Engineer.find(params[:engineer_id])
     @rating = Rating.new(rating_params)
     if @rating.save
-      redirect_to engineer_rating_path(@engineer.id, @rating.id)
+      redirect_to completed_requests_path
     else
       render action: :new
     end
   end
 
-  def show
+  def edit
     @engineer = Engineer.find(params[:engineer_id])
+    @rating = Rating.find(params[:id])
   end
   
+  def update
+    Rating.update(update_params)
+    redirect_to completed_requests_path
+  end
   
   private
   def rating_params
     params.require(:rating).permit(:rate, :customer_comment).merge(customer_id: current_customer.id, engineer_id: @engineer.id)
   end
+
+  def update_params
+    params.require(:rating).permit(:rate, :customer_comment)
+  end
+  
   
 end

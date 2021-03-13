@@ -14,7 +14,13 @@
           <td><%= completed_request.request.title %></td>
           <td><%= completed_request.engineer.nickname %></td>
           <td><%= l completed_request.created_at %></td>
-          <td><%= link_to "評価する", new_engineer_rating_path(completed_request.engineer_id) %></td>
+          <td>
+            <% if completed_request.engineer.ratings.where(customer_id: current_customer.id).present? %>
+              <%= link_to "編集する", edit_engineer_rating_path(completed_request.engineer_id, completed_request.engineer.ratings.find_by(customer_id: current_customer.id).id) %>
+            <% else %>
+              <%= link_to "評価する", new_engineer_rating_path(completed_request.engineer_id) %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </table>
