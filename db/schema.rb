@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_090112) do
+ActiveRecord::Schema.define(version: 2021_03_09_134202) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 2021_02_27_090112) do
     t.index ["engineer_id"], name: "index_agreements_on_engineer_id"
     t.index ["order_id"], name: "index_agreements_on_order_id"
     t.index ["request_id"], name: "index_agreements_on_request_id"
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "engineer_id"
+    t.string "payjp_customer_id"
+    t.string "card_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "completes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -104,6 +112,8 @@ ActiveRecord::Schema.define(version: 2021_02_27_090112) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "subscription_id"
+    t.boolean "premium", default: false, null: false
     t.index ["email"], name: "index_engineers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_engineers_on_reset_password_token", unique: true
   end

@@ -1,5 +1,6 @@
 class EngineersController < ApplicationController
-
+  before_action :authenticate_engineer!
+  
   def index
     
   end
@@ -25,6 +26,18 @@ class EngineersController < ApplicationController
     @user.update(update_params)
     redirect_to engineer_path(current_engineer)
   end
+
+  def show
+    card = Card.find_by(engineer_id: current_engineer.id)
+    if card.blank?
+      redirect_to engineers_path(current_engineer)
+    else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      customer = Payjp::Customer.retrieve(card.payjp_customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
+  end
+  
   
   private
   def update_params
