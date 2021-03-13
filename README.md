@@ -159,9 +159,10 @@
 ## ratingsテーブル
 | Column           | Type       | Options           |
 | ---------------- | ---------- | ----------------- |
-| rate             | integer    |                   |
+| rate             | integer    | null: false       |
 | customer         | references | foreign_key: true |
 | engineer         | references | foreign_key: true |
+| customer_comment | text       |                   |
 
 ### Association
 - belongs_to: customer
