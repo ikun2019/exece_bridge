@@ -60,4 +60,7 @@
 .request-text {
   font-size: 13px;
 }
+.request-table-th {
+  width: 30%;
+}
 
