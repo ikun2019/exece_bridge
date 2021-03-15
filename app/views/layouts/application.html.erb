@@ -15,6 +15,8 @@
   </head>
 
   <body>
+
+<% if false %>
   <!-- ナビゲーションバー -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
     <div class="container">
@@ -64,6 +66,74 @@
       </div>
     </div>
   </nav>
+<% end %>
+
+
+<!-- Preloader -->
+<div id="page-loading-blocs-notifaction" class="page-preloader"></div>
+<!-- Preloader END -->
+
+
+<!-- Main container -->
+<div class="page-container">
+    
+<!-- bloc-0 -->
+<div class="bloc l-bloc navigation " id="bloc-0">
+	<div class="container bloc-sm">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-light row navbar-expand-md" role="navigation">
+					<a class="navbar-brand" href="index.html">Company</a>
+					<button id="nav-toggle" type="button" class="ml-auto ui-navbar-toggler navbar-toggler border-0 p-0" data-toggle="collapse" data-target=".navbar-22462" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse navbar-22462">
+						<ul class="site-navigation nav navbar-nav ml-auto">
+							<li class="nav-item">
+								<a href="index.html" class="nav-link">Home</a>
+							</li>
+							<li>
+								<div class="btn-group btn-dropdown bloc-padding float-lg-none">
+									<a href="#" class="btn dropdown-toggle btn-lg btn-d btn-style-none btn-sq btn-style" data-toggle="dropdown" aria-expanded="false">User</a>
+									<ul class="dropdown-menu" role="menu">
+										<li>
+											<a href="index.html" class="dropdown-item a-block">Options 1</a>
+										</li>
+										<li>
+											<a href="index.html" class="dropdown-item a-block">Options 2</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="navbar-content-area d-block col-12 col-md-3 col-lg-2">
+						<div class="row">
+							<div class="align-self-center col-4 text-left">
+								<a href="https://blocsapp.com/"><span class="fab fa-facebook-f icon-md"></span></a>
+							</div>
+							<div class="align-self-center col-4 text-center">
+								<a href="https://blocsapp.com/"><span class="fab fa-twitter float-md-none icon-md"></span></a>
+							</div>
+							<div class="align-self-center col-4 text-right">
+								<a href="https://blocsapp.com/"><span class="fab fa-instagram float-lg-none icon-md"></span></a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-0 END -->
+
+<!-- ScrollToTop Button -->
+<a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></a>
+<!-- ScrollToTop Button END-->
+
+
+</div>
+<!-- Main container END -->
 
   <% flash.each do |message_type, message| %>
     <%= content_tag :div, message %>
