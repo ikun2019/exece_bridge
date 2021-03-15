@@ -7,8 +7,9 @@
     <%= csp_meta_tag %>
 
     <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
+
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
@@ -68,7 +69,6 @@
   </nav>
 <% end %>
 
-
 <!-- Preloader -->
 <div id="page-loading-blocs-notifaction" class="page-preloader"></div>
 <!-- Preloader END -->
@@ -78,23 +78,23 @@
 <div class="page-container">
     
 <!-- bloc-0 -->
-<div class="bloc l-bloc navigation " id="bloc-0">
+<div class="bloc l-bloc " id="bloc-0">
 	<div class="container bloc-sm">
 		<div class="row">
 			<div class="col">
 				<nav class="navbar navbar-light row navbar-expand-md" role="navigation">
-					<a class="navbar-brand" href="index.html">Company</a>
-					<button id="nav-toggle" type="button" class="ml-auto ui-navbar-toggler navbar-toggler border-0 p-0" data-toggle="collapse" data-target=".navbar-22462" aria-expanded="false" aria-label="Toggle navigation">
+					<a class="navbar-brand" href="index.html">ExeceBridge</a>
+					<button id="nav-toggle" type="button" class="ml-auto ui-navbar-toggler navbar-toggler border-0 p-0" data-toggle="collapse" data-target=".navbar-25436" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<div class="collapse navbar-collapse navbar-22462">
+					<div class="collapse navbar-collapse navbar-25436">
 						<ul class="site-navigation nav navbar-nav ml-auto">
 							<li class="nav-item">
 								<a href="index.html" class="nav-link">Home</a>
 							</li>
 							<li>
-								<div class="btn-group btn-dropdown bloc-padding float-lg-none">
-									<a href="#" class="btn dropdown-toggle btn-lg btn-d btn-style-none btn-sq btn-style" data-toggle="dropdown" aria-expanded="false">User</a>
+								<div class="btn-group btn-dropdown">
+									<a href="#" class="btn dropdown-toggle  btn-d  btn-lg btn-style-none drop" data-toggle="dropdown" aria-expanded="false">User</a>
 									<ul class="dropdown-menu" role="menu">
 										<li>
 											<a href="index.html" class="dropdown-item a-block">Options 1</a>
@@ -127,13 +127,9 @@
 </div>
 <!-- bloc-0 END -->
 
-<!-- ScrollToTop Button -->
-<a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></a>
-<!-- ScrollToTop Button END-->
 
 
-</div>
-<!-- Main container END -->
+
 
   <% flash.each do |message_type, message| %>
     <%= content_tag :div, message %>
