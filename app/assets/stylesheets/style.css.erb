@@ -202,7 +202,7 @@ button{
 	background-image: linear-gradient(bottom, rgba(0,0,0,.07) 0%, rgba(255,255,255,.07) 100%);
 }
 .btn-style-none,.btn-style-none:hover,.btn-style-none:active,.btn-style-none:focus{
-	background:none;
+	background:none !important;
 	box-shadow: none;
 	padding:0;
 }
@@ -291,10 +291,10 @@ button{
 	width:100%;
 	height:auto;
 	padding: 4% 8.5% 23.7%;
-	background-image:url("img/Apple-iMac.png");
+	background-image: url("<%= asset_path('Apple-iMac.png') %>");
 }
 .blocsapp-device-imac.imac-pro{
-	background-image:url("img/Apple-iMac-Pro.png");
+	background-image: url("<%= asset_path('Apple-iMac-Pro.png') %>");
 }
 .blocsapp-device-imac img{
 	width:100%;
@@ -391,7 +391,7 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 /* Background colour styles */
 
 .bgc-black{
-	background-color:#000000;
+	background-color:#000000 !important;
 }
 
 /* Text colour styles */
@@ -429,7 +429,6 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 .bg-keyboard-2308477-1920{
 	background-image: url("<%= asset_path('keyboard-2308477_1920.jpg') %>") !important;
 }
-
 
 
 /* = Bloc Padding Multi Breakpoint
