@@ -9,6 +9,11 @@ require("@rails/activestorage").start()
 require("channels")
 require("../devise_preview")
 require("../payjp")
+require("../blocs")
+require("../bootstrap.bundle")
+require("../jquery-3.5.1")
+require("../lazysizes.min.js")
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

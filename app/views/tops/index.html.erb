@@ -1,25 +1,189 @@
-<div class="top" style="background-image: url(<%= asset_path('main4.jpg') %>)">
-  <div class="container">
-    <div class="title-box">
-      <div class="main-box">
-        <h1>Exce Bridge</h1>
-        <div class="container devise-boxs d-flex justify-content-around mt-3">
-          <div class="devise-customer">
-            <p class="top-title">お仕事の依頼をご希望の方</p>
-            <%= link_to "Sign Up", new_customer_registration_path, class: "signup-button" %>
-            <%= link_to "Sign In", new_customer_session_path, class: "signin-button mt-2" %>
-          </div>
-          <div class="devise-engineer">
-            <p class="top-title">エンジニア・学習希望の方</p>
-            <%= link_to "Sign Up", new_engineer_registration_path, class: "signup-button" %>
-            <%= link_to "Sign In", new_engineer_session_path, class: "signin-button mt-2" %>
-          </div>
-        </div>
+<!-- bloc-1 -->
+<div class="bloc bg-keyboard-2308477-1920 tc-silver" id="bloc-1">
+  <div class="container bloc-lg">
+    <div class="row">
+      <div class="col-md-6 order-md-1 col-lg-3 devise-box offset-lg-2">
+        <h4 class="float-lg-none text-lg-center tc-princeton-orange glow-t">
+          Customer
+        </h4>
+        <%= link_to "Sign in", new_customer_session_path, class: "btn btn-lg btn-style btn-princeton-orange btn-rd btn-glossy" %>
+        <%= link_to "Sign up(無料)", new_customer_registration_path, class: "btn btn-lg btn-button-style btn-rd wire-btn-princeton-orange btn-wire" %>
+      </div>
+      <div class="col-md-6 order-md-1 col-lg-3 devise-box offset-lg-2">
+        <h4 class="text-lg-center tc-princeton-orange glow-t">
+          Engineer
+        </h4>
+        <%= link_to "Sign in", new_engineer_session_path, class: "btn btn-lg btn-style btn-princeton-orange btn-rd btn-glossy" %>
+        <%= link_to "Sign up", new_engineer_registration_path, class: "btn btn-lg btn-button-style btn-rd wire-btn-princeton-orange btn-wire" %>
+      </div>
+      <div class="col-md-6 align-self-center offset-lg-1 col-lg-10">
+        <h2 class="mg-md tc-silver">
+          ExeceBridge
+        </h2>
+        <h3 class="mg-md tc-silver">
+          Excel作業を外注して業務効率化しませんか？
+        </h3>
       </div>
     </div>
   </div>
 </div>
+<!-- bloc-1 END -->
 
-<div class="main">
+<!-- ScrollToTop Button -->
+<a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></a>
+<!-- ScrollToTop Button END-->
 
+<!-- bloc-4 -->
+<div class="bloc l-bloc none bloc-4 animated fadeIn" id="bloc-4" data-appear-anim-style="fadeIn">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col">
+				<h2 class="label-style">
+					Benefits of using Excel?<br>
+				</h2>
+				<h3 class="label-label-style">
+					<u>エクセルを活用するメリット</u>
+				</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="align-self-center col-md-6 col-lg-4 order-lg-0 order-md-1">
+				<div class="row voffset">
+					<div class="col-lg-12">
+						<h4 class="text-center mg-sm text-lg-right tc-black">
+							コストが安い
+						</h4>
+						<p class="text-center text-lg-left mx-auto d-block">
+							WEBアプリケーション等と違いサーバーを必要とせず、既にパソコンに入っているmicrosoft officeがあれば誰でも利用することができます。
+						</p>
+					</div>
+					<div class="col-lg-12">
+						<h4 class="text-center mg-sm text-lg-right tc-black">
+							完成までの時間が早い
+						</h4>
+						<p class="text-center text-lg-left">
+							既にエクセルに備わっている機能を組み合わせていくだけなので、完成までの時間が早くなります。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12 order-lg-0 order-md-0 align-self-center">
+				<div class="mx-auto d-block blocsapp-device blocsapp-device-imac">
+          <%= image_tag 'display.png', class: "img-fluid lazyload", alt: "display", data: {src: "/display.png"} %>
+				</div>
+			</div>
+			<div class="align-self-center col-md-6 col-lg-4 order-md-1">
+				<div class="row voffset">
+					<div class="col-lg-12">
+						<h4 class="text-center text-lg-left mg-sm tc-black">
+							一時的な利用にも最適
+						</h4>
+						<p class="text-center text-lg-left">
+							コストが安く完成までの期間が早いので、緊急時の一時利用でも活用することができます。
+						</p>
+					</div>
+					<div class="col-lg-12">
+						<h4 class="text-center text-lg-left mg-sm tc-black">
+							情報の外部流出リスクが低い
+						</h4>
+						<p class="text-center text-lg-left">
+							オフラインで稼働するアプリなので、個人情報等の外部流出リスクを抑えられます。
+						</p>
+					</div>
+					<div class="col-lg-12">
+						<h4 class="text-center text-lg-left mg-sm tc-black">
+							メンテナンスが容易
+						</h4>
+						<p class="text-center text-lg-left">
+							関数やVBAなど限られた言語でプログラムを組むので、作成した本人だけでなく他のエンジニアでもメンテナンスが容易です。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+<!-- bloc-4 END -->
+
+<!-- bloc-3 -->
+<div class="bloc l-bloc bloc-3 animated fadeIn none" data-appear-anim-style="fadeIn" id="bloc-3">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col-md-6 order-md-1">
+        <%= image_tag "question_woman2.jpg", class: "img-fluid mx-auto d-block lazyload", alt: "placeholder image" %>
+			</div>
+			<div class="col-md-6 align-self-center">
+				<h2 class="mg-md">
+					What you can do Excel?
+				</h2>
+				<h3 class="mg-md">
+					<u>エクセルでできることは？</u>
+				</h3>
+				<p>
+					エクセルが表計算ソフトであることは聞いたことがある方も多いと思います。<br>しかしながら、実に様々な機能が備わっており、グラフの作成や、データベースとしての活用、データ集計、業務アプリの作成等、幅広いことが実現できます。<br>幅広い機能が備わっている故に使いこなせる人が少ないので、エクセルだとすぐに解決できることでも時間をかけて作業している企業も少なくありません。<br>エクセル専門のエンジニアにお任せすることで、手間のかかる作業を効率化することができます。<br>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-3 END -->
+
+<!-- bloc-2 -->
+<div class="bloc l-bloc animated fadeIn bloc-2 none" id="bloc-2" data-appear-anim-style="fadeIn">
+	<div class="container bloc-lg">
+		<div class="row animated fadeIn animSpeedLazy" data-appear-anim-style="fadeIn">
+			<div class="col">
+				<h3 class="mg-md">
+					How to use?
+				</h3>
+			</div>
+		</div>
+		<div class="row animated fadeIn animSpeedLazy" data-appear-anim-style="fadeIn">
+			<div class="col-md-3">
+				<div class="text-lg-left">
+          <%= image_tag "step1.svg", class: "img-fluid img-style float-lg-none lazyload", alt: "step1" %>
+				</div>
+				<h3 class="mg-md h3-style">
+					依頼フォームから依頼
+				</h3>
+				<p>
+					会員登録（無料）後に依頼フォームより案件の詳細を入力し、投稿してください。
+				</p>
+			</div>
+			<div class="col-md-3">
+				<div class=" text-lg-left">
+          <%= image_tag "step2.svg", class: "img-fluid img-style float-lg-none lazyload", alt: "step2" %>
+				</div>
+				<h3 class="mg-md h3-bloc-2-style">
+					エンジニアからリクエストが届く
+				</h3>
+				<p>
+					投稿いただいた案件に対して、エンジニアからリクエストが届きます。
+				</p>
+			</div>
+			<div class="col-md-3">
+				<div class="text-lg-left">
+          <%= image_tag "step3.svg", class: "img-fluid img-style float-lg-none lazyload", alt: "step3" %>
+				</div>
+				<h3 class="mg-md h3-feature-title-style">
+					エンジニアを選択して依頼確定
+				</h3>
+				<p>
+					リクエストが来たエンジニアが複数いる場合は、一人を選択してどのエンジニアに依頼をするか確定してください。
+				</p>
+			</div>
+			<div class="col-md-3">
+				<div>
+          <%= image_tag "step4.svg", class: "img-fluid img-style float-lg-none lazyload", alt: "step4" %>
+				</div>
+				<h3 class="mg-md h3-6-style">
+					案件完了後にエンジニアを評価
+				</h3>
+				<p>
+					依頼が完了したら、対応したエンジニアに評価をフィードバックしてください。
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-2 END -->
