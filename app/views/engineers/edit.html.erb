@@ -1,7 +1,27 @@
 <div class="wrapper">
   <div class="container">
     <div class="shadow-sm p-3 mb-5 bg-white rounded mt-5">
-      <%= form_with model: @user, methdo: :put, local: true do |f| %>
+      <%= form_with model: @user, method: :put, local: true do |f| %>
+
+        <div class="container bloc-sm">
+          <div class="row ">
+            <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3">
+              <label for="input_image">
+                <% if current_engineer.image.attached? %>
+                  <div class="engineer-image">
+                    <%= image_tag current_engineer.image, class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+                  </div>
+                <% else %>
+                  <div class="engineer-image">
+                    <%= image_tag "placeholder-user.png", class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+                  </div>
+                <% end %>
+                <%= f.file_field :image, name: "engineer[image]", id: "input_image", class: "hidden" %>
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div class="field mt-3">
           <%= f.label :"氏名(漢字)" %><span class="badge badge-danger ml-2">必須</span><br>
           <%= f.text_field :first_name, autofocus: true, placeholder: "姓", class: "name-form" %>

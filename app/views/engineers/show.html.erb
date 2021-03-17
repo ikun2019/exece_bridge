@@ -1,6 +1,23 @@
-<div class="wrapper">
+<div class="pb-5">
+  <!-- bloc-1 -->
+  <div class="bloc l-bloc" id="bloc-1">
+    <div class="container bloc-sm">
+      <div class="row ">
+        <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3">
+          <div class="card">
+            <% if current_engineer.image.attached? %>
+              <%= image_tag current_engineer.image, class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+            <% else %>
+              <%= image_tag "placeholder-user.png", class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- bloc-1 END -->
   <div class="container">
-    <div class="mt-5">
+    <div class="mt-5 user-table">
       <label class="devise-label">基本情報</label>
       <table class="table table-sm">
         <tr>
@@ -29,11 +46,11 @@
         </tr>
       </table>
       <div class="text-right">
-        <%= link_to "編集", edit_engineer_path(current_engineer), class: "btn btn-sm btn-warning" %>
+        <%= link_to "編集", edit_engineer_path(current_engineer), class: "btn btn-md btn-warning" %>
       </div>
     </div>
 
-    <div class="mt-5">
+    <div class="mt-5 user-table">
       <label class="devise-label">登録クレジットカード情報</label><br>
       <table class="table table-sm">
         <tr>
@@ -50,7 +67,7 @@
         </tr>
       </table>
       <div class="text-right">
-        <%= link_to "編集", edit_card_path(current_engineer.card), class: "btn btn-sm btn-warning" %>
+        <%= link_to "編集", edit_card_path(current_engineer.card), class: "btn btn-md btn-warning" %>
       </div>
     </div>
   </div>

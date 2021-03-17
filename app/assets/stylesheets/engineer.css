@@ -429,3 +429,7 @@ hr {
   width: 100px;        /* 評価★の幅 */
   content:"★★★★★";        /* ★の指定 */
 }
+
+.engineer-image {
+  width: 300px;
+}
