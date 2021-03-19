@@ -5,6 +5,10 @@ body{
   color: #454839;
 }
 
+.wrapper {
+  min-height: 100vh;
+}
+
 .face {
   width: 100px;
   height: 100px;

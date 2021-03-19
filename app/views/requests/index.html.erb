@@ -1,38 +1,55 @@
 <div class="wrapper">
-  <div class="container requests-contents mt-5">
-    <h2 class="requests-title">依頼一覧</h2>
-    <% @requests.each do |request| %>
-      <div class="request-content mt-3">
-        <div class="request-customer">
-          <div>
-            <div>
-              <% if request.customer.image.attached? %>
-                <%= image_tag request.customer.image, class: "face" %>
-              <% else %>
-                <span class="face-image-box"></span>
-              <% end %>
-            </div>
-            <div class="text-center">
-              <%= request.customer.nickname %>
-            </div>
-          </div>
-        </div>
-        <div class="request-detail">
-          <label>依頼日時：</label>
-          <%= l request.created_at %><br>
-          <label>依頼内容：</label>
-          <%= request.title %><br>
-          <label>予算：</label>
-          <%= request.budget.name %><br>
-          <label>期限：</label>
-          <%= request.term.name %><br>
-          <label>対応方法：</label>
-          <%= request.approach.name %>
-          <div class="text-right">
-            <%= link_to "詳細を見る", request_path(request.id), class: "btn-show" %>
+  <!-- Main container -->
+  <div class="page-container">
+    <h2 class="mt-3 ml-3">依頼一覧</h2>
+  <!-- Bloc Group -->
+    
+    <!-- Bloc Group -->
+    <div class="bloc-group">
+
+    <!-- bloc-0 -->
+      <div class="bloc bloc-tile-4 l-bloc" id="bloc-0">
+        <div class="container bloc-lg">
+          <div class="row">
+            <% @requests.each do |request| %>
+              <div class="col-lg-3 mt-2">
+                <div class="request-list">
+                  <h3 class="mg-md">
+                    <%= request.title %>
+                  </h3>
+                  <p>
+                    <%= request.content %>
+                  </p>
+                  <table>
+                    <tr>
+                      <th class="text-right">予算：</th>
+                      <td><%= request.budget.name %></td>
+                    </tr>
+                    <tr>
+                      <th class="text-right">期限：</th>
+                      <td><%= request.term.name %></td>
+                    </tr>
+                    <tr>
+                      <th class="text-right">対応方法：</th>
+                      <td><%= request.approach.name %></td>
+                    </tr>
+                  </table>
+                  <%= link_to "More", request_path(request.id), class: "btn btn-d btn-lg request-list-btn mt-3" %>
+                </div>
+              </div>       
+            <% end %>
           </div>
         </div>
       </div>
-    <% end %>
+    <!-- bloc-0 END -->
+    </div>
+    <!-- Bloc Group END -->
+    
+    <!-- ScrollToTop Button -->
+    <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></a>
+    <!-- ScrollToTop Button END-->
+
+
   </div>
+  <!-- Main container END -->
 </div>
