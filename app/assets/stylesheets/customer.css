@@ -82,7 +82,7 @@
   left:0;
   width: 5px;
   height:25px;
-  background-color: #000fff;
+  /* background-color: #000fff; */
 }
 .p-title span {
   position: relative;

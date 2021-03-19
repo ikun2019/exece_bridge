@@ -1,19 +1,19 @@
 <div class="wrapper">
   <div class="container mt-3">
-    <div class="rating-contents shadow-sm p-3 mb-3 bg-light rounded">
+    <div class="rating-contents shadow p-3 mb-3 bg-light rounded">
       <% @ratings.each do |rating| %>
         <table class="table table-sm table-bordered bg-light">
           <tr>
             <th class="rating-table-th">評価</th>
-            <td><p class="star-actived rate-<%= rating.rate %>"></p></td>
+            <td><span class="ml-2"><p class="star-actived rate-<%= rating.rate %>"></p></span></td>
           </tr>
           <tr>
-            <th>顧客名</th>
-            <td><%= rating.customer.nickname %></td>
+            <th class="rating-table-th">顧客名</th>
+            <td><span class="ml-2"><%= rating.customer.nickname %></span></td>
           </tr>
           <tr>
-            <th>コメント</th>
-            <td><%= rating.customer_comment %></td>
+            <th class="rating-table-th">コメント</th>
+            <td><span class="ml-2"><%= rating.customer_comment %></span></td>
           </tr>
         </table>
       <% end %>

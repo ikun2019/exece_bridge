@@ -8,8 +8,9 @@
 	border-width:1px 1px 1px 1px;
 }
 .request-list-btn{
-	background-color:#00CFCD !important;
+	background-color:#f58b09 !important;
 	background-size:auto auto !important;
+  font-weight: bold;
 }
 
 /* requests#show */
@@ -66,4 +67,27 @@ td {
 	font-size:16px;
 	border-radius:10px 10px 10px 10px;
 	border-width:3px 3px 3px 3px;
+}
+
+/* request#new */
+.request-new-form{
+	border-style:solid;
+	border-color:#DBDBDB!important;
+	box-shadow:0px 5px 10px #DBDBDB;
+	padding:20px 20px 20px 20px;
+	border-radius:15px 15px 15px 15px;
+	border-width:1px 1px 1px 1px;
+}
+.request-new-button{
+	background-color:#F58B09 !important;
+}
+.form-group-new {
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-box{
+	margin-top:20px;
+}
+.field-style{
+	height:204px;
 }
