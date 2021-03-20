@@ -1,8 +1,8 @@
 <div class="wrapper">
   <div class="container mt-3">
-    <div class="rating-contents shadow p-3 mb-3 bg-light rounded">
+    <div class="container customer-status-wrap">
       <% @ratings.each do |rating| %>
-        <table class="table table-sm table-bordered bg-light">
+        <table class="table table-hover table-bordered table-sm mt-3">
           <tr>
             <th class="rating-table-th">評価</th>
             <td><span class="ml-2"><p class="star-actived rate-<%= rating.rate %>"></p></span></td>
