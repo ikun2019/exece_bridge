@@ -1,41 +1,65 @@
-<div class="wrapper">
-  <div class="container form">
-    <%= form_with model: @request, method: :post, local: true do |f| %>
-
-      <div class="field">
-        <%= f.label :"タイトル", class: "form-label" %><br>
-        <%= f.text_field :title, class: "form-text" %>
-      </div>
-
-      <div class="field mt-3">
-        <%= f.label :"依頼内容詳細", class: "form-label" %><br>
-        <%= f.text_area :content, cols: "20", rows: "15", class: "form-text" %>
-      </div>
-
-      <div class="field mt-3">
-        <%= f.label :"予算", class: "form-label" %><br>
-        <%= f.collection_select(:budget_id, Budget.all, :id, :name, {}, { class: "select-box" }) %>
-      </div>
-
-      <div class="field mt-3">
-        <%= f.label :"募集期限", class: "form-label" %><br>
-        <%= f.collection_select(:term_id, Term.all, :id, :name, {}, { class: "select-box" }) %>
-      </div>
-
-      <div class="field mt-3">
-        <%= f.label :"希望の対応方法", class: "form-label" %><br>
-        <%= f.collection_select(:approach_id, Approach.all, :id, :name, {}, { class: "select-box" }) %>
-      </div>
-
-      <div class="field mt-3">
-        <%= f.label :"その他備考欄", class: "form-label" %><br>
-        <%= f.text_area :other, cols: "20", rows: "7", class: "form-text" %>
-      </div>
-
-      <div class="devise-submit-box mt-4">
-        <%= f.submit "登録", class: "devise-submit" %>
-      </div>
-
-    <% end %>
-  </div>
+<!-- Main container -->
+<div class="page-container">
+    
+<!-- bloc-0 -->
+<div class="bloc l-bloc " id="bloc-0">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col">
+				<form id="form_1" class="request-new-form">
+          <%= form_with model: @request, method: :post, local: true do |f| %>
+            <label>
+              <u><strong>依頼内容投稿</strong></u><br>
+            </label>
+            <div class="form-group-new form-box">
+              <label>
+                依頼タイトル<br>
+              </label>
+              <%= f.text_field :title, class: "form-control" %>
+            </div>
+            <div class="form-group-new form-box">
+              <label>
+                依頼内容詳細<br>
+              </label>
+              <%= f.text_area :content, cols: "50", rows: "10", class: "form-control field-style" %>
+            </div>
+            <div class="form-group-new form-box">
+              <label>
+                予算<br>
+              </label>
+              <%= f.collection_select(:budget_id, Budget.all, :id, :name, {}, { class: "form-control" }) %>
+            </div>
+            <div class="form-group-new form-box">
+              <label>
+                募集期限<br>
+              </label>
+              <%= f.collection_select(:term_id, Term.all, :id, :name, {}, { class: "form-control" }) %>
+            </div>
+            <div class="form-group-new form-box">
+              <label>
+                希望の対応方法<br>
+              </label>
+              <%= f.collection_select(:approach_id, Approach.all, :id, :name, {}, { class: "form-control" }) %>
+            </div>
+            <div class="form-group-new form-box">
+              <label>
+                その他備考欄<br>
+              </label>
+              <%= f.text_area :other, cols: "50", rows: "4", class: "form-control" %>
+            </div> 
+            <%= f.submit "登録", class: "bloc-button btn btn-d btn-lg btn-block request-new-button mt-5" %>
+          <% end %>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
+<!-- bloc-0 END -->
+
+<!-- ScrollToTop Button -->
+<a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></a>
+<!-- ScrollToTop Button END-->
+
+
+</div>
+<!-- Main container END -->

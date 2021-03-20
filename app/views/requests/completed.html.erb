@@ -1,28 +1,31 @@
 <div class="wrapper">
   <div class="container mt-5">
-    <table class="table table-hover table-sm">
-      <tr class="text-center">
-        <th class="table-th">案件番号</th>
-        <th class="table-th">依頼タイトル</th>
-        <th class="table-th">対応者</th>
-        <th class="table-th">完了日</th>
-        <td class="table-th">対応者を評価</td>
-      </tr>
-      <% @completed_requests.each do |completed_request| %>
+    <p class="p-title"><span><%= current_customer.nickname %>様の完了済案件</span></p>
+    <div class="container customer-status-wrap">
+      <table class="table table-hover table-sm">
         <tr class="text-center">
-          <td><%= completed_request.request.id %></td>
-          <td><%= completed_request.request.title %></td>
-          <td><%= completed_request.engineer.nickname %></td>
-          <td><%= l completed_request.created_at %></td>
-          <td>
-            <% if completed_request.engineer.ratings.where(customer_id: current_customer.id).present? %>
-              <%= link_to "編集する", edit_engineer_rating_path(completed_request.engineer_id, completed_request.engineer.ratings.find_by(customer_id: current_customer.id).id) %>
-            <% else %>
-              <%= link_to "評価する", new_engineer_rating_path(completed_request.engineer_id) %>
-            <% end %>
-          </td>
+          <th class="table-th">案件番号</th>
+          <th class="table-th">依頼タイトル</th>
+          <th class="table-th">対応者</th>
+          <th class="table-th">完了日</th>
+          <td class="table-th">対応者を評価</td>
         </tr>
-      <% end %>
-    </table>
+        <% @completed_requests.each do |completed_request| %>
+          <tr class="text-center">
+            <td><%= completed_request.request.id %></td>
+            <td><%= completed_request.request.title %></td>
+            <td><%= completed_request.engineer.nickname %></td>
+            <td><%= l completed_request.created_at %></td>
+            <td>
+              <% if completed_request.engineer.ratings.where(customer_id: current_customer.id).present? %>
+                <%= link_to "編集する", edit_engineer_rating_path(completed_request.engineer_id, completed_request.engineer.ratings.find_by(customer_id: current_customer.id).id) %>
+              <% else %>
+                <%= link_to "評価する", new_engineer_rating_path(completed_request.engineer_id) %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>

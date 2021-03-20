@@ -1,30 +1,32 @@
 <div class="wrapper">
   <div class="container mt-5">
-    <table class="table table-hover table-sm">
-      <tr class="text-center">
-        <th class="table-th">案件番号</th>
-        <th class="table-th">依頼主</th>
-        <th class="table-th">タイトル</th>
-        <th class="table-th">依頼受諾日</th>
-        <th class="table-th">完了報告</th>
-      </tr>
-
-      <% @unfinished_request.each do |order| %>
+    <div class="container customer-status-wrap">
+      <table class="table table-hover table-sm">
         <tr class="text-center">
-          <td class="table-td align-middle">
-            <%= link_to request_path(order.request.id) do %>
-              <%= order.request.id %>
-            <% end %>
-          </td>
-          <td class="table-td align-middle"><%= order.request.customer.nickname %></td>
-          <td class="table-td align-middle"><%= order.request.title %></td>
-          <td class="table-td align-middle"><%= l order.created_at %></td>
-          <td class="table-td align-middle">
-            <%= link_to "完了", request_complete_path(order.request.id, complete: {conclusion: true}), method: :put, class: "btn btn-success btn-sm" %>
-          </td>
+          <th class="table-th">案件番号</th>
+          <th class="table-th">依頼主</th>
+          <th class="table-th">タイトル</th>
+          <th class="table-th">依頼受諾日</th>
+          <th class="table-th">完了報告</th>
         </tr>
-      <% end %>
 
-    </table>
+        <% @unfinished_request.each do |order| %>
+          <tr class="text-center">
+            <td class="align-middle">
+              <%= link_to request_path(order.request.id) do %>
+                <%= order.request.id %>
+              <% end %>
+            </td>
+            <td class="align-middle"><%= order.request.customer.nickname %></td>
+            <td class="align-middle"><%= order.request.title %></td>
+            <td class="align-middle"><%= l order.created_at %></td>
+            <td class="align-middle">
+              <%= link_to "完了", request_complete_path(order.request.id, complete: {conclusion: true}), method: :put, class: "btn btn-success btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
+
+      </table>
+    </div>
   </div>
 </div>

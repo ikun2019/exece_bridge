@@ -5,6 +5,10 @@ body{
   color: #454839;
 }
 
+.wrapper {
+  min-height: 100vh;
+}
+
 .face {
   width: 100px;
   height: 100px;
@@ -21,15 +25,15 @@ body{
 }
 
 .table-th {
-  color:#005ab3;
+  color: #203d4c;
   background: #fff;
 }
 .table-td {
   border-bottom:1px dashed #999;
 }
 .table-th {
-  border-top:2px solid #005ab3;
-  border-bottom:2px solid #005ab3;
+  border-top:2px solid #203d4c;
+  border-bottom:2px solid #203d4c;
 }
 
 .devise-label {
