@@ -1,28 +1,28 @@
 <!-- bloc-1 -->
-<div class="bloc bg-keyboard-2308477-1920 tc-silver" id="bloc-1">
+<div class="bloc bg-keyboard-2308477-1920 tc-silver pb-5" id="bloc-1">
   <div class="container bloc-lg">
+		<div class="pb-5">
+			<h2 class="mg-md tc-silver">
+				ExeceBridge
+			</h2>
+			<h3 class="mg-md tc-silver">
+				Excel作業を外注して業務効率化しませんか？
+			</h3>
+		</div>
     <div class="row">
-      <div class="col-md-6 order-md-1 col-lg-3 devise-box offset-lg-2">
+      <div class="col col-sm col-md-6 order-md-1 col-lg-3 devise-box offset-lg-2">
         <h4 class="float-lg-none text-lg-center tc-princeton-orange glow-t">
           Customer
         </h4>
         <%= link_to "Sign in", new_customer_session_path, class: "btn btn-lg btn-style btn-princeton-orange btn-rd btn-glossy" %>
         <%= link_to "Sign up(無料)", new_customer_registration_path, class: "btn btn-lg btn-button-style btn-rd wire-btn-princeton-orange btn-wire" %>
       </div>
-      <div class="col-md-6 order-md-1 col-lg-3 devise-box offset-lg-2">
+      <div class="col col-sm col-md-6 order-md-1 col-lg-3 devise-box offset-lg-2">
         <h4 class="text-lg-center tc-princeton-orange glow-t">
           Engineer
         </h4>
         <%= link_to "Sign in", new_engineer_session_path, class: "btn btn-lg btn-style btn-princeton-orange btn-rd btn-glossy" %>
         <%= link_to "Sign up", new_engineer_registration_path, class: "btn btn-lg btn-button-style btn-rd wire-btn-princeton-orange btn-wire" %>
-      </div>
-      <div class="col-md-6 align-self-center offset-lg-1 col-lg-10">
-        <h2 class="mg-md tc-silver">
-          ExeceBridge
-        </h2>
-        <h3 class="mg-md tc-silver">
-          Excel作業を外注して業務効率化しませんか？
-        </h3>
       </div>
     </div>
   </div>
