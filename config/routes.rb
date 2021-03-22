@@ -7,7 +7,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "tops#index"
 
-  resources :tops, only: [:index]
+  resources :tops, only: [:index] do
+    collection do
+      get :engineers
+    end
+    get :engineer_show
+  end
+
+
   resources :customers, only: [:index, :status, :edit, :update, :show] do
     member do
       get :status
@@ -22,6 +29,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:create, :destroy]
     resources :completes, only: [:edit, :update]
   end
+
   resources :engineers, only: [:index, :edit, :update, :show] do
     member do
       get :apply

@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <!-- bloc-1 -->
+  <div class="bloc l-bloc" id="bloc-1">
+    <div class="container bloc-sm">
+      <div class="row ">
+        <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3">
+          <% if @engineer.image.attached? %>
+            <%= image_tag @engineer.image, class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+          <% else %>
+            <%= image_tag "placeholder-user.png", class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="user-table">
+        <label class="devise-label mt-3">エンジニア情報</label>
+        <table class="table table-sm">
+          <tr>
+            <th>名前</th>
+            <td><%= @engineer.nickname %></td>
+          </tr>
+          <tr>
+            <th>開発言語</th>
+            <td><%= @engineer.language.name %></td>
+          </tr>
+          <tr>
+            <th>自己PR</th>
+            <td><%= @engineer.profile %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- bloc-1 END -->
+
+  <div class="user-table">
+    <table class="table table-sm mtー３">
+      <tr>
+        <th class="text-center engineer-info">クライアント評価</th>
+        <td class="engineer-info">
+          <span class="ml-2"><p class="star-actived rate-<%= @rate %>"></p></span>
+        </td>
+      </tr>
+      <tr>
+        <th class="text-center engineer-info">エンジニア評価</th>
+        <td class="engineer-info">
+          <span class="ml-2"><p class="star-actived rate-<%= @rate %>"></p></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

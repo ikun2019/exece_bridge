@@ -107,22 +107,6 @@
   background-color: gray;
 }
 
-
-
-/* .main {
-  position: relative;
-}
-.main-image {
-  width: 100%;
-}
-.main-title {
-  font-size: 5vw;
-  color: #AECA54;
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-} */
-
 .beginner-box {
   display: flex;
   justify-content: center;
@@ -181,4 +165,9 @@
   width: 42vw;;
   border: 1px solid #979797;
   border-radius: 8px;
+}
+
+.engineer-info {
+  border-top: none !important;
+  font-size: 16px;;
 }

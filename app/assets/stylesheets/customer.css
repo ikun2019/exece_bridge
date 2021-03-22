@@ -118,3 +118,42 @@
 	border-radius:15px 15px 15px 15px;
 	border-width:1px 1px 1px 1px;
 }
+
+.customer-menu {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.customer-sub-btn {
+  width: 98%;
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1em;
+  text-decoration: none !important;
+  color: #454839;
+  transition: .4s;
+}
+.customer-sub-btn:hover {
+  background: #AAAD9B;
+}
+.customer-sub-btn:before, .customer-sub-btn:after {
+  position: absolute;
+  top: 0;
+  content:'';
+  width: 8px;
+  height: 100%;
+  display: inline-block;
+}
+.customer-sub-btn:before {
+  border-left: solid 1px #454839;
+  border-top: solid 1px #454839;
+  border-bottom: solid 1px #454839;
+  left: 0;
+}
+.customer-sub-btn:after {
+  content: '';
+  border-top: solid 1px #454839;
+  border-right: solid 1px #454839;
+  border-bottom: solid 1px #454839;
+  right: 0;
+}
