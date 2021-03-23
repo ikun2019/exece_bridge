@@ -11,7 +11,8 @@
 				</h6>
 				<p class="question-description">
 					分からないことを下のボタンから質問しましょう！<br>エンジニアから回答が得られたら、回答したエンジニアに評価をフィードバックしてください。<br>
-				</p><a href="index.html" class="btn btn-d btn-lg question-new-btn">質問を投稿</a>
+				</p>
+        <%= link_to "質問を投稿", new_question_path, class: "btn btn-d btn-lg question-new-btn" %>
 			</div>
 		</div>
 	</div>
@@ -27,7 +28,7 @@
             <div class="card question-card">
               <div class="card-header">
                 <h3 class="mg-clear">
-                  <%= question.title %>>
+                  <%= question.title %>
                 </h3>
               </div>
               <div class="card-body">
