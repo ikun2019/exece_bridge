@@ -1,0 +1,45 @@
+<!-- question-index-bloc -->
+<div class="bloc bg-question d-bloc none bloc-bg-texture texture-pixels" id="question-index-bloc">
+	<div class="container bloc-xxl-lg">
+		<div class="row">
+			<div class="col">
+				<h3 class="mg-md question-title">
+					Question Board
+				</h3>
+				<h6 class="mg-md question-subtitle">
+					<strong><u class="question-subtitle">質問掲示板</u></strong>
+				</h6>
+				<p class="question-description">
+					分からないことを下のボタンから質問しましょう！<br>エンジニアから回答が得られたら、回答したエンジニアに評価をフィードバックしてください。<br>
+				</p><a href="index.html" class="btn btn-d btn-lg question-new-btn">質問を投稿</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- question-index-bloc END -->
+<!-- question-index-bloc2 -->
+<div class="wrapper">
+  <div class="bloc l-bloc" id="question-index-bloc2">
+    <div class="container bloc-lg">
+      <div class="row">
+        <% @questions.each do |question| %>
+          <div class="col-md-4">
+            <div class="card question-card">
+              <div class="card-header">
+                <h3 class="mg-clear">
+                  <%= question.title %>>
+                </h3>
+              </div>
+              <div class="card-body">
+                <p>
+                  <%= question.content %>
+                </p><a href="index.html" class="btn btn-d btn-lg question-show-btn">詳細</a>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- question-index-bloc2 END -->
