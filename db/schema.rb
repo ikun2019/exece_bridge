@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_150202) do
+ActiveRecord::Schema.define(version: 2021_03_13_082409) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -127,15 +127,6 @@ ActiveRecord::Schema.define(version: 2021_03_22_150202) do
     t.index ["request_id"], name: "index_orders_on_request_id"
   end
 
-  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "engineer_id"
-    t.string "title", null: false
-    t.text "content", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["engineer_id"], name: "index_questions_on_engineer_id"
-  end
-
   create_table "ratings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "rate", null: false
     t.bigint "customer_id"
@@ -169,7 +160,6 @@ ActiveRecord::Schema.define(version: 2021_03_22_150202) do
   add_foreign_key "completes", "requests"
   add_foreign_key "orders", "engineers"
   add_foreign_key "orders", "requests"
-  add_foreign_key "questions", "engineers"
   add_foreign_key "ratings", "customers"
   add_foreign_key "ratings", "engineers"
   add_foreign_key "requests", "customers"
