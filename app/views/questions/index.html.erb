@@ -34,7 +34,8 @@
               <div class="card-body">
                 <p>
                   <%= question.content %>
-                </p><a href="index.html" class="btn btn-d btn-lg question-show-btn">詳細</a>
+                </p>
+                <%= link_to "詳細", question_path(question.id), class: "btn btn-d btn-lg question-show-btn" %>
               </div>
             </div>
           </div>

@@ -39,6 +39,6 @@ Rails.application.routes.draw do
     resources :ratings, only: [:new, :create, :show, :edit, :update, :index]
   end
 
-  resources :questions, only: [:index, :new, :create]
+  resources :questions, only: [:index, :new, :create, :show]
 
 end
