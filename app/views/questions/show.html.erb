@@ -51,23 +51,29 @@
 					<label class="asnwer-label">
 						Answer
 					</label>
-					<div class="card">
-						<div class="card-body">
-							<h6 class="mg-md answer-engineer-label">
-								エンジニア名さんの回答
-							</h6>
-							<p>
-								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-							</p>
-							<div class="form-wrap text-left">
-								<div>
-									<button class="bloc-button btn">➕</button>
-                  評価
-                  <button class="bloc-button btn">➖</button>
-								</div>
-							</div>
-						</div>
-					</div>
+          <% if @answers.present? %>
+            <% @answers.each do |answer| %>
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="mg-md answer-engineer-label">
+                    <%= answer.engineer.nickname %>さんの回答
+                  </h6>
+                  <p>
+                    <%= answer.answer %>
+                  </p>
+                  <div class="form-wrap text-left">
+                    <div>
+                      <button class="bloc-button btn">➕</button>
+                      評価
+                      <button class="bloc-button btn">➖</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p>まだ回答はありません</p>
+          <% end %>
 				</div>
 			</div>
 		</div>
