@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   end
   
   def create
-    question = Question.new(create_params)
+    question = Question.new(question_params)
     if question.save
       redirect_to questions_path
     else
@@ -19,13 +19,13 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answer = Answer.new
   end
   
   
   private
-  def create_params
+  def question_params
     params.require(:question).permit(:title, :content).merge(engineer_id: current_engineer.id)
   end
-  
   
 end
