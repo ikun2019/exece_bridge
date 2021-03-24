@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_124023) do
+ActiveRecord::Schema.define(version: 2021_03_24_135115) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 2021_03_23_124023) do
     t.index ["engineer_id"], name: "index_agreements_on_engineer_id"
     t.index ["order_id"], name: "index_agreements_on_order_id"
     t.index ["request_id"], name: "index_agreements_on_request_id"
+  end
+
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "question_id"
+    t.bigint "engineer_id"
+    t.text "answer", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["engineer_id"], name: "index_answers_on_engineer_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -164,6 +174,8 @@ ActiveRecord::Schema.define(version: 2021_03_23_124023) do
   add_foreign_key "agreements", "engineers"
   add_foreign_key "agreements", "orders"
   add_foreign_key "agreements", "requests"
+  add_foreign_key "answers", "engineers"
+  add_foreign_key "answers", "questions"
   add_foreign_key "completes", "customers"
   add_foreign_key "completes", "engineers"
   add_foreign_key "completes", "requests"
