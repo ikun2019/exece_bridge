@@ -1,0 +1,83 @@
+<div class="wrap">
+<!-- bloc-2 -->
+<div class="bloc l-bloc" id="bloc-2">
+	<div class="container bloc-lg bloc-lg-lg">
+		<div class="row no-gutters">
+			<div class="col">
+				<div class="card question-show-card">
+					<div class="card-header question-show-title">
+						<div class="text-center">
+							<span class="icon-md question-icon far fa-question-circle"></span>
+						</div>
+						<h3 class="mg-clear btn-resize-mode">
+							<%= @question.title %>
+						</h3>
+					</div>
+					<div class="card-body">
+						<p>
+							<%= @question.content %>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div>
+					<div class="form-wrap">
+						<label class="question-show-answer-label">
+							回答欄<br>
+						</label>
+            <%= form_with(model: [@question, @answer], local: true) do |f| %>
+              <div class="form-wrap">
+                <%= f.text_area :answer, class: "form-control", rows: "4", cols: "50" %>
+              </div>
+              <%= f.submit "回答する", class: "btn btn-d btn-lg float-lg-right question-answer-btn" %>
+            <% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-2 END -->
+
+<!-- bloc-3 -->
+<div class="bloc l-bloc " id="bloc-3">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col">
+				<div>
+					<label class="asnwer-label">
+						Answer
+					</label>
+          <% if @answers.present? %>
+            <% @answers.each do |answer| %>
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="mg-md answer-engineer-label">
+                    <%= answer.engineer.nickname %>さんの回答
+                  </h6>
+                  <p>
+                    <%= answer.answer %>
+                  </p>
+                  <div class="form-wrap text-left">
+                    <div>
+                      <button class="bloc-button btn">➕</button>
+                      評価
+                      <button class="bloc-button btn">➖</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p>まだ回答はありません</p>
+          <% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-3 END -->
+</div>

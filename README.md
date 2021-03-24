@@ -47,8 +47,9 @@
 - has_many: room_users
 - has_many: rooms
 - has_many: orders
-- has_many :agreements
-- has_many :completes
+- has_many: agreements
+- has_many: completes
+- has_many: questions
 
 
 ## ordersテーブル
@@ -154,4 +155,28 @@
 
 ### Association
 - belongs_to: customer
+- belongs_to: engineer
+
+
+## questionsテーブル
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| engineer         | references | foreign_key: true |
+| title            | string     | null: false       |
+| content          | text       | null: false       |
+
+### Association
+- belongs_to: engineer
+- has_many: answers
+
+
+## answersテーブル
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| question         | references | foreign_key: true |
+| engineer         | references | foreign_key: true |
+| answer           | text       | null: false       |
+
+### Association
+- belongs_to: question
 - belongs_to: engineer
