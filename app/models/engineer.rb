@@ -12,6 +12,7 @@ class Engineer < ApplicationRecord
   has_one :card, dependent: :destroy
   has_many :ratings
   has_many :questions
+  has_many :answers
 
   def name
     self.first_name + " " + self.last_name
