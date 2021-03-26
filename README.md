@@ -180,3 +180,9 @@
 ### Association
 - belongs_to: question
 - belongs_to: engineer
+
+## evaluationsテーブル
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| engineer         | references | foreign_key: true |
+| rate             | integer    | null: false       |
