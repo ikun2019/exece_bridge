@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_26_082531) do
+ActiveRecord::Schema.define(version: 2021_03_24_135115) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_03_26_082531) do
     t.bigint "question_id"
     t.bigint "engineer_id"
     t.text "answer", null: false
+    t.integer "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["engineer_id"], name: "index_answers_on_engineer_id"
@@ -128,14 +129,6 @@ ActiveRecord::Schema.define(version: 2021_03_26_082531) do
     t.index ["reset_password_token"], name: "index_engineers_on_reset_password_token", unique: true
   end
 
-  create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "engineer_id"
-    t.integer "rate", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["engineer_id"], name: "index_evaluations_on_engineer_id"
-  end
-
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "request_id"
     t.bigint "engineer_id"
@@ -187,7 +180,6 @@ ActiveRecord::Schema.define(version: 2021_03_26_082531) do
   add_foreign_key "completes", "customers"
   add_foreign_key "completes", "engineers"
   add_foreign_key "completes", "requests"
-  add_foreign_key "evaluations", "engineers"
   add_foreign_key "orders", "engineers"
   add_foreign_key "orders", "requests"
   add_foreign_key "questions", "engineers"
