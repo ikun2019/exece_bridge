@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_03_24_135115) do
     t.bigint "question_id"
     t.bigint "engineer_id"
     t.text "answer", null: false
+    t.integer "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["engineer_id"], name: "index_answers_on_engineer_id"

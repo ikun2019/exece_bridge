@@ -51,12 +51,10 @@
         <div class="col-md">
           <label>エンジニア評価</label>
           <span class="rating-star">
-            <% if current_engineer.ratings.present? %>
-              <p class="star-actived rate-<%= current_engineer.ratings.average(:rate).round %>"></p>
+            <% if current_engineer.answers.present? %>
+              <p class="star-actived rate-<%= current_engineer.answers.average(:rate).round %>"></p>
               <p class="rate-count">
-                <%# link_to engineer_rating_path do %>
-                  (<%= current_engineer.ratings.count %>)
-                <%# end %>
+                (<%= current_engineer.answers.where.not(rate: nil).count %>)
               </p>
             <% end %>
           </span>

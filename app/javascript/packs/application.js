@@ -9,10 +9,13 @@ require("@rails/activestorage").start()
 require("channels")
 require("../devise_preview")
 require("../payjp")
-require("../blocs")
+require("../rate")
+
 require("../bootstrap.bundle")
-require("../jquery-3.5.1")
-require("../lazysizes.min.js")
+// require("../jquery-3.5.1")
+require("../blocs")
+require("../lazysizes")
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -176,7 +176,9 @@
 | question         | references | foreign_key: true |
 | engineer         | references | foreign_key: true |
 | answer           | text       | null: false       |
+| rate             | integer    |                   |
 
 ### Association
 - belongs_to: question
 - belongs_to: engineer
+
