@@ -433,3 +433,50 @@ hr {
 .engineer-image {
   width: 300px;
 }
+
+/* 切り替えボタン */
+.switchArea {
+  line-height    : 32px;                /* 1行の高さ          */
+  letter-spacing : 0;                   /* 文字間             */
+  text-align     : center;              /* 文字位置は中央     */
+  font-size      : 13px;                /* 文字サイズ         */
+
+  position       : relative;
+  width          : 120px;               /* ボタンの横幅       */
+  background     : #fff;                /* デフォルト背景色   */
+}
+
+.switch-area {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  height         : 32px;                /* ボタンの高さ       */
+  border         : 2px solid #DD5E15;   /* 未選択タブのの枠線 */
+  border-radius  : 16px;   
+}
+#switch:checked + .switch-area {
+  border-color   : #5472cd;
+}
+.switch-area span:after {
+  content        : "Engineer";               /* 表示する文字       */
+  padding        : 0 0 0 19px;          /* 表示する位置       */
+  color          : #DD5E15;             /* 文字色             */
+}
+#switch:checked + .switch-area span:after {
+  content        : "Study";                /* 表示する文字       */
+  padding        : 0 19px 0 0;          /* 表示する位置       */
+  color          : #5472cd;             /* 文字色             */
+}
+#swimg {
+  position       : absolute;            /* 親要素からの相対位置*/
+  width          : 24px;                /* 丸の横幅           */
+  height         : 24px;                /* 丸の高さ           */
+  background     : #DD5E15;             /* カーソルタブの背景 */
+  top            : 4px;                 /* 親要素からの位置   */
+  left           : 4px;                 /* 親要素からの位置   */
+  border-radius  : 12px;                /* 角丸               */
+  transition     : .2s;                 /* 滑らか変化         */
+}
+#switch:checked ~ #swimg {
+  transform      : translateX(88px);    /* 丸も右へ移動       */
+  background     : #5472cd;             /* カーソルタブの背景 */
+}

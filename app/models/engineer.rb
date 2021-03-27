@@ -24,4 +24,5 @@ class Engineer < ApplicationRecord
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :language
+  belongs_to :study
 end

@@ -39,6 +39,8 @@
 | acceptable_area | integer | default: 1  |
 | profile         | text    |             |
 | language_id     | integer | default: 1  |
+| premium         | boolean | default: 0  |
+| study           | boolean | default: 1  |
 
 ### Association
 - has_many: comments

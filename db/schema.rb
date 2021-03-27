@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_091906) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "subscription_id"
     t.boolean "premium", default: false, null: false
-    t.boolean "study", default: true
+    t.integer "study_id", default: 1
     t.index ["email"], name: "index_engineers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_engineers_on_reset_password_token", unique: true
   end
