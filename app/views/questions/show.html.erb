@@ -63,9 +63,10 @@
                   </p>
                   <div class="form-wrap text-left">
                     <div>
-                      <button class="bloc-button btn">➕</button>
-                      評価
-                      <button class="bloc-button btn">➖</button>
+                      <button class="bloc-button btn countup" data-question-id="<%= answer.question.id %>" data-answer-id="<%= answer.id %>"><i class="far fa-thumbs-up fa-2x"></i></button>
+                      評価：
+											<span class="rating-<%= answer.id %>"><%= answer.rate %></span>
+                      <button class="bloc-button btn countdown" data-question-id="<%= answer.question.id %>" data-answer-id="<%= answer.id %>"><i class="fas fa-thumbs-down fa-2x"></i></button>
                     </div>
                   </div>
                 </div>

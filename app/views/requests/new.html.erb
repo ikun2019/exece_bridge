@@ -6,7 +6,7 @@
 	<div class="container bloc-lg">
 		<div class="row">
 			<div class="col">
-				<form id="form_1" class="request-new-form">
+				<div id="form_1" class="request-new-form">
           <%= form_with model: @request, method: :post, local: true do |f| %>
             <label>
               <u><strong>依頼内容投稿</strong></u><br>
@@ -49,7 +49,7 @@
             </div> 
             <%= f.submit "登録", class: "bloc-button btn btn-d btn-lg btn-block request-new-button mt-5" %>
           <% end %>
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>
