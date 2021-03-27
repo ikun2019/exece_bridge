@@ -4,12 +4,20 @@ class TopsController < ApplicationController
   end
 
   def engineers
-    @engineers = Engineer.all.includes(:ratings)
+    @engineers = Engineer.where(study_id: 0).includes(:ratings)
   end
 
   def engineer_show
     @engineer = Engineer.find(params[:top_id])
-    @rate = @engineer.ratings.average(:rate).round
+    if @engineer.ratings.present?
+      @rate = @engineer.ratings.average(:rate).round
+      @rate_count = @engineer.ratings.where.not(rate: nil).count
+    end
+    if @engineer.answers.where.not(rate: nil).present?
+      @engineer_rate = @engineer.answers.average(:rate).round
+      @engineer_rate_count = @engineer.answers.where.not(rate: nil).count
+    end
+    
   end
   
   
