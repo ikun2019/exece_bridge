@@ -6,9 +6,11 @@
 
         <% @engineers.each do |engineer| %>
           <div class="col-lg-4 col-md-4">
-            <div class="card">
+            <div class="card mt-2">
               <div class="card-body team-card">
-                <%= image_tag engineer.image, class: "rounded-circle mx-auto d-block mt-5 lazyload face-image", width: "100px;" %>
+                <% if engineer.image.attached? %>
+                  <%= image_tag engineer.image, class: "rounded-circle mx-auto d-block mt-5 lazyload face-image", width: "100px;" %>
+                <% end %>
                 <h3 class="text-center mg-sm">
                   <%= engineer.nickname %>さん
                 </h3>
@@ -23,13 +25,21 @@
                     <tr>
                       <th class="text-center engineer-info">クライアント評価</th>
                       <td class="engineer-info">
-                        <span class="ml-2"><p class="star-actived rate-<%= engineer.ratings.average(:rate).round %>"></p></span>
+                        <% if engineer.ratings.where.not(rate: nil).present? %>
+                          <span class="ml-2"><p class="star-actived rate-<%= engineer.ratings.average(:rate).round %>"></p></span>
+                        <% else %>
+                          <span>-</span>
+                        <% end %>
                       </td>
                     </tr>
                     <tr>
                       <th class="text-center engineer-info">エンジニア評価</th>
                       <td class="engineer-info">
-                        <span class="ml-2"><p class="star-actived rate-<%= engineer.ratings.average(:rate).round %>"></p></span>
+                        <% if engineer.answers.where.not(rate: nil).present? %>
+                          <span class="ml-2"><p class="star-actived rate-<%= engineer.answers.average(:rate).round %>"></p></span>
+                        <% else %>
+                          <span>-</span>
+                        <% end %>
                       </td>
                     </tr>
                   </table>
