@@ -17,6 +17,7 @@
 						<p>
 							<%= @question.content %>
 						</p>
+						<p>質問者：<%= @question.engineer.nickname %>さん</p>
 					</div>
 				</div>
 			</div>
@@ -62,12 +63,22 @@
                     <%= answer.answer %>
                   </p>
                   <div class="form-wrap text-left">
-                    <div>
-                      <button class="bloc-button btn countup" data-question-id="<%= answer.question.id %>" data-answer-id="<%= answer.id %>"><i class="far fa-thumbs-up"></i></button>
-                      評価：
-											<span class="rating-<%= answer.id %>"><%= answer.rate %></span>
-                      <button class="bloc-button btn countdown" data-question-id="<%= answer.question.id %>" data-answer-id="<%= answer.id %>"><i class="fas fa-thumbs-down"></i></button>
-                    </div>
+										<% if answer.question.engineer == current_engineer %>
+											<div>
+												<button class="bloc-button btn countup" data-question-id="<%= answer.question.id %>" data-answer-id="<%= answer.id %>"><i class="far fa-thumbs-up"></i></button>
+												評価：
+												<span class="rating-<%= answer.id %>">
+													<%= answer.rate %>
+												</span>
+												<button class="bloc-button btn countdown" data-question-id="<%= answer.question.id %>" data-answer-id="<%= answer.id %>"><i class="fas fa-thumbs-down"></i></button>
+											</div>
+										<% else %>
+											<div class="rating-star">
+												<% if answer.rate.present? %>
+													評価：<p class="star-actived rate-<%= answer.rate %>"></p>
+												<% end %>
+											</div>
+										<% end %>
                   </div>
                 </div>
               </div>
