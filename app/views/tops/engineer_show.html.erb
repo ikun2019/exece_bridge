@@ -37,13 +37,21 @@
       <tr>
         <th class="text-center engineer-info">クライアント評価</th>
         <td class="engineer-info">
-          <span class="ml-2"><p class="star-actived rate-<%= @rate %>"></p></span>
+          <% if @rate.present? %>
+            <span class="ml-2"><p class="star-actived rate-<%= @rate %>"></p>(<%= @rate_count %>)</span>
+          <% else %>
+            <span class="ml-2">-</span>
+          <% end %>
         </td>
       </tr>
       <tr>
         <th class="text-center engineer-info">エンジニア評価</th>
         <td class="engineer-info">
-          <span class="ml-2"><p class="star-actived rate-<%= @rate %>"></p></span>
+          <% if @engineer_rate.present? %>
+            <span class="ml-2"><p class="star-actived rate-<%= @engineer_rate %>"></p>(<%= @engineer_rate_count %>)</span>
+          <% else %>
+            <span class="ml-2">-</span>
+          <% end %>
         </td>
       </tr>
     </table>

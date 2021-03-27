@@ -40,7 +40,7 @@ class EngineersController < ApplicationController
   
   private
   def update_params
-    params.require(:engineer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :nickname, :language_id, :profile, :image)
+    params.require(:engineer).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :nickname, :language_id, :profile, :image, :study_id)
   end
   
   
