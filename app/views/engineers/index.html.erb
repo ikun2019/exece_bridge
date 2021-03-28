@@ -1,3 +1,22 @@
+<!-- image-bloc -->
+<div class="bloc bg-engineer d-bloc none bloc-bg-texture texture-pixels">
+	<div class="container bloc-xxl-lg">
+		<div class="row">
+			<div class="col">
+				<div class="mt-5 mb-5">
+          <h3 class="text-white font-weight-bold">ExeceBridge</h3>
+          <br>
+          <p class="text-white font-weight-bold">Execelを学んで仕事にしよう!</p>
+          <%= link_to manual_engineers_path, class: "btn btn-radius-solid font-weight-bold" do %>
+            <i class="fas fa-book-open mr-2 book-icon"></i><span>利用マニュアル</span>
+          <% end %>
+        </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- image-bloc END -->
+
 <div class="wrapper">
   <div class="container">
 
@@ -51,7 +70,7 @@
         <div class="col-md">
           <label>エンジニア評価</label>
           <span class="rating-star">
-            <% if current_engineer.answers.present? %>
+            <% if current_engineer.answers.where.not(rate: nil).present? %>
               <p class="star-actived rate-<%= current_engineer.answers.average(:rate).round %>"></p>
               <p class="rate-count">
                 (<%= current_engineer.answers.where.not(rate: nil).count %>)

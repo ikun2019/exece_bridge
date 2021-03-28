@@ -36,6 +36,9 @@ Rails.application.routes.draw do
       get :replied
       get :completed
     end
+    collection do
+      get :manual
+    end
     resources :ratings, only: [:new, :create, :show, :edit, :update, :index]
   end
 
