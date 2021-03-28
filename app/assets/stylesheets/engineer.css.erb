@@ -1,4 +1,25 @@
 /* engineer#index */
+.bg-engineer {
+  background-image: url("<%= asset_path("sea.jpg") %>") !important;
+}
+a.btn-radius-solid {
+  border: 1px solid #ccc;
+  background: #f1e767;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fdfbfb), to(#ebedee));
+  background: -webkit-linear-gradient(top, #fdfbfb 0%, #ebedee 100%);
+  background: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
+  -webkit-box-shadow: inset 1px 1px 1px #fff;
+  box-shadow: inset 1px 1px 1px #fff;
+}
+.book-icon {
+  color: #006400;
+}
+
+a.btn-radius-solid:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#fdfbfb), to(#ebedee));
+  background: -webkit-linear-gradient(bottom, #fdfbfb 0%, #ebedee 100%);
+  background: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
+}
 .engineer-label {
   color: #454839;
   font-size: 16px;
@@ -479,4 +500,15 @@ hr {
 #switch:checked ~ #swimg {
   transform      : translateX(88px);    /* 丸も右へ移動       */
   background     : #5472cd;             /* カーソルタブの背景 */
+}
+/*engineers#manual*/
+.warning-p{
+	line-height:30px;
+}
+.warning-icon{
+	color:#F48A09!important;
+	margin-right:10px;
+}
+.color-normal{
+	color:#20465D!important;
 }
