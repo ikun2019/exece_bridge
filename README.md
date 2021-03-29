@@ -18,12 +18,12 @@
 | phone_number    | string  | null: false |
 
 ### Association
-- has_many: requests
-- has_many: room_users
-- has_many: rooms
-- has_many: messages
-- has_many: comments
-- has_many: ratings
+- has_many :requests
+- has_many :room_users
+- has_many :rooms
+- has_many :messages
+- has_many :comments
+- has_many :ratings
 
 
 ## engineersテーブル
@@ -43,16 +43,16 @@
 | study           | boolean | default: 1  |
 
 ### Association
-- has_many: comments
-- has_many: ratings
-- has_many: messages
-- has_many: room_users
-- has_many: rooms
-- has_many: orders
-- has_many: agreements
-- has_many: completes
-- has_many: questions
-
+- has_many :comments
+- has_many :ratings
+- has_many :messages
+- has_many :room_users
+- has_many :rooms
+- has_many :orders
+- has_many :agreements
+- has_many :completes
+- has_many :questions
+- has_many :works
 
 ## ordersテーブル
 | Column   | Type       | Options                     |
@@ -118,10 +118,10 @@
 | engineer    | references | foreign_key: true |
 
 ### Association
-- belongs_to: request
-- belongs_to: room
-- belongs_to: customer
-- belongs_to: engineer
+- belongs_to :request
+- belongs_to :room
+- belongs_to :customer
+- belongs_to :engineer
 
 
 ## roomsテーブル
@@ -130,10 +130,10 @@
 | name        | string     |                   |
 
 ### Association
-- has_one: room_user
-- has_one: customer
-- has_one: engineer
-- has_many: messages
+- has_one :room_user
+- has_one :customer
+- has_one :engineer
+- has_many :messages
 
 
 ## messagesテーブル
@@ -142,9 +142,9 @@
 | content     | text       | null: false       |
 
 ### Association
-- belongs_to: room
-- belongs_to: customer
-- belongs_to: engineer
+- belongs_to :room
+- belongs_to :customer
+- belongs_to :engineer
 
 
 ## ratingsテーブル
@@ -156,8 +156,8 @@
 | customer_comment | text       |                   |
 
 ### Association
-- belongs_to: customer
-- belongs_to: engineer
+- belongs_to :customer
+- belongs_to :engineer
 
 
 ## questionsテーブル
@@ -168,8 +168,8 @@
 | content          | text       | null: false       |
 
 ### Association
-- belongs_to: engineer
-- has_many: answers
+- belongs_to :engineer
+- has_many :answers
 
 
 ## answersテーブル
@@ -181,6 +181,26 @@
 | rate             | integer    |                   |
 
 ### Association
-- belongs_to: question
-- belongs_to: engineer
+- belongs_to :question
+- belongs_to :engineer
 
+
+## trainingsテーブル
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| title            | string     | null: false       |
+| text             | text       | null: false       |
+
+### Association
+- has_many :works
+
+## worksテーブル
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| training         | references | foreign_key: true |
+| engineer         | references | foreign_key: true |
+| complete         | boolean    | default: false    |
+
+### Association
+- belongs_to :training
+- belongs_to :engineer
