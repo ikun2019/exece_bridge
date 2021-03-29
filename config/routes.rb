@@ -49,4 +49,6 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :trainings, only: [:index, :show]
+
 end
