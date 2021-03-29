@@ -189,7 +189,7 @@
 | Column           | Type       | Options           |
 | ---------------- | ---------- | ----------------- |
 | title            | string     | null: false       |
-| text             | text       | null: false       |
+| detail           | text       | null: false       |
 
 ### Association
 - has_many :works
