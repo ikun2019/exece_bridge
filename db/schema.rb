@@ -175,6 +175,9 @@ ActiveRecord::Schema.define(version: 2021_03_29_143029) do
   create_table "trainings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "detail", null: false
+    t.integer "genre_id", null: false
+    t.integer "lesson_id", null: false
+    t.string "lesson_title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

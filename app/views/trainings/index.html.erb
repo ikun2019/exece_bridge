@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <!-- bloc-6 -->
+  <div class="bloc l-bloc full-width-bloc" id="bloc-6">
+    <div class="container bloc-no-padding">
+      <div class="row voffset-clear-xs no-gutters">
+        <div class="col-12">
+          <h3 class="mg-md training-title">
+            Training
+          </h3>
+          <%= image_tag "book.jpg", class: "img-fluid mx-auto d-block lazyload", alt: "book" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- bloc-6 END -->
+  <!-- bloc-7 -->
+  <div class="bloc l-bloc" id="bloc-7">
+    <div class="container bloc-lg">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card">
+          <!--image class: "card-img-top"-->
+            <div class="card-body">
+              <h4 class="card-title">Lesson1</h4>
+              <p class="card-text">はじめに</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <% @trainings.each do |training| %>
+                <li class="list-group-item"><%= training.title %></li>
+              <% end %>
+            </ul>
+            <div class="card-body">
+              <a href="#">リンク</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- bloc-7 END -->
+</div>

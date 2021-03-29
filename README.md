@@ -190,6 +190,9 @@
 | ---------------- | ---------- | ----------------- |
 | title            | string     | null: false       |
 | detail           | text       | null: false       |
+| genre_id         | integer    | null: false       |
+| lesson_id        | integer    | null: false       |
+| lesson_title     | string     |                   |
 
 ### Association
 - has_many :works
