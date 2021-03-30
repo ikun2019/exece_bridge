@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
+
   devise_for :engineers
   resources :cards, only: [:index, :new, :create, :destroy, :show, :edit, :update]
 

@@ -9,6 +9,7 @@ class Customer < ApplicationRecord
   has_many :completes
   has_many :ratings
 
+  enum role: {user: 0, admin: 1}
 
   def name
     self.first_name + " " +self.last_name
