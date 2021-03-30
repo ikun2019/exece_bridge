@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     member do
       get :status
     end
+    collection do
+      get :manual
+    end
   end
 
   resources :requests, only: [:index, :new, :create, :show] do
