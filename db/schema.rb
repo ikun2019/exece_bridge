@@ -178,7 +178,6 @@ ActiveRecord::Schema.define(version: 2021_03_30_065746) do
     t.text "detail", null: false
     t.integer "genre_id", null: false
     t.integer "lesson_id", null: false
-    t.string "lesson_title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

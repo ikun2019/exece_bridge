@@ -1,77 +1,79 @@
-<div class="pb-5">
-  <!-- bloc-1 -->
-  <div class="bloc l-bloc" id="bloc-1">
-    <div class="container bloc-sm">
-      <div class="row ">
-        <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3">
-          <div class="engineer-image">
-            <% if current_engineer.image.attached? %>
-              <%= image_tag current_engineer.image, class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
-            <% else %>
-              <%= image_tag "placeholder-user.png", class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
-            <% end %>
+<div class="wrapper">
+  <div class="pb-5 mt-5">
+    <!-- bloc-1 -->
+    <div class="bloc l-bloc" id="bloc-1">
+      <div class="container bloc-sm">
+        <div class="row ">
+          <div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3">
+            <div class="engineer-image">
+              <% if current_engineer.image.attached? %>
+                <%= image_tag current_engineer.image, class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+              <% else %>
+                <%= image_tag "placeholder-user.png", class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- bloc-1 END -->
-  <div class="container">
-    <div class="mt-5 user-table">
-      <label class="devise-label">基本情報</label>
-      <table class="table table-sm">
-        <tr>
-          <th>登録情報</th>
-          <td><%= current_engineer.study.name %></td>
-        <tr>
-        <tr>
-          <th>名前</th>
-          <td><%= current_engineer.name %></td>
-        </tr>
-        <tr>
-          <th>名前(カナ)</th>
-          <td><%= current_engineer.name_kana %></td>
-        </tr>
-        <tr>
-          <th>サイト表示名</th>
-          <td><%= current_engineer.nickname %></td>
-        </tr>
-        <tr>
-          <th>email</th>
-          <td><%= current_engineer.email %></td>
-        </tr>
-        <tr>
-          <th>開発言語</th>
-          <td><%= current_engineer.language.name %></td>
-        </tr>
-        <tr>
-          <th>自己PR</th>
-          <td><%= current_engineer.profile %></td>
-        </tr>
-      </table>
-      <div class="text-right">
-        <%= link_to "編集", edit_engineer_path(current_engineer), class: "btn btn-md btn-warning" %>
+    <!-- bloc-1 END -->
+    <div class="container">
+      <div class="mt-5 user-table">
+        <label class="devise-label">基本情報</label>
+        <table class="table table-sm">
+          <tr>
+            <th>登録情報</th>
+            <td><%= current_engineer.study.name %></td>
+          <tr>
+          <tr>
+            <th>名前</th>
+            <td><%= current_engineer.name %></td>
+          </tr>
+          <tr>
+            <th>名前(カナ)</th>
+            <td><%= current_engineer.name_kana %></td>
+          </tr>
+          <tr>
+            <th>サイト表示名</th>
+            <td><%= current_engineer.nickname %></td>
+          </tr>
+          <tr>
+            <th>email</th>
+            <td><%= current_engineer.email %></td>
+          </tr>
+          <tr>
+            <th>開発言語</th>
+            <td><%= current_engineer.language.name %></td>
+          </tr>
+          <tr>
+            <th>自己PR</th>
+            <td><%= current_engineer.profile %></td>
+          </tr>
+        </table>
+        <div class="text-right">
+          <%= link_to "編集", edit_engineer_path(current_engineer), class: "btn btn-md btn-warning" %>
+        </div>
       </div>
-    </div>
 
-    <div class="mt-5 user-table">
-      <label class="devise-label">登録クレジットカード情報</label><br>
-      <table class="table table-sm">
-        <tr>
-          <td>カード番号</td>
-          <td>**** **** **** <%= @default_card_information.last4 %></td>
-        </tr>
-        <tr>
-          <td>有効期限</td>
-          <td><%= @default_card_information.exp_month %>/<%= @default_card_information.exp_year %></td>
-        </tr>
-        <tr>
-          <td>ブランド</td>
-          <td><%= @default_card_information.brand %></td>
-        </tr>
-      </table>
-      <div class="text-right">
-        <%= link_to "編集", edit_card_path(current_engineer.card), class: "btn btn-md btn-warning" %>
+      <div class="mt-5 user-table">
+        <label class="devise-label">登録クレジットカード情報</label><br>
+        <table class="table table-sm">
+          <tr>
+            <td>カード番号</td>
+            <td>**** **** **** <%= @default_card_information.last4 %></td>
+          </tr>
+          <tr>
+            <td>有効期限</td>
+            <td><%= @default_card_information.exp_month %>/<%= @default_card_information.exp_year %></td>
+          </tr>
+          <tr>
+            <td>ブランド</td>
+            <td><%= @default_card_information.brand %></td>
+          </tr>
+        </table>
+        <div class="text-right">
+          <%= link_to "編集", edit_card_path(current_engineer.card), class: "btn btn-md btn-warning" %>
+        </div>
       </div>
     </div>
   </div>

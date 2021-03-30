@@ -54,6 +54,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :trainings, only: [:index, :show]
+  resources :trainings, only: [:index, :show, :new, :create, :edit, :update]
 
 end
