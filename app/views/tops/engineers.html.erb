@@ -6,10 +6,12 @@
 
         <% @engineers.each do |engineer| %>
           <div class="col-lg-4 col-md-4">
-            <div class="card mt-2">
+            <div class="card mt-2 shadow mb-5 bg-white rounded">
               <div class="card-body team-card">
                 <% if engineer.image.attached? %>
                   <%= image_tag engineer.image, class: "rounded-circle mx-auto d-block mt-5 lazyload face-image", width: "100px;" %>
+                <% else %>
+                  <%= image_tag "placeholder-user.png", class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
                 <% end %>
                 <h3 class="text-center mg-sm">
                   <%= engineer.nickname %>さん

@@ -174,3 +174,6 @@
 .fb_iframe_widget > span {
   vertical-align: baseline !important;
 }
+.card {
+  border-radius: 15px !important;
+}
