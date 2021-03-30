@@ -19,21 +19,22 @@
       <div class="row">
 
         <div class="col-md-4">
-          <div class="card">
-          <!--image class: "card-img-top"-->
+
+          <div class="card shadow-sm p-3 mb-5 bg-white rounded">
+            <%= image_tag "kansu1.jpg", class: "card-img-top", style: "height:100px;object-fit:cover;" %>
             <div class="card-body">
               <h4 class="card-title">Lesson1</h4>
               <p class="card-text">はじめに</p>
             </div>
             <ul class="list-group list-group-flush">
-              <% @trainings.each do |training| %>
-                <li class="list-group-item"><%= training.title %></li>
+              <% @kansu1.each do |kansu1| %>
+                <%= link_to training_path(kansu1) do %>
+                  <li class="list-group-item list-hover"><%= kansu1.title %></li>
+                <% end %>
               <% end %>
             </ul>
-            <div class="card-body">
-              <a href="#">リンク</a>
-            </div>
           </div>
+
         </div>
 
       </div>

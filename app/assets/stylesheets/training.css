@@ -9,3 +9,7 @@
 	font-weight:900;
 	font-style:italic;
 }
+.list-hover:hover {
+	background-color: lightgray;
+	transition: .3s;
+}
