@@ -1,38 +1,3 @@
 <div class="wrapper">
-  <!-- bloc-10 -->
-  <div class="bloc l-bloc " id="bloc-10">
-    <div class="container bloc-lg shadow p-3 mb-5 mt-5 bg-white rounded">
-      <div class="row">
-        <div class="col training-wrap">
-          <%= form_with model: @training, method: :post, local: true do |f| %>
-
-            <div class="mt-2">
-              <%= f.label :"ジャンル", class: "color-normal" %><br>
-              <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form-control", id:"prefecture"}) %>
-            </div>
-
-            <div class="mt-2">
-              <%= f.label :"Lesson", class: "color-normal" %><br>
-              <%= f.collection_select(:lesson_id, Lesson.all, :id, :name, {}, {class:"form-control", id:"prefecture"}) %>
-            </div>
-            
-            <div class="mt-2">
-              <%= f.label :"記事タイトル", class: "color-normal" %>
-              <%= f.text_field :title, class: "form-control" %>
-            </div>
-
-            <div class="mt-2">
-              <%= f.label :"記事内容", class: "color-normal" %>
-              <%= f.text_area :detail, class: "form-control", rows: "20", cols: "50" %>
-            </div>
-
-            <div class="mt-5">
-              <%= f.submit "投稿", class: "bloc-button btn btn-d btn-lg btn-block btn-rd question-submit-btn" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- bloc-10 END -->
+  <%= render partial: "form" %>
 </div>
