@@ -1,65 +1,40 @@
-<% if false %>
 <div class="wrapper">
-  <div class="customer-form">
-    <h2 class="devise-title">エンジニア用ログインページ</h2>
-
-    <div class="text-right">
-      <i class="far fa-hand-point-right finger"></i>
-      <%= link_to "お客様用ログインページはこちらから", new_customer_session_path, class: "btn btn-danger btn-sm" %>
-    </div>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field mt-2">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field mt-2">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :パスワードを記憶する %>
-        </div>
-      <% end %>
-
-      <div class="devise-submit-box mt-4">
-        <%= f.submit "ログイン", class: "devise-submit" %>
-      </div>
-    <% end %>
-  </div>
-</div>
-<% end %>
-
-<div class="bloc l-bloc" id="bloc-2">
-  <div class="container bloc-lg">
-    <div class="row">
-      <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-        <label>
-          <strong>エンジニア様　ログインページ</strong><br>
-        </label>
-        <div class="form-group sign-in-wrap">
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", autocomplete: "current-password", class: "form-control" %>
-
-            <%= f.label :password %>
-            <%= f.password_field :password, class: "form-control" %>
-
-            <div class="form-check sign-in-checkbox">
-              <%= f.check_box :remember_me, class: "form-check-input" %>
-              <%= f.label :パスワードを記憶する, class: "form-check-label" %>
+  <!-- bloc-9 -->
+  <div class="bloc l-bloc " id="bloc-9">
+    <div class="container bloc-lg">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 offset-md-2 col-md-8">
+          <div class="devise-wrap">
+            <div class="form-group">
+              <h3 class="mg-md color-normal devise-title">
+                エンジニア様 ログインページ<br>
+              </h3>
             </div>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-            <div class="text-center">
-              <%= f.submit "Sign In", class: "btn btn-rd submit-btn btn-princeton-orange btn-glossy btn-style btn-lg" %>
-            </div>
-          <% end %>
+              <div class="form-group">
+                <%= f.label :email, class: "color-normal" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", autocomplete: "current-password", class: "form-control" %>
+              </div>
+            
+              <div class="form-group">
+                <%= f.label :password, class: "color-normal" %>
+                <%= f.password_field :password, class: "form-control" %>
+              </div>
+            
+              <div class="form-check mt-3">
+                <%= f.check_box :remember_me, class: "form-check-input" %>
+                <%= f.label :パスワードを記憶する, class: "form-check-label" %>
+              </div> 
+
+              <div class="text-center mt-5">
+                <%= f.submit "Login", class: "bloc-button btn btn-d btn-lg btn-block devise-signin btn-rd" %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- bloc-9 END -->
 </div>

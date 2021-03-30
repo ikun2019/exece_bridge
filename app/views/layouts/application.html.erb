@@ -8,7 +8,7 @@
 
     <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
 
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
@@ -40,42 +40,48 @@
 					<button id="nav-toggle" type="button" class="ml-auto ui-navbar-toggler navbar-toggler border-0 p-0" data-toggle="collapse" data-target=".navbar-25436" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<div class="collapse navbar-collapse navbar-25436">
-						<ul class="site-navigation nav navbar-nav ml-auto">
-							<li class="nav-item">
-								<a href="index.html" class="nav-link">Home</a>
-							</li>
-							<li>
-								<div class="btn-group btn-dropdown">
-									<a href="#" class="btn dropdown-toggle  btn-d  btn-lg btn-style-none drop" data-toggle="dropdown" aria-expanded="false">User</a>
-									<ul class="dropdown-menu" role="menu">
-                    <% if customer_signed_in? %>
-                      <li>
-                        <%= link_to "ユーザー情報", customer_path(current_customer), class: "dropdown-item a-block" %>
-                      </li>
-                      <li>
-                        <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "dropdown-item a-block" %>
-                      </li>
-                      <% elsif engineer_signed_in? %>
-                      <li>
-                        <%= link_to "ユーザー情報", engineer_path(current_engineer), class: "dropdown-item a-block" %>
-                      </li>
-                      <li>
-                        <%= link_to "ログアウト", destroy_engineer_session_path, method: :delete, class: "dropdown-item a-block" %>
-                      </li>
-                      <% else %>
-                      <li>
-                        <%= link_to "ログイン", new_customer_session_path, class: "dropdown-item a-block" %>
-                      </li>
-                      <li>
-                        <%= link_to '新規登録',new_customer_registration_path, class: "dropdown-item a-block" %>
-                      </li>
-                    <% end %>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
+
+          <% if (customer_signed_in? || engineer_signed_in?) %>
+            <div class="collapse navbar-collapse navbar-25436">
+              <ul class="site-navigation nav navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li>
+                  <div class="btn-group btn-dropdown">
+                    <a href="#" class="btn dropdown-toggle  btn-d  btn-lg btn-style-none drop" data-toggle="dropdown" aria-expanded="false">User</a>
+                    <ul class="dropdown-menu" role="menu">
+                      <% if customer_signed_in? %>
+                        <li>
+                          <%= link_to "ユーザー情報", customer_path(current_customer), class: "dropdown-item a-block" %>
+                        </li>
+                        <li>
+                          <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "dropdown-item a-block" %>
+                        </li>
+                        <% elsif engineer_signed_in? %>
+                        <li>
+                          <%= link_to "ユーザー情報", engineer_path(current_engineer), class: "dropdown-item a-block" %>
+                        </li>
+                        <li>
+                          <%= link_to "ログアウト", destroy_engineer_session_path, method: :delete, class: "dropdown-item a-block" %>
+                        </li>
+                        <% else %>
+                        <li>
+                          <%= link_to "ログイン", new_customer_session_path, class: "dropdown-item a-block" %>
+                        </li>
+                        <li>
+                          <%= link_to '新規登録',new_customer_registration_path, class: "dropdown-item a-block" %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          <% else %>
+            <div class="collapse navbar-collapse navbar-25436"></div>
+          <% end %>
+
 					<div class="navbar-content-area d-block col-12 col-md-3 col-lg-2">
 						<div class="row">
 
