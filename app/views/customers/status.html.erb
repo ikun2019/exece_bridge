@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container mt-5">
     <p class="p-title"><span><%= current_customer.nickname %>様の案件進捗確認</span></p>
-    <div class="container customer-status-wrap">
+    <div class="container customer-status-wrap shadow-sm p-3 mb-5 bg-white rounded">
       <table class="table table-hover table-sm mt-3">
         <tr class="text-center">
           <th class="table-th">案件番号</th>
@@ -18,9 +18,7 @@
               <% end %>
             </td>
             <td class="align-middle">
-              <%= link_to request_path(request.id) do %>
-                <%= request.title %>
-              <% end %>
+              <%= request.title %>
             </td>
             <td class="align-middle"><%= l request.created_at %></td>
             <td class="align-middle">
