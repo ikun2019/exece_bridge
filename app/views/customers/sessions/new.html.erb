@@ -17,7 +17,7 @@
 
               <div class="form-group">
                 <%= f.label :password, class: "color-normal" %>
-                <%= f.password_field :password, class: "form-control" %>
+                <%= f.password_field :password, class: "form-control", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "半角英数字で入力" %>
               </div>
 
               <div class="form-check mt-3">

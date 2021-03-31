@@ -1,13 +1,14 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const createHTML = (blob) => {
-    const img = document.querySelector('.face-image');
-    img.setAttribute('src', blob);
-  };
+if (document.URL.match(/registrations/)) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const createHTML = (blob) => {
+      const img = document.querySelector('.face-image');
+      img.setAttribute('src', blob);
+    };
 
-  document.querySelector('#input_image').addEventListener('change', (e) => {
-    let file = e.target.files[0];
-    let blob = window.URL.createObjectURL(file);
-    createHTML(blob);
+    document.querySelector('#input_image').addEventListener('change', (e) => {
+      let file = e.target.files[0];
+      let blob = window.URL.createObjectURL(file);
+      createHTML(blob);
+    });
   });
-});
-
+}

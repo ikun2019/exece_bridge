@@ -12,7 +12,7 @@ $(function(){
 	
 	$('a[onclick^="scrollToTarget"]').click(function(e){e.preventDefault()}); // Prevent page jump on scroll to links
 	$('.nav-item [data-active-page]').addClass($('.nav-item [data-active-page]').attr('data-active-page')); // Apply Active Link Classes
-	$('[data-toggle="tooltip"]').tooltip(); // Initialise Tool tips
+	//$('[data-toggle="tooltip"]').tooltip(); // Initialise Tool tips
 });
 
 // Loading page complete
