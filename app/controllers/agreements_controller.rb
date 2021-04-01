@@ -1,4 +1,5 @@
 class AgreementsController < ApplicationController
+  before_action :authenticate_customer!
 
   def create
     @request = Request.find(params[:request_id])

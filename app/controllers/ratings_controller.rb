@@ -1,4 +1,6 @@
 class RatingsController < ApplicationController
+  before_action :authenticate_engineer!, only: [:index]
+  before_action :authenticate_customer!, except: [:index]
 
   def new
     @rating = Rating.new

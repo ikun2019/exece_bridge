@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+  before_action :authenticate_engineer!
   def create
     @request = Request.find(params[:request_id])
     @order = Order.new(request_id: @request.id, engineer_id: current_engineer.id)

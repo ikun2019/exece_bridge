@@ -1,4 +1,5 @@
 class TrainingsController < ApplicationController
+  before_action :authenticate_engineer!
 
   def index
     @kansu1 = Training.all.where(genre_id: 1, lesson_id: 1)
