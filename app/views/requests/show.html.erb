@@ -1,84 +1,11 @@
-<% if false %>
-<div class="wrapper">
-  <div class="container request-infomation mt-4 p-4">
-    <div class="text-center">
-      <% if flash[:notice] %>
-        <p class="flash"><%= flash[:notice] %></p>
-      <% end %>
-    </div>
-    <table class="table">
-      <tr>
-        <td class=w-25><label class="request-label">管理No</label></td>
-        <td class="request-text align-bottom w-75"><%= @request.id %></td>
-      </tr>
-      <tr>
-        <td><label class="request-label">依頼タイトル</label></td>
-        <td class="request-text align-bottom"><%= @request.title %></td>
-      </tr>
-      <tr>
-        <td><label class="request-label">依頼詳細</label></td>
-        <td class="request-text align-bottom"><%= @request.content %></td>
-      </tr>
-      <tr>
-        <td><label class="request-label">予算</label></td>
-        <td class="request-text align-bottom"><%= @request.budget.name %></td>
-      </tr>
-      <tr>
-        <td><label class="request-label">期限</label></td>
-        <td class="request-text align-bottom"><%= @request.term.name %></td>
-      </tr>
-      <tr>
-        <td><label class="request-label">対応方法</label></td>
-        <td class="request-text align-bottom"><%= @request.approach.name %></td>
-      </tr>
-      <tr>
-        <td><label class="request-label">備考欄</label></td>
-        <td class="request-text align-bottom"><%= @request.other %></td>
-      </tr>
-    </table>
-    <div class="text-center">
-      <% if engineer_signed_in? && @applied == true && @request.agreements.blank? %>
-        <%= button_to "リクエストをキャンセル", request_order_path(@request), method: :delete, data: {confirm: "依頼をキャンセルしてよろしいですか？"}, class: "btn btn-danger" %>
-      <% elsif engineer_signed_in? && @applied == false && @request.agreements.blank? %>
-        <%= button_to "リクエスト", request_orders_path(@request), method: :post, class: "btn btn-success" %>
-      <% elsif engineer_signed_in? && @request.agreements.where(engineer_id: current_engineer.id) %>
-        <div class="text-left">
-          <p>この依頼は<%= current_engineer.nickname %>さんに確定しました。</p>
-          <p>下記、クライアントの連絡先に連絡して案件の詳細等について、ご相談してください。</p>
-          <table class="table table-sm table-bordered">
-            <tr>
-              <th class="request-table-th text-center">クライアント名</th>
-              <td><%= @request.customer.nickname %></td>
-            <tr>
-            <tr>
-              <th class="text-center">email</th>
-              <td><%= @request.customer.email %></td>
-            </tr>
-            <tr>
-              <th class="text-center">Tel</th>
-              <td><%= @request.customer.phone_number %></td>
-            </tr>
-          </table>
-        </div>
-      <% elsif engineer_signed_in? && @request.agreements.present? %>
-        <p>この依頼は既に対応するエンジニアが確定しています。</p>
-      <% elsif customer_signed_in? %>
-        <% if @request.agreements.present? %>
-          <%= render partial: "replied" %>
-        <% else %>
-          <%= render partial: "reply" %>
-        <% end %>
-      <% else %>
-        <p>*** ログインが必要です ***</p>
-      <% end %>
-    </div>
-  </div>
-</div>
-<% end %>
-
 <div class="wrapper">
   <!-- bloc-0 -->
-	<div class="container">
+  <div class="container mt-2">
+    <%= link_to 'javascript:history.back()' do %>
+      <button class="btn btn-link">戻る</button>
+    <% end %>
+  </div>
+	<div class="container mt-2">
 		<div class="row">
 			<div class="col request-show-wrap">
 				<div class="row">

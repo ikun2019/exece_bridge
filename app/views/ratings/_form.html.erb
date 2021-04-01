@@ -1,5 +1,10 @@
 <div class="wrapper">
-  <div class="container">
+  <div class="container mt-2">
+    <%= link_to 'javascript:history.back()' do %>
+      <button class="btn btn-link">戻る</button>
+    <% end %>
+  </div>
+  <div class="container mt-2">
     <div class="rating-group shadow-sm p-3 mb-5 mt-3 bg-white rounded">
       <label class="rating-title"><%= @engineer.nickname %>さんの評価</label>
       <%= form_with(model: [@engineer, @rating], local: true) do |f| %>

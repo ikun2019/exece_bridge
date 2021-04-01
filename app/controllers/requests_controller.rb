@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
-  before_action :authenticate_engineer!, only: [:index, :show]
-  before_action :authenticate_customer!, only: [:show, :new, :create, :completed]
+  before_action :authenticate_engineer_original!, only: [:index, :show]
+  before_action :authenticate_customer_original!, only: [:show, :new, :create, :completed]
 
   def index
     @requests = Request.all.order("created_at DESC").includes(:customer)
@@ -46,6 +46,22 @@ class RequestsController < ApplicationController
   private
   def request_params
     params.require(:request).permit(:title, :content, :budget_id, :term_id, :approach_id, :other).merge(customer_id: current_customer.id)
+  end
+  
+  def authenticate_engineer_original!
+    if engineer_signed_in?
+      true
+    else
+      root_path
+    end
+  end
+  
+  def authenticate_customer_original!
+    if customer_signed_in?
+      true
+    else
+      root_path
+    end
   end
   
   

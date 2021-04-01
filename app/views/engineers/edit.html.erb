@@ -1,5 +1,10 @@
 <div class="wrapper">
-  <div class="container">
+  <div class="container mt-2">
+    <%= link_to 'javascript:history.back()' do %>
+      <button class="btn btn-link">戻る</button>
+    <% end %>
+  </div>
+  <div class="container mt-2">
     <div class="shadow-sm p-3 mb-5 bg-white rounded mt-5 d-flex justify-content-center">
       <%= form_with model: @user, method: :put, local: true do |f| %>
 
