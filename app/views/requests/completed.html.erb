@@ -1,5 +1,10 @@
 <div class="wrapper">
-  <div class="container mt-5">
+  <div class="container mt-2">
+    <%= link_to 'javascript:history.back()' do %>
+      <button class="btn btn-link">戻る</button>
+    <% end %>
+  </div>
+  <div class="container mt-2">
     <p class="p-title"><span><%= current_customer.nickname %>様の完了済案件</span></p>
     <div class="container customer-status-wrap shadow-sm p-3 mb-5 bg-white rounded">
       <table class="table table-hover table-sm">
