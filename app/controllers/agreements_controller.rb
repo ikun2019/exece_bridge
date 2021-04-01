@@ -1,5 +1,6 @@
 class AgreementsController < ApplicationController
-
+  before_action :authenricate_customer!
+  
   def create
     @request = Request.find(params[:request_id])
     @agreement_complete = AgreementComplete.new(agreement_complete_params)
