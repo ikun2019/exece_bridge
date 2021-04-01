@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_engineer!
 
   def index
     @questions = Question.all.order("created_at DESC")
