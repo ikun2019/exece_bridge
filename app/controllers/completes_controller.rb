@@ -1,4 +1,5 @@
 class CompletesController < ApplicationController
+  before_action :authenticate_engineer!
 
   def create
   end
