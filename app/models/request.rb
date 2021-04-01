@@ -10,6 +10,17 @@ class Request < ApplicationRecord
   has_many :agreements
   has_one :complete
 
+  with_options presence: true do
+    validates :customer_id
+    validates :title
+    validates :content
+    with_options numericality: {other_than: 1} do
+      validates :budget_id
+      validates :term_id
+      validates :approach_id
+    end
+  end
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :approach
   belongs_to :budget
