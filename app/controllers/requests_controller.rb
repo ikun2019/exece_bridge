@@ -1,5 +1,7 @@
 class RequestsController < ApplicationController
-  
+  before_action :authenticate_engineer!, only: [:index, :show]
+  before_action :authenticate_customer!, only: [:show, :new, :create, :completed]
+
   def index
     @requests = Request.all.order("created_at DESC").includes(:customer)
   end
