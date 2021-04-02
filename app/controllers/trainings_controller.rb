@@ -36,7 +36,7 @@ class TrainingsController < ApplicationController
     if engineer_signed_in? && current_engineer.premium
       true
     elsif engineer_signed_in? && !current_engineer.premium
-      redirect_to engineers_path, notice: "こちらのページは有料会員に登録する必要があります。"
+      redirect_to engineers_path, notice: "こちらのページを閲覧するには有料会員に登録する必要があります。"
     else
       redirect_to new_customer_session_path
     end
