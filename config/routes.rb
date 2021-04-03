@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   devise_for :engineers
   resources :cards, only: [:index, :new, :create, :destroy, :show, :edit, :update]
 
   devise_for :customers
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "tops#index"
 
   resources :tops, only: [:index] do
