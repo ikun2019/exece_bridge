@@ -41,6 +41,7 @@
 | language_id     | integer | default: 1  |
 | premium         | boolean | default: 0  |
 | study           | boolean | default: 1  |
+| role            | integer | default: 0  |
 
 ### Association
 - has_many :comments

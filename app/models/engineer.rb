@@ -13,6 +13,8 @@ class Engineer < ApplicationRecord
   has_many :ratings
   has_many :questions
   has_many :answers
+
+  enum role: {user: 0, admin: 1}
   
   VALIS_EISU_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i
   with_options presence: true do
