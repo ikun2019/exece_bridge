@@ -22,7 +22,7 @@ class Customer < ApplicationRecord
     validates :post_code, format: {with: /\A\d{3}[-]\d{4}\z/, message: "：「-」を入れた郵便番号を入力してください"}
     validates :prefecture_id, format: {with: /\A[0-9]+\z/}
     validates :city, format: {with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: "：「ひらがな」「カタカナ」「漢字」で入力してください"}
-    validates :house_numbeer
+    validates :house_number
     validates :phone_number, format: {with: /\A\d{11}\z/, message: "：「-」無し、11桁で入力してください"}
     validates :email, format: {with: /\A\S+@\S+\.\S+\z/, message: "：正しいemailを入力してください"}
     validates :password, format: {with: VALIS_EISU_REGEX, message: "：パスワードは半角英数字混合8文字以上で作成してください"}
