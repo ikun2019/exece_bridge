@@ -59,27 +59,33 @@
           <%= link_to "編集", edit_engineer_path(current_engineer), class: "btn btn-md btn-warning" %>
         </div>
       </div>
-
-      <div class="mt-5 user-table">
-        <label class="devise-label">登録クレジットカード情報</label><br>
-        <table class="table table-sm">
-          <tr>
-            <td>カード番号</td>
-            <td>**** **** **** <%= @default_card_information.last4 %></td>
-          </tr>
-          <tr>
-            <td>有効期限</td>
-            <td><%= @default_card_information.exp_month %>/<%= @default_card_information.exp_year %></td>
-          </tr>
-          <tr>
-            <td>ブランド</td>
-            <td><%= @default_card_information.brand %></td>
-          </tr>
-        </table>
-        <div class="text-right">
-          <%= link_to "編集", edit_card_path(current_engineer.card), class: "btn btn-md btn-warning" %>
+    
+      <% if current_engineer.card.present? %>
+        <div class="mt-5 user-table">
+          <label class="devise-label">登録クレジットカード情報</label><br>
+          <table class="table table-sm">
+            <tr>
+              <td>カード番号</td>
+              <td>**** **** **** <%= @default_card_information.last4 %></td>
+            </tr>
+            <tr>
+              <td>有効期限</td>
+              <td><%= @default_card_information.exp_month %>/<%= @default_card_information.exp_year %></td>
+            </tr>
+            <tr>
+              <td>ブランド</td>
+              <td><%= @default_card_information.brand %></td>
+            </tr>
+          </table>
+          <div class="text-right">
+            <%= link_to "編集", edit_card_path(current_engineer.card), class: "btn btn-md btn-warning" %>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <div class="user-table mt-5">
+          <%= link_to "カード情報を登録", cards_path, class: "btn btn-info btn-lg btn-block" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -13,16 +13,17 @@ class Engineer < ApplicationRecord
   has_many :ratings
   has_many :questions
   has_many :answers
-
+  
+  VALIS_EISU_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i
   with_options presence: true do
-    validates :first_name, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "「ひらがな」「漢字」で入力してください"}
-    validates :last_name, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "「ひらがな」「漢字」で入力してください"}
-    validates :first_name_kana, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "「カタカナ」で入力してください"}
-    validates :last_name_kana, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "「カタカナ」で入力してください"}
+    validates :first_name, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "：「ひらがな」「漢字」で入力してください"}
+    validates :last_name, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "：「ひらがな」「漢字」で入力してください"}
+    validates :first_name_kana, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "：「カタカナ」で入力してください"}
+    validates :last_name_kana, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "：「カタカナ」で入力してください"}
     validates :nickname
-    validates :email, format: {with: /\A\S+@\S+\.\S+\z/, message: "正しいemailを入力してください"}
-    validates :password, format: {with: /\A[a-zA-Z0-9]+\z/, message: "半角英数字を入力してください"}
-    validates :password_confirmation, format: {with: /\A[a-zA-Z0-9]+\z/, message: "半角英数字を入力してください"}
+    validates :email, format: {with: /\A\S+@\S+\.\S+\z/, message: "：正しいemailを入力してください"}
+    validates :password, format: {with: VALIS_EISU_REGEX, message: "：パスワードは半角英数字混合8文字以上で作成してください"}
+    validates :password_confirmation, format: {with: VALIS_EISU_REGEX, message: "：パスワードは半角英数字混合8文字以上で作成してください"}
   end
 
   def name
