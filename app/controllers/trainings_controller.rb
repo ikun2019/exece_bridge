@@ -6,12 +6,20 @@ class TrainingsController < ApplicationController
   end
 
   def new
-    @training = Training.new
+    if current_engineer.role == "admin"
+      @training = Training.new
+    else
+      redirect_to trainings_path
+    end
   end
 
   def create
-    Training.create(training_params)
-    redirect_to trainings_path
+    if current_engineer.role == "admin"
+      Training.create(training_params)
+      redirect_to trainings_path
+    else
+      redirect_to trainings_path
+    end
   end
 
   def show
@@ -19,12 +27,20 @@ class TrainingsController < ApplicationController
   end
 
   def edit
-    @training = Training.find(params[:id])
+    if current_engineer.role == "admin"
+      @training = Training.find(params[:id])
+    else
+      redirect_to trainings_path
+    end
   end
 
   def update
-    Training.update(training_params)
-    redirect_to trainings_path
+    if current_engineer.role == "admin"
+      Training.update(training_params)
+      redirect_to trainings_path
+    else
+      redirect_to trainings_path
+    end
   end
   
   private
