@@ -54,23 +54,6 @@ class RequestsController < ApplicationController
     params.require(:request).permit(:title, :content, :budget_id, :term_id, :approach_id, :other).merge(customer_id: current_customer.id)
   end
   
-  # def engineer_singin?
-  #   if engineer_signed_in?
-  #     true
-  #   else
-  #     redirect_to new_engineer_session_path
-  #   end
-  # end
-  
-  # def engineer_premium?
-  #   if current_engineer.premium
-  #     before_action :authenticate_engineer!, only: [:index, :show]
-  #   else
-  #     before_action :authenticate_engineer!, only: [:index]
-  #   end
-  # end
-  
-  
   def authenticate_customer_original!
     if customer_signed_in?
       true
