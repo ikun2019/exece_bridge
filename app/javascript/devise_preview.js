@@ -1,4 +1,4 @@
-if (document.URL.match(/registrations/)) {
+if (document.URL.match(/registrations/) || document.URL.match(/customers/)) {
   document.addEventListener("DOMContentLoaded", () => {
     const createHTML = (blob) => {
       const img = document.querySelector('.face-image');

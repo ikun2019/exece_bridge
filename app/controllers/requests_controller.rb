@@ -1,22 +1,21 @@
 class RequestsController < ApplicationController
-  before_action :authenticate_engineer!
-  before_action :authenticate_customer_original!, only: [:show, :new, :create, :completed]
+  before_action :authenticate_engineer!, only: [:show], if: :engineer_signed_in?
+  before_action :authenticate_customer!, only: [:show, :new, :create, :completed], if: :customer_signed_in?
 
   def index
     @requests = Request.all.order("created_at DESC").includes(:customer)
   end
   
   def show
-    if current_engineer.premium
-      true
-    else
-      redirect_to requests_path, notice: "こちらのページを閲覧するには有料会員に登録する必要があります。"
-    end
-    
     @request = Request.find(params[:id])
     @agree = Agreement.new
 
     if engineer_signed_in?
+      if current_engineer.premium
+        true
+      else
+        redirect_to requests_path, notice: "こちらのページを閲覧するには有料会員に登録する必要があります。"
+      end
       @applied = @request.engineer_apply(current_engineer.id)
     end
     @order = Order.new
@@ -53,14 +52,6 @@ class RequestsController < ApplicationController
   def request_params
     params.require(:request).permit(:title, :content, :budget_id, :term_id, :approach_id, :other).merge(customer_id: current_customer.id)
   end
-  
-  def authenticate_customer_original!
-    if customer_signed_in?
-      true
-    else
-      root_path
-    end
-  end
-  
-  
+
+
 end

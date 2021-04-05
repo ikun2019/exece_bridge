@@ -3,10 +3,19 @@
   margin-left: auto;
   margin-right: auto;
 }
-.card-title {
-	font-size: 21px;
+.card-label {
+  border-bottom: solid 3px #cce4ff;
+  position: relative;
+  font-size: 20px;
   font-weight: bold;
-  color: #454839;
+}
+.card-label:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #5472cd;
+  bottom: -3px;
+  width: 20%;
 }
 .form-text {
   font-size: 18px;
