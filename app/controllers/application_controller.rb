@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :devise_parameter_sanitizer, if: :devise_controller?
   
-  # rescue_from SecurityError do |exception|
-  #   redirect_to customers_path, notice: "管理者権限がありません"
-  # end
-
   rescue_from SecurityError do |exception|
     redirect_to engineers_path, notice: "管理者権限がありません"
   end

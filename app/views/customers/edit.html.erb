@@ -1,20 +1,20 @@
 <div class="wrapper">
   <div class="container mt-2">
-    <%= link_to 'javascript:history.back()' do %>
-      <button class="btn btn-link">戻る</button>
-    <% end %>
+    <%# link_to 'javascript:history.back()' do %>
+      <!--button class="btn btn-link">戻る</button-->
+    <%# end %>
   </div>
   <div class="container mt-2">
     <div class="shadow-sm p-3 mb-5 bg-white rounded mt-5 d-flex justify-content-center">
-      <%= form_with model: @user, method: :put, local: true do |f| %>
+      <%= form_with model: @user, local: true do |f| %>
 
         <div class="container bloc-sm">
           <div class="row">
             <div class="text-center">
               <label for="input_image">
-                <% if current_customer.image.attached? %>
+                <% if @user.image.attached? %>
                   <div class="customer-image">
-                    <%= image_tag current_customer.image, class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
+                    <%= image_tag @user.image, class: "img-fluid mx-auto d-block lazyload face-image", alt: "placeholder user" %>
                   </div>
                 <% else %>
                   <div class="customer-image">
@@ -47,38 +47,39 @@
         </div>
 
         <div class="field mt-3">
-        <%= f.label :"郵便番号" %><span class="badge badge-danger ml-2">必須</span><br>
-        <%= f.text_field :post_code, placeholder: "例)123-4567", maxlength: "8", class: "post-form" %>
-      </div>
+          <%= f.label :"郵便番号" %><span class="badge badge-danger ml-2">必須</span><br>
+          <%= f.text_field :post_code, placeholder: "例)123-4567", maxlength: "8", class: "post-form" %>
+        </div>
 
-      <div class="field mt-3">
-        <%= f.label :"都道府県" %><span class="badge badge-danger ml-2">必須</span><br>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
-      </div>
+        <div class="field mt-3">
+          <%= f.label :"都道府県" %><span class="badge badge-danger ml-2">必須</span><br>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+        </div>
 
-      <div class="field mt-3">
-        <%= f.label :"市区町村" %><span class="badge badge-danger ml-2">必須</span><br>
-        <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区", class: "address-form" %>
-      </div>
+        <div class="field mt-3">
+          <%= f.label :"市区町村" %><span class="badge badge-danger ml-2">必須</span><br>
+          <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区", class: "address-form" %>
+        </div>
 
-      <div class="field mt-3">
-        <%= f.label :"番地" %><span class="badge badge-danger ml-2">必須</span><br>
-        <%= f.text_field :house_number, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1", class: "address-form" %>
-      </div>
+        <div class="field mt-3">
+          <%= f.label :"番地" %><span class="badge badge-danger ml-2">必須</span><br>
+          <%= f.text_field :house_number, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1", class: "address-form" %>
+        </div>
 
-      <div class="field mt-3">
-        <%= f.label :"建物名" %><span class="badge badge-info ml-2">任意</span><br>
-        <%= f.text_field :building_name, class:"input-default", id:"building", placeholder:"例）柳ビル103", class: "address-form" %>
-      </div>
+        <div class="field mt-3">
+          <%= f.label :"建物名" %><span class="badge badge-info ml-2">任意</span><br>
+          <%= f.text_field :building_name, class:"input-default", id:"building", placeholder:"例）柳ビル103", class: "address-form" %>
+        </div>
 
-      <div class="field mt-3">
-        <%= f.label :"電話番号" %><span class="badge badge-danger ml-2">必須</span><br>
-        <%= f.text_field :phone_number, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11", class: "phone-form", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "半角数字" %>
-      </div>
+        <div class="field mt-3">
+          <%= f.label :"電話番号" %><span class="badge badge-danger ml-2">必須</span><br>
+          <%= f.text_field :phone_number, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11", class: "phone-form", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "半角数字" %>
+        </div>
 
         <div class="devise-submit-box mt-4">
           <%= f.submit "更新", class: "devise-submit" %>
         </div>
+
       <% end %>
 
     </div>
