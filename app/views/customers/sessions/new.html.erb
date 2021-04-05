@@ -20,10 +20,12 @@
                 <%= f.password_field :password, class: "form-control", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "半角英数字で入力" %>
               </div>
 
-              <div class="form-check mt-3">
-                <%= f.check_box :remember_me, class: "form-check-input" %>
-                <%= f.label :パスワードを記憶する, class: "form-check-label" %>
-              </div>
+              <% if devise_mapping.rememberable? %>
+                <div class="form-check mt-3">
+                  <%= f.check_box :remember_me, class: "form-check-input" %>
+                  <%= f.label :パスワードを記憶する, class: "form-check-label" %>
+                </div>
+              <% end %>
 
               <div class="text-center mt-5">
                 <%= f.submit "Login", class: "btn btn-rd submit-btn btn-princeton-orange btn-glossy btn-style btn-lg" %>

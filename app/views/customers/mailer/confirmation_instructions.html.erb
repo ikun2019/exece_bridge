@@ -1,5 +1,8 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= @email %>さん</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>
+Exece Bridgeにご登録いただき有り難うございます。<br>
+下記、リンク先をクリックいただければ認証が完了いたします。
+</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to '認証を完了する', confirmation_url(@resource, confirmation_token: @token) %></p>
