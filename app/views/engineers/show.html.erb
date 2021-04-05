@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container mt-2">
     <%= link_to 'javascript:history.back()' do %>
-      <button class="btn btn-link">戻る</button>
+      <button class="btn btn-link">back</button>
     <% end %>
   </div>
   <div class="pb-5 mt-2">
@@ -43,10 +43,6 @@
             <td><%= current_engineer.nickname %></td>
           </tr>
           <tr>
-            <th>email</th>
-            <td><%= current_engineer.email %></td>
-          </tr>
-          <tr>
             <th>開発言語</th>
             <td><%= current_engineer.language.name %></td>
           </tr>
@@ -86,6 +82,10 @@
           <%= link_to "カード情報を登録", cards_path, class: "btn btn-info btn-lg btn-block" %>
         </div>
       <% end %>
+
+      <div class="user-table mt-2">
+        <%= link_to "メールアドレス・パスワードの編集", edit_engineer_registration_path, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
     </div>
   </div>
 </div>
