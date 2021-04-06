@@ -71,3 +71,6 @@ gem 'pry-rails'
 gem 'payjp'
 gem 'activeadmin'
 gem 'rails-i18n'
+
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
