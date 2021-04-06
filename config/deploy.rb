@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.15.0"
+lock "3.16.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "ExeceBridge"
+set :repo_url, "git@github.com:ikun2019/exece_bridge.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -24,7 +24,7 @@ set :repo_url, "git@example.com:me/my_repo.git"
 # append :linked_files, "config/database.yml"
 
 # Default value for linked_dirs is []
-# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -37,3 +37,26 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+namespace :deploy do
+  desc "Make sure local git is in sync with remote."
+  task :confirm do
+    on roles(:app) do
+      puts "This stage is '#{fetch(:stage)}'. Deploying branch is '#{fetch(:branch)}'."
+      puts 'Are you sure? [y/n]'
+      ask :answer, 'n'
+      if fetch(:answer) != 'y'
+        puts 'deploy stopped'
+        exit
+      end
+    end
+  end
+
+  desc 'Initial Deploy'
+  task :initial do
+    on roles(:app) do
+      invoke 'deploy'
+    end
+  end
+
+  before :starting, :confirm
+end
