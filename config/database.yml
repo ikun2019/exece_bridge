@@ -52,4 +52,4 @@ production:
   <<: *default
   database: exece_bridge_production
   username: exece_bridge
-  password: <%= ENV['EXECE_BRIDGE_DATABASE_PASSWORD'] %>
+  password: "<%= ENV['EXECE_BRIDGE_DATABASE_PASSWORD'] %>"
