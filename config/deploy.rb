@@ -1,15 +1,16 @@
 # config valid for current version and patch releases of Capistrano
 lock "3.16.0"
 
-set :application, "ExeceBridge"
-set :repo_url, "git@github.com:ikun2019/exece_bridge.git"
+set :application, "exece_bridge"
+set :repo_url, "https://github.com/ikun2019/exece_bridge.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
-
+set :deploy_to, "/var/www/exece_bridge"
+set :linked_files, %w{.env config/secrets.yml}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads}
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -33,30 +34,40 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
-
+set :keep_releases, 5
+set :rbenv_ruby, '2.6.5'
+set :rbenv_type, :system
+set :log_level, :debug
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 namespace :deploy do
-  desc "Make sure local git is in sync with remote."
-  task :confirm do
-    on roles(:app) do
-      puts "This stage is '#{fetch(:stage)}'. Deploying branch is '#{fetch(:branch)}'."
-      puts 'Are you sure? [y/n]'
-      ask :answer, 'n'
-      if fetch(:answer) != 'y'
-        puts 'deploy stopped'
-        exit
+  desc 'Restart application'
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+  desc 'Create database'
+  task :db_create do
+    on roles(:db) do |host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rails, 'db:create'
+        end
       end
     end
   end
-
-  desc 'Initial Deploy'
-  task :initial do
+  desc 'Run seed'
+  task :seed do
     on roles(:app) do
-      invoke 'deploy'
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rails, 'db:seed'
+        end
+      end
     end
   end
-
-  before :starting, :confirm
+  after :publishing, :restart
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
+  end
 end
