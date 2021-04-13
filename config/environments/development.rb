@@ -72,3 +72,5 @@ Rails.application.configure do
     :authentication => 'login',
   }
 end
+
+# SMTP_PASSWD='boalfdyoabysgekb'

@@ -109,7 +109,8 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.default_url_options = { protocol: 'http', host: '153.126.154.128' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
