@@ -1,8 +1,9 @@
 <p><%= @email %>さん</p>
 
 <p>
-Exece Bridgeにご登録いただき有り難うございます。<br>
+ExceBridgeにご登録いただき有り難うございます。<br>
 下記、リンク先をクリックいただければ認証が完了いたします。
 </p>
+
 
 <p><%= link_to '認証を完了する', confirmation_url(@resource, confirmation_token: @token) %></p>
