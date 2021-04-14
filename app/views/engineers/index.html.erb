@@ -22,15 +22,9 @@
 
     <label class="engineer-label mt-3 ml-2">Main</label>
     <div class="engineer-main-btn mt-3">
-      <div class="left-btn">
-        <%= link_to "案件検索", requests_path, class: "engineer-important-btn", data: {toggle: "tooltip", placement: "top"}, title: "新規案件の検索はこちら" %>
-      </div>
-      <div class="right-btn">
-        <%= link_to "Excelを学ぶ", trainings_path, class: "engineer-normal-btn", data: {toggle: "tooltip", placement: "top"}, title: "学習希望の方はこちら" %>
-      </div>
-      <div class="center-btn mt-2">
-        <%= link_to "質問掲示板", questions_path, class: "engineer-normal-btn", data: {toggle: "tooltip", placement: "top"}, title: "Excelに関する質問はこちら" %>
-      </div>
+      <%= link_to "案件検索", requests_path, class: "engineer-important-btn mx-auto", data: {toggle: "tooltip", placement: "top"}, title: "新規案件の検索はこちら" %>
+      <%= link_to "Excelを学ぶ", trainings_path, class: "engineer-normal-btn mx-auto", data: {toggle: "tooltip", placement: "top"}, title: "学習希望の方はこちら" %>
+      <%= link_to "質問掲示板", questions_path, class: "engineer-normal-btn mx-auto", data: {toggle: "tooltip", placement: "top"}, title: "Excelに関する質問はこちら" %>
     </div>
 
     <hr class="line">

@@ -4,9 +4,9 @@
 <%= form_with model: @agreement_complete, url: request_agreements_path(@request.id), method: :post, local: true do |f| %>
   <table class="table table-sm table-bordered">
     <tr class="text-center">
-      <th style="width: 20%;" class="align-middle">No.</th>
-      <th style="width: 40%;" class="align-middle">申請者</th>
-      <th style="width: 40%;" class="align-middle">依頼するエンジニアを選択</th>
+      <th style="width: 20%;" class="align-middle reply-table-th">No.</th>
+      <th style="width: 40%;" class="align-middle reply-table-th">申請者</th>
+      <th style="width: 40%;" class="align-middle reply-table-th">依頼するエンジニアを選択</th>
     </tr>
     <% if @reply == true %>
       <% @request.orders.each_with_index do |order, i| %>
