@@ -25,7 +25,7 @@ class RequestsController < ApplicationController
     end
 
     if customer_signed_in? && @request.agreements.where(answer: true).present?
-      @engineer = @request.agreements.find_by(answer: true).engineer.nickname
+      @engineer = @request.agreements.find_by(answer: true).engineer
     end
     
   end

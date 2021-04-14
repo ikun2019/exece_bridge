@@ -21,15 +21,9 @@
   <div class="container pb-5">
     <label class="customer-label mt-3 ml-2">Main</label>
     <div class="customer-main-btn mt-3">
-      <div>
-        <%= link_to "新規依頼作成", new_request_path, class: "customer-important-btn", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "依頼はこちら" %>
-      </div>
-      <div>
-        <%= link_to "依頼状況", status_customer_path(current_customer.id), class: "customer-normal-btn", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "進捗状況の確認" %>
-      </div>
-      <div>
-        <%= link_to "完了案件", completed_requests_path, class: "customer-normal-btn", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "完了済み案件の確認" %>
-      </div>
+      <%= link_to "新規依頼作成", new_request_path, class: "customer-important-btn mx-auto", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "依頼はこちら" %>
+      <%= link_to "依頼状況", status_customer_path(current_customer.id), class: "customer-normal-btn mx-auto", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "進捗状況の確認" %>
+      <%= link_to "完了案件", completed_requests_path, class: "customer-normal-btn mx-auto", data: {toggle: "tooltip", placement: "top", container: "body"}, title: "完了済み案件の確認" %>
     </div>
 
     <hr class="line">

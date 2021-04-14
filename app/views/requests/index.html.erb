@@ -39,7 +39,13 @@
                       <td><%= request.approach.name %></td>
                     </tr>
                   </table>
-                  <%= link_to "More", request_path(request.id), class: "btn btn-d btn-lg request-list-btn mt-3" %>
+                  <% if request.agreements.where(answer: true).present? %>
+                    <%= link_to request_path(request.id) do %>
+                      <%= image_tag"decision.svg", size: "150x30" %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to "More", request_path(request.id), class: "btn btn-d btn-lg request-list-btn mt-3" %>
+                  <% end %>
                 </div>
               </div>       
             <% end %>
