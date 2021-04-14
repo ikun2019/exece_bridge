@@ -1,3 +1,6 @@
 <div class="container text-left">
-  <%= @engineer %>さんに依頼済みです。
+  <%= link_to top_engineer_show_path(@engineer.id) do %>
+    <%= @engineer.nickname %>
+  <% end %>
+  さんに依頼済みです。
 </div>

@@ -13,7 +13,9 @@
         <tr>
           <td class="align-middle text-center"><%= i + 1 %></td>
           <td class="align-middle text-center">
-            <%= order.engineer.nickname %>
+            <%= link_to top_engineer_show_path(order.engineer.id) do %>
+              <%= order.engineer.nickname %>さん
+            <% end %>
           </td>
           <td class="text-center">
             <%= f.hidden_field :order_id, value: order.id %>
@@ -27,7 +29,7 @@
     <% end %>
   </table>
   <% if @reply == true %>
-    <%= f.submit "依頼確定" %>
+    <%= f.submit "依頼確定", class: "btn bnt-lg btn-warning" %>
   <% else %>
     <p>*** まだ申請がありません ***</p>
   <% end %>
